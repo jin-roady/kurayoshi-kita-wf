@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倉吉北高校 PCビュー構成WF（モノクロヘッダー版）</title>
+    <style>
+        /* =========================================
+       ベーススタイル
+       ========================================= */
+        body {
+            font-family: "Hiragino Kaku Gothic ProN", "Meiryo", sans-serif;
+            margin: 0;
+            background: #e0e0e0;
+            color: #333;
+            font-size: 14px;
+            min-width: 1200px;
+            padding-bottom: 100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* PC画面コンテナ */
+        .pc-container {
+            width: 1200px;
+            margin: 0 auto;
+            background: #fff;
+            min-height: 100vh;
+            border-left: 1px solid #ccc;
+            border-right: 1px solid #ccc;
+            position: relative;
+        }
+
+        /* =========================================
+       検証用パネル（画面下部）
+       ========================================= */
+        .control-panel {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #333;
+            padding: 10px 20px;
+            color: #fff;
+            z-index: 9999;
+            border-top: 2px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .control-label {
+            font-size: 12px;
+            color: #ccc;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .btn-cat {
+            padding: 8px 12px;
+            background: #fff;
+            border: 1px solid #000;
+            color: #000;
+            cursor: pointer;
+            font-size: 11px;
+            transition: 0.2s;
+            border-radius: 4px;
+        }
+
+        .btn-cat:hover {
+            background: #eee;
+        }
+
+        .btn-cat.active {
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+            border-color: #fff;
+        }
+
+        /* =========================================
+       ★ヘッダー（レイアウト維持・モノクロ化）★
+       ========================================= */
+        header {
+            background: #fff;
+            border-bottom: 3px solid #333;
+        }
+
+        /* メインカラー部分を濃いグレーに */
+
+        /* 上段：ロゴとサブリンク */
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 20px 30px 10px;
+        }
+
+        .logo-box {
+            width: 220px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            border: 1px solid #000;
+            background: #eee;
+        }
+
+        .header-sub-links {
+            display: flex;
+            gap: 20px;
+            font-size: 12px;
+            color: #333;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .sub-link-item {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        .sub-link-item::before {
+            content: '|';
+            margin-right: 15px;
+            color: #ccc;
+        }
+
+        .sub-link-item:first-child::before {
+            content: none;
+        }
+
+        /* 中段：ターゲット別ナビ（ダークグレー帯） */
+        .nav-target-area {
+            background: #555;
+            height: 40px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding-right: 20px;
+            margin-top: 10px;
+            border-radius: 10px 0 0 0;
+            width: 90%;
+            margin-left: auto;
+        }
+
+        .nav-target-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-target-item {
+            color: #fff;
+            font-size: 12px;
+            font-weight: bold;
+            padding: 0 20px;
+            cursor: pointer;
+            border-right: 1px solid #777;
+        }
+
+        .nav-target-item:last-child {
+            border-right: none;
+        }
+
+        .nav-target-item:hover {
+            background: #666;
+        }
+
+        /* 下段：メインナビ（白帯・点線区切り・黒文字） */
+        .nav-main-area {
+            border-bottom: 1px solid #ccc;
+            background: #fff;
+        }
+
+        .nav-main-list {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+
+        .nav-home {
+            width: 60px;
+            background: #999;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 20px;
+        }
+
+        /* 家アイコン部分 */
+        .nav-main-item {
+            flex: 1;
+            text-align: center;
+            padding: 15px 0;
+            cursor: pointer;
+            font-weight: bold;
+            color: #000;
+            font-size: 14px;
+            border-right: 1px dotted #999;
+            transition: 0.2s;
+        }
+
+        .nav-main-item:hover {
+            background: #eee;
+        }
+
+        .nav-main-item:last-child {
+            border-right: none;
+        }
+
+        /* =========================================
+       レイアウト構造・コンテンツ
+       ========================================= */
+        /* 下層ページ用MV */
+        .page-header-area {
+            height: 150px;
+            background: #eee;
+            border-bottom: 1px solid #000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            display: none;
+        }
+
+        .ph-en {
+            font-size: 14px;
+            font-weight: bold;
+            color: #666;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .ph-ja {
+            font-size: 28px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        /* 2カラムレイアウト */
+        .main-wrapper {
+            display: flex;
+            padding: 40px 30px;
+            gap: 40px;
+            min-height: 600px;
+        }
+
+        .col-main {
+            width: 860px;
+        }
+
+        .col-side {
+            width: 240px;
+            flex-shrink: 0;
+        }
+
+        /* レイアウト切替 */
+        .layout-top .main-wrapper {
+            flex-direction: row;
+        }
+
+        .layout-top .col-main {
+            width: 880px;
+        }
+
+        .layout-sub .main-wrapper {
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+        }
+
+        /* パンくず */
+        .breadcrumbs {
+            font-size: 12px;
+            margin-bottom: 20px;
+            color: #666;
+            display: none;
+        }
+
+        /* サイドバー */
+        .local-nav {
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+
+        .local-nav-title {
+            background: #000;
+            color: #fff;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .local-nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .local-nav-item {
+            border-bottom: 1px solid #ccc;
+            padding: 12px 15px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s;
+            background: #fff;
+        }
+
+        .local-nav-item:hover {
+            background: #eee;
+        }
+
+        .local-nav-item.current {
+            background: #ddd;
+            font-weight: bold;
+            border-left: 5px solid #000;
+        }
+
+        .side-banner {
+            height: 100px;
+            border: 1px solid #000;
+            background: #ddd;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            color: #555;
+            cursor: pointer;
+        }
+
+        /* コンテンツ共通 */
+        h2 {
+            font-size: 22px;
+            border-left: 10px solid #000;
+            padding-left: 15px;
+            margin: 0 0 30px;
+            border-bottom: 1px solid #000;
+            padding-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            color: #000;
+        }
+
+        h2 .sub {
+            font-size: 12px;
+            font-weight: normal;
+            color: #666;
+        }
+
+        h3 {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 40px 0 15px;
+            border-bottom: 1px dotted #000;
+            padding-bottom: 5px;
+            color: #000;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* TOPページパーツ */
+        .hero-area {
+            height: 400px;
+            width: 100%;
+            background: #ccc;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 50px;
+            color: #555;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .pickup-item {
+            height: 150px;
+            background: #fff;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 12px;
+            background: #eee;
+        }
+
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .news-item {
+            height: 100px;
+            border: 1px solid #000;
+            background: #fff;
+            padding: 10px;
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .adm-list {
+            display: flex;
+            gap: 20px;
+            background: #f9f9f9;
+            border: 1px solid #000;
+            padding: 20px;
+        }
+
+        .adm-btn {
+            flex: 1;
+            background: #fff;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            font-weight: bold;
+            cursor: pointer;
+            border: 1px solid #000;
+            color: #000;
+        }
+
+        .event-wrap {
+            display: flex;
+            gap: 20px;
+        }
+
+        .event-main {
+            flex: 2;
+            height: 200px;
+            background: #eee;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .event-sub {
+            flex: 1;
+            height: 200px;
+            background: #fff;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature-box {
+            height: 180px;
+            background: #fff;
+            border: 1px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .life-img {
+            height: 120px;
+            background: #eee;
+            border: 1px solid #000;
+        }
+
+        /* 下層テンプレート */
+        .template {
+            display: none;
+        }
+
+        .template.show {
+            display: block;
+        }
+
+        .media-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .media-row.rev {
+            flex-direction: row-reverse;
+        }
+
+        .media-img {
+            width: 350px;
+            height: 220px;
+            background: #eee;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #000;
+        }
+
+        .media-body {
+            flex: 1;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #000;
+            background: #fff;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 3px 3px 0 #000;
+        }
+
+        .card-thumb {
+            height: 140px;
+            background: #eee;
+            border-bottom: 1px solid #000;
+        }
+
+        .card-body {
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        table.pc-table {
+            width: 100%;
+            border-collapse: collapse;
+            border: 1px solid #000;
+            margin-bottom: 30px;
+        }
+
+        table.pc-table th,
+        table.pc-table td {
+            border: 1px solid #000;
+            padding: 15px;
+        }
+
+        table.pc-table th {
+            background: #eee;
+            width: 30%;
+            text-align: left;
+        }
+
+        .detail-header {
+            height: 250px;
+            background: #555;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            border: 1px solid #000;
+        }
+
+        .news-section {
+            border: 2px solid #000;
+            padding: 20px;
+            margin-bottom: 30px;
+            background: #f9f9f9;
+        }
+
+        .news-row {
+            display: flex;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+            gap: 20px;
+        }
+
+        footer {
+            background: #f0f0f0;
+            border-top: 1px solid #000;
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="control-panel">
+        <div class="control-label">PC VIEW SELECTOR:</div>
+        <button class="btn-cat active" onclick="updateView('top')">0. TOP</button>
+        <button class="btn-cat" onclick="updateView('school')">1. 学校紹介</button>
+        <button class="btn-cat" onclick="updateView('course')">2. 学科・コース</button>
+        <button class="btn-cat" onclick="updateView('club')">3. 部活動</button>
+        <button class="btn-cat" onclick="updateView('life')">4. 学校生活</button>
+        <button class="btn-cat" onclick="updateView('career')">5. 進路・進学</button>
+        <button class="btn-cat" onclick="updateView('exam')">6. 受験生の方へ</button>
+        <button class="btn-cat" onclick="updateView('parent')">7. 保護者</button>
+        <button class="btn-cat" onclick="updateView('grad')">8. 卒業生</button>
+        <button class="btn-cat" onclick="updateView('other')">9. その他</button>
+    </div>
+
+    <div class="pc-container layout-top" id="page-container">
+        <header>
+            <div class="header-top">
+                <div class="logo-box">KURAYOSHI KITA</div>
+                <div class="header-sub-links">
+                    <div class="sub-link-item">交通アクセス</div>
+                    <div class="sub-link-item">お問い合わせ</div>
+                </div>
+            </div>
+
+            <div class="nav-target-area">
+                <ul class="nav-target-list">
+                    <li class="nav-target-item" onclick="updateView('parent')">在校生・保護者の方へ</li>
+                    <li class="nav-target-item" onclick="updateView('grad')">卒業生の方へ</li>
+                    <li class="nav-target-item" onclick="updateView('exam')">受験生の方へ</li>
+                    <li class="nav-target-item">資料請求</li>
+                </ul>
+            </div>
+
+            <div class="nav-main-area">
+                <ul class="nav-main-list">
+                    <li class="nav-home" onclick="updateView('top')">⌂</li>
+                    <li class="nav-main-item" onclick="updateView('school')">学校紹介</li>
+                    <li class="nav-main-item" onclick="updateView('course')">学科・コース</li>
+                    <li class="nav-main-item" onclick="updateView('club')">部活動</li>
+                    <li class="nav-main-item" onclick="updateView('life')">学校生活</li>
+                    <li class="nav-main-item" onclick="updateView('career')">進路・進学</li>
+                    <li class="nav-main-item" onclick="updateView('exam')">入試情報</li>
+                </ul>
+            </div>
+        </header>
+
+        <div id="ph-area" class="page-header-area">
+            <div class="ph-en" id="ph-en">CATEGORY</div>
+            <div class="ph-ja" id="ph-ja">カテゴリ名</div>
+        </div>
+
+        <div class="main-wrapper">
+
+            <div class="col-main">
+                <div class="breadcrumbs" id="breadcrumbs">TOP > カテゴリ名</div>
+
+                <div id="temp-top" class="template show">
+                    <div class="hero-area">MAIN VISUAL SLIDE</div>
+
+                    <h2>PICK UP <span class="sub">注目コンテンツ</span></h2>
+                    <div class="grid-3" style="margin-bottom:40px;">
+                        <div class="pickup-item">BANNER</div>
+                        <div class="pickup-item">BANNER</div>
+                        <div class="pickup-item">BANNER</div>
+                    </div>
+
+                    <h2>NEWS & TOPICS <span class="sub">お知らせ</span><span
+                            style="font-size:12px; margin-left:auto; text-decoration:underline; cursor:pointer;">一覧を見る
+                            ></span></h2>
+                    <div class="news-grid" style="margin-bottom:40px;">
+                        <div class="news-item">お知らせテキスト</div>
+                        <div class="news-item">お知らせテキスト</div>
+                        <div class="news-item">お知らせテキスト</div>
+                        <div class="news-item">お知らせテキスト</div>
+                        <div class="news-item">お知らせテキスト</div>
+                        <div class="news-item">お知らせテキスト</div>
+                    </div>
+
+                    <h2>ADMISSIONS <span class="sub">入試情報</span></h2>
+                    <div class="adm-list" style="margin-bottom:40px;">
+                        <div class="adm-btn">募集要項 ></div>
+                        <div class="adm-btn">説明会情報 ></div>
+                        <div class="adm-btn">出願について ></div>
+                    </div>
+
+                    <h2>EVENTS <span class="sub">学校行事</span></h2>
+                    <div class="event-wrap" style="margin-bottom:40px;">
+                        <div class="event-main">行事一覧 (Main)</div>
+                        <div class="event-sub">ピックアップ (Sub)</div>
+                    </div>
+
+                    <h2>FEATURE <span class="sub">倉吉北高の特色</span></h2>
+                    <div class="grid-3" style="margin-bottom:40px;">
+                        <div class="feature-box">学び (文)</div>
+                        <div class="feature-box">部活動 (武)</div>
+                        <div class="feature-box">調理科 (技)</div>
+                    </div>
+
+                    <h2>DAILY LIFE <span class="sub">学校生活</span></h2>
+                    <div class="grid-4" style="margin-bottom:40px;">
+                        <div class="life-img"></div>
+                        <div class="life-img"></div>
+                        <div class="life-img"></div>
+                        <div class="life-img"></div>
+                    </div>
+
+                    <h2>MEDIA <span class="sub">メディアギャラリー</span></h2>
+                    <div class="grid-3">
+                        <div class="pickup-item">動画</div>
+                        <div class="pickup-item">パンフレット</div>
+                        <div class="pickup-item">新聞掲載</div>
+                    </div>
+                </div>
+
+                <div id="temp-a" class="template">
+                    <h2 id="title-a" style="border-left:none; padding-left:0; border-bottom:2px solid #000;">ページタイトル
+                    </h2>
+                    <div class="media-row">
+                        <div class="media-img">IMG</div>
+                        <div class="media-body">
+                            <h3>見出しテキスト</h3>
+                            <p>テキストテキストテキストテキストテキストテキスト。</p>
+                        </div>
+                    </div>
+                    <div class="media-row rev">
+                        <div class="media-img">IMG</div>
+                        <div class="media-body">
+                            <h3>見出しテキスト</h3>
+                            <p>テキストテキストテキストテキストテキストテキスト。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="temp-b" class="template">
+                    <div
+                        style="text-align:center; padding:40px; background:#f9f9f9; border:1px solid #000; margin-bottom:40px;">
+                        <strong style="font-size:18px;">CONCEPT MESSAGE</strong><br>
+                        コンセプトメッセージ
+                    </div>
+                    <h3>3つの特徴</h3>
+                    <div class="grid-3">
+                        <div class="feature-box">POINT 1</div>
+                        <div class="feature-box">POINT 2</div>
+                        <div class="feature-box">POINT 3</div>
+                    </div>
+                </div>
+
+                <div id="temp-c" class="template">
+                    <div style="margin-bottom:20px;">
+                        <button
+                            style="background:#000; color:#fff; border:1px solid #000; padding:5px 15px; cursor:pointer;">すべて</button>
+                        <button
+                            style="background:#fff; border:1px solid #000; padding:5px 15px; cursor:pointer;">運動部</button>
+                        <button
+                            style="background:#fff; border:1px solid #000; padding:5px 15px; cursor:pointer;">文化部</button>
+                    </div>
+                    <div class="card-grid">
+                        <div class="card" onclick="showClubDetail()">
+                            <div class="card-thumb"></div>
+                            <div class="card-body">野球部</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-thumb"></div>
+                            <div class="card-body">サッカー部</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-thumb"></div>
+                            <div class="card-body">吹奏楽部</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-thumb"></div>
+                            <div class="card-body">調理部</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-thumb"></div>
+                            <div class="card-body">美術部</div>
+                        </div>
+                        <div class="card">
+                            <div class="card-thumb"></div>
+                            <div class="card-body">ボランティア部</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="temp-d" class="template">
+                    <h2 id="title-d" style="border-left:none; padding-left:0; border-bottom:2px solid #000;">ページタイトル
+                    </h2>
+                    <h3 id="table-cap">一覧</h3>
+                    <table class="pc-table" id="table-content">
+                        <tr>
+                            <th>項目名</th>
+                            <td>内容が入ります</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="temp-e" class="template">
+                    <div class="detail-header">野球部 HERO</div>
+                    <div class="media-row">
+                        <div style="flex:1;">
+                            <div class="news-section">
+                                <strong
+                                    style="display:block; margin-bottom:10px; border-bottom:1px solid #000; color:#000;">NEWS
+                                    (投稿機能)</strong>
+                                <div class="news-row"><span>2025.10.15</span><span>秋季県大会の結果について</span></div>
+                                <div class="news-row"><span>2025.09.20</span><span>練習試合のスケジュール</span></div>
+                            </div>
+                            <h3>部活動紹介</h3>
+                            <p>紹介文テキストが入ります。</p>
+                        </div>
+                        <div style="width:300px;">
+                            <table class="pc-table">
+                                <tr>
+                                    <th>部員数</th>
+                                    <td>30名</td>
+                                </tr>
+                                <tr>
+                                    <th>活動日</th>
+                                    <td>週6日</td>
+                                </tr>
+                                <tr>
+                                    <th>場所</th>
+                                    <td>第1グラウンド</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div style="text-align:center;">
+                        <button onclick="updateView('club')"
+                            style="padding:10px 40px; background:#fff; border:1px solid #000; cursor:pointer; font-weight:bold;">一覧に戻る</button>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="col-side">
+                <div id="local-nav-area" class="local-nav" style="display:none;">
+                    <div class="local-nav-title" id="sidebar-title">MENU</div>
+                    <ul class="local-nav-list" id="sidebar-list"></ul>
+                </div>
+                <div class="side-banner">BANNER</div>
+                <div class="side-banner">BANNER</div>
+                <div class="side-banner">BANNER</div>
+                <div class="side-banner">BANNER</div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="footer-links">
+                <span>学校概要</span>
+                <span>アクセス</span>
+                <span>採用情報</span>
+                <span>サイトマップ</span>
+                <span>プライバシーポリシー</span>
+            </div>
+            <p>Copyright © Kurayoshi Kita High School.</p>
+        </footer>
+    </div>
+
+    <script>
+        // サイトデータ
+        const siteData = {
+            'top': { label: 'TOP', labelEn: 'TOP PAGE', layout: 'temp-top', items: [] },
+            'school': {
+                label: '学校紹介', labelEn: 'SCHOOL GUIDE', layout: 'temp-a',
+                items: ['校長あいさつ', '教育方針', '施設・設備', '制服紹介', '特色ある取り組み', 'アクセス']
+            },
+            'course': {
+                label: '学科・コース', labelEn: 'COURSE GUIDE', layout: 'temp-b',
+                items: ['学科・コース一覧', '特別進学コース', '総合コース', '家庭学科/調理科']
+            },
+            'club': {
+                label: '部活動', labelEn: 'CLUB ACTIVITIES', layout: 'temp-c',
+                items: ['部活動一覧', '運動部', '文化部']
+            },
+            'life': {
+                label: '学校生活', labelEn: 'DAILY LIFE', layout: 'temp-b',
+                items: ['年間行事', '1日のスケジュール', '北高祭', '球技大会', '修学旅行', '在校生の声']
+            },
+            'career': {
+                label: '進路・進学', labelEn: 'CAREER', layout: 'temp-a',
+                items: ['進路サポート', '進路実績', '先輩生インタビュー']
+            },
+            'exam': {
+                label: '受験生の方へ', labelEn: 'ADMISSIONS', layout: 'temp-d',
+                items: ['入試情報', '学費・就学支援金', 'オープンスクール', 'Q&A']
+            },
+            'parent': {
+                label: '在校生・保護者', labelEn: 'PARENTS', layout: 'temp-d',
+                items: ['証明書発行', '奨学金案内', 'LINE/マチコミ']
+            },
+            'grad': {
+                label: '卒業生の方へ', labelEn: 'GRADUATES', layout: 'temp-d',
+                items: ['証明書発行', 'ご寄付のお願い', '同窓会']
+            },
+            'other': {
+                label: 'その他', labelEn: 'OTHERS', layout: 'temp-a',
+                items: ['教職員募集', 'パンフレット', '紹介動画', 'お問い合わせ']
+            }
+        };
+
+        function updateView(key) {
+            document.querySelectorAll('.btn-cat').forEach(b => b.classList.remove('active'));
+            event.target.classList.add('active');
+
+            document.querySelectorAll('.template').forEach(t => t.classList.remove('show'));
+            window.scrollTo(0, 0);
+
+            const data = siteData[key];
+            const isTop = (key === 'top');
+            const container = document.getElementById('page-container');
+            const phArea = document.getElementById('ph-area');
+            const navArea = document.getElementById('local-nav-area');
+            const breadcrumbs = document.getElementById('breadcrumbs');
+
+            if (isTop) {
+                container.classList.remove('layout-sub');
+                container.classList.add('layout-top');
+                phArea.style.display = 'none';
+                navArea.style.display = 'none';
+                breadcrumbs.style.display = 'none';
+                document.getElementById('temp-top').classList.add('show');
+            } else {
+                container.classList.remove('layout-top');
+                container.classList.add('layout-sub');
+                phArea.style.display = 'flex';
+                navArea.style.display = 'block';
+                breadcrumbs.style.display = 'block';
+                document.getElementById(data.layout).classList.add('show');
+
+                document.getElementById('ph-en').innerText = data.labelEn;
+                document.getElementById('ph-ja').innerText = data.label;
+                breadcrumbs.innerText = `TOP > ${data.label}`;
+
+                document.getElementById('sidebar-title').innerText = data.label + " MENU";
+                const list = document.getElementById('sidebar-list');
+                list.innerHTML = '';
+                data.items.forEach((item, idx) => {
+                    const li = document.createElement('li');
+                    li.className = 'local-nav-item' + (idx === 0 ? ' current' : '');
+                    li.innerText = item;
+                    li.onclick = function () {
+                        document.querySelectorAll('.local-nav-item').forEach(c => c.classList.remove('current'));
+                        this.classList.add('current');
+                        updateContentTitle(data.layout, item);
+                    };
+                    list.appendChild(li);
+                });
+
+                updateContentTitle(data.layout, data.items[0]);
+
+                if (key === 'exam') {
+                    document.getElementById('table-cap').innerText = '学費・諸経費一覧';
+                    document.getElementById('table-content').innerHTML = `<tr><th>入学金</th><td>200,000円</td></tr><tr><th>授業料(月)</th><td>35,000円</td></tr><tr><th>備考</th><td>就学支援金対象</td></tr>`;
+                } else if (key === 'parent' || key === 'grad') {
+                    document.getElementById('table-cap').innerText = '発行手数料';
+                    document.getElementById('table-content').innerHTML = `<tr><th>卒業証明書</th><td>1通 500円</td></tr><tr><th>調査書</th><td>1通 500円</td></tr>`;
+                }
+            }
+        }
+
+        function updateContentTitle(layoutId, text) {
+            const titleId = layoutId.replace('temp', 'title');
+            const el = document.getElementById(titleId);
+            if (el) el.innerText = text;
+        }
+
+        function showClubDetail() {
+            document.querySelectorAll('.template').forEach(t => t.classList.remove('show'));
+            document.getElementById('temp-e').classList.add('show');
+            document.getElementById('ph-ja').innerText = '部活動紹介';
+            document.getElementById('breadcrumbs').innerText = 'TOP > 部活動紹介 > 野球部';
+        }
+
+        const initBtn = document.querySelector('.btn-cat');
+        if (initBtn) initBtn.click();
+    </script>
+
+</body>
+
+</html>
