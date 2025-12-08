@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倉吉北高校 - Full Header Composition</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="control-panel">
+        <div class="cp-label">VIEW MODE</div>
+        <button class="btn-cat active" onclick="updateView('top')">TOP</button>
+        <button class="btn-cat" onclick="updateView('school')">学校紹介</button>
+        <button class="btn-cat" onclick="updateView('course')">学科・コース</button>
+        <button class="btn-cat" onclick="updateView('club')">部活動</button>
+        <button class="btn-cat" onclick="updateView('life')">学校生活</button>
+        <button class="btn-cat" onclick="updateView('exam')">受験生</button>
+    </div>
+
+    <div class="full-width-container" id="page-container">
+
+        <header>
+            <div class="header-upper">
+                <div class="header-inner upper-inner">
+                    <ul class="nav-target-list">
+                        <li class="nav-target-item">在校生・保護者の方へ</li>
+                        <li class="nav-target-item">卒業生の方へ</li>
+                        <li class="nav-target-item">受験生の方へ</li>
+                    </ul>
+                    <ul class="nav-sub-list">
+                        <li class="nav-sub-item">交通アクセス</li>
+                        <li class="nav-sub-item">お問い合わせ</li>
+                        <li class="nav-req-btn">資料請求</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="header-lower">
+                <div class="header-inner lower-inner">
+                    <div class="logo-box">KURAYOSHI KITA</div>
+
+                    <ul class="nav-main-list">
+                        <li class="nav-main-item" onclick="updateView('top')">HOME</li>
+                        <li class="nav-main-item" onclick="updateView('school')">学校紹介</li>
+                        <li class="nav-main-item" onclick="updateView('course')">学科・コース</li>
+                        <li class="nav-main-item" onclick="updateView('club')">部活動</li>
+                        <li class="nav-main-item" onclick="updateView('life')">学校生活</li>
+                        <li class="nav-main-item" onclick="updateView('career')">進路・進学</li>
+                        <li class="nav-main-item" onclick="updateView('exam')">入試情報</li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <div id="dynamic-content">
+
+            <div id="temp-top" class="template show">
+
+                <div class="hero-wrapper">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Be Unique<span class="dot">.</span></h1>
+                        <p class="hero-sub">KURAYOSHI KITA HIGH SCHOOL</p>
+                    </div>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="main-grid">
+
+                        <div class="col-main">
+
+                            <h2 class="section-title">PICK UP <span class="sub">注目のコンテンツ</span></h2>
+                            <div class="grid-3">
+                                <div class="pickup-item">OPEN CAMPUS</div>
+                                <div class="pickup-item">ONLINE SCHOOL</div>
+                                <div class="pickup-item">INTERVIEW</div>
+                            </div>
+
+                            <h2 class="section-title">NEWS <span class="view-all">View All</span></h2>
+                            <div class="news-list-simple">
+                                <div class="news-row-simple">
+                                    <div class="news-date">2025.12.01</div>
+                                    <div class="news-title">Webサイトをリニューアルしました</div>
+                                </div>
+                                <div class="news-row-simple">
+                                    <div class="news-date">2025.11.28</div>
+                                    <div class="news-title">【重要】入試説明会の日程変更について</div>
+                                </div>
+                                <div class="news-row-simple">
+                                    <div class="news-date">2025.11.15</div>
+                                    <div class="news-title">野球部が秋季県大会で優勝しました</div>
+                                </div>
+                            </div>
+
+                            <h2 class="section-title">ADMISSIONS <span class="sub">入試情報</span></h2>
+                            <div class="adm-grid">
+                                <div class="adm-cell">
+                                    <span>募集要項</span>
+                                    <small>Guidelines</small>
+                                </div>
+                                <div class="adm-cell">
+                                    <span>学校説明会</span>
+                                    <small>Open Campus</small>
+                                </div>
+                                <div class="adm-cell">
+                                    <span>資料請求</span>
+                                    <small>Request</small>
+                                </div>
+                            </div>
+
+                            <h2 class="section-title">EVENTS <span class="sub">学校行事</span></h2>
+                            <div class="events-container">
+                                <div class="event-main">
+                                    <div class="event-content">
+                                        <span class="event-tag">PICK UP</span>
+                                        <h3 class="event-h3">北高祭レポート</h3>
+                                        <p class="event-p">全校生徒が一つになった熱い2日間の記録。</p>
+                                    </div>
+                                </div>
+                                <div class="event-sub">
+                                    <div class="event-content">
+                                        <span class="event-tag">NEXT</span>
+                                        <h3 class="event-h3">球技大会のお知らせ</h3>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h2 class="section-title">FEATURE <span class="sub">倉吉北高の特色</span></h2>
+                            <div class="feature-grid">
+                                <div class="feature-box">
+                                    <span class="f-num">01</span>
+                                    <span class="f-label">学び</span>
+                                    <p class="f-text">一人ひとりの進路実現</p>
+                                </div>
+                                <div class="feature-box">
+                                    <span class="f-num">02</span>
+                                    <span class="f-label">部活動</span>
+                                    <p class="f-text">全国レベルの挑戦</p>
+                                </div>
+                                <div class="feature-box">
+                                    <span class="f-num">03</span>
+                                    <span class="f-label">調理科</span>
+                                    <p class="f-text">プロへの最短ルート</p>
+                                </div>
+                            </div>
+
+                            <h2 class="section-title">DAILY LIFE <span class="sub">日々の様子</span></h2>
+                            <div class="grid-4">
+                                <div class="life-img"></div>
+                                <div class="life-img"></div>
+                                <div class="life-img"></div>
+                                <div class="life-img"></div>
+                            </div>
+
+                        </div>
+                        <div class="col-side">
+                            <div class="side-sticky-area">
+
+                                <a href="#" class="cv-banner primary">
+                                    <span class="cv-sub">DOCUMENT</span>
+                                    <span class="cv-main">資料請求</span>
+                                    <span class="cv-arrow">→</span>
+                                </a>
+                                <a href="#" class="cv-banner secondary">
+                                    <span class="cv-sub">EVENT</span>
+                                    <span class="cv-main">学校説明会</span>
+                                    <span class="cv-arrow">→</span>
+                                </a>
+                                <a href="#" class="cv-banner outline">
+                                    <span class="cv-sub">ENTRY</span>
+                                    <span class="cv-main">Web出願</span>
+                                    <span class="cv-arrow">→</span>
+                                </a>
+
+                                <div class="promo-banner">
+                                    <div class="pb-inner">
+                                        <span class="pb-tag">CHECK</span>
+                                        <span class="pb-text">部活動<br>大会結果一覧</span>
+                                    </div>
+                                </div>
+                                <div class="promo-banner" style="background:#f0f0f0; border-color:#ccc;">
+                                    <div class="pb-inner">
+                                        <span class="pb-text" style="color:#555">調理科<br>レストラン「北斗」</span>
+                                    </div>
+                                </div>
+
+                                <div class="side-sns-area">
+                                    <div class="sns-box">INSTAGRAM</div>
+                                    <div class="sns-box">X / TWITTER</div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="sub-page-wrapper" class="template">
+                <div id="ph-area" class="page-header-area">
+                    <div class="ph-en" id="ph-en">CATEGORY</div>
+                    <div class="ph-ja" id="ph-ja">カテゴリ名</div>
+                </div>
+
+                <div class="content-wrapper">
+                    <div class="breadcrumbs" id="breadcrumbs">TOP > カテゴリ名</div>
+
+                    <div class="main-grid">
+                        <div class="col-main" id="sub-content-area"></div>
+                        <div class="col-side">
+                            <div class="local-nav">
+                                <div class="local-nav-title" id="sidebar-title">MENU</div>
+                                <ul class="local-nav-list" id="sidebar-list"></ul>
+                            </div>
+                            <div class="side-banner">BANNER AREA</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer>
+            <div class="content-wrapper">
+                <div class="footer-links">
+                    <span>学校概要</span>
+                    <span>アクセス</span>
+                    <span>採用情報</span>
+                    <span>プライバシーポリシー</span>
+                </div>
+                <div class="footer-copy">Copyright © Kurayoshi Kita High School.</div>
+            </div>
+        </footer>
+    </div>
+
+    <div style="display:none;">
+        <div id="content-a">
+            <h2 class="page-h2">Introduction</h2>
+            <div class="media-row">
+                <div class="media-img"></div>
+                <div class="media-body">
+                    <h3>教育理念</h3>
+                    <p>テキストが入ります。</p>
+                </div>
+            </div>
+            <div class="media-row rev">
+                <div class="media-img"></div>
+                <div class="media-body">
+                    <h3>施設紹介</h3>
+                    <p>テキストが入ります。</p>
+                </div>
+            </div>
+        </div>
+        <div id="content-b">
+            <div class="concept-box">
+                <p class="concept-label">CONCEPT</p>
+                <p class="concept-text">「自分らしさ」を見つける、3年間の物語。</p>
+            </div>
+            <h3 class="section-divider">コース一覧</h3>
+            <div class="grid-3">
+                <div class="pickup-item light-bg">特別進学</div>
+                <div class="pickup-item light-bg">総合コース</div>
+                <div class="pickup-item light-bg">調理科</div>
+            </div>
+        </div>
+        <div id="content-c">
+            <div class="filter-area"><span class="filter-item active">ALL</span><span
+                    class="filter-item">SPORTS</span><span class="filter-item">CULTURE</span></div>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="card-thumb"></div>
+                    <div class="card-body">野球部</div>
+                </div>
+                <div class="card">
+                    <div class="card-thumb"></div>
+                    <div class="card-body">サッカー部</div>
+                </div>
+                <div class="card">
+                    <div class="card-thumb"></div>
+                    <div class="card-body">吹奏楽部</div>
+                </div>
+            </div>
+        </div>
+        <div id="content-d">
+            <h2 class="page-h2">Information</h2>
+            <div class="table-list">
+                <div class="table-row">
+                    <div class="th">入学金</div>
+                    <div class="td">200,000円</div>
+                </div>
+                <div class="table-row">
+                    <div class="th">授業料</div>
+                    <div class="td">35,000円 / 月</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const siteData = {
+            'top': { label: 'TOP', labelEn: 'HOME', type: 'top' },
+            'school': { label: '学校紹介', labelEn: 'SCHOOL GUIDE', type: 'sub', contentId: 'content-a', items: ['校長あいさつ', '教育方針', '施設・設備', 'アクセス'] },
+            'course': { label: '学科・コース', labelEn: 'COURSE GUIDE', type: 'sub', contentId: 'content-b', items: ['学科・コース一覧', '特別進学コース', '総合コース', '家庭学科/調理科'] },
+            'club': { label: '部活動', labelEn: 'CLUB ACTIVITIES', type: 'sub', contentId: 'content-c', items: ['部活動一覧', '運動部', '文化部'] },
+            'life': { label: '学校生活', labelEn: 'DAILY LIFE', type: 'sub', contentId: 'content-b', items: ['年間行事', '1日のスケジュール', '在校生の声'] },
+            'career': { label: '進路・進学', labelEn: 'CAREER', type: 'sub', contentId: 'content-a', items: ['進路実績', '進路指導', '卒業生の声'] },
+            'exam': { label: '受験生の方へ', labelEn: 'ADMISSIONS', type: 'sub', contentId: 'content-d', items: ['入試情報', '学費・就学支援金', 'オープンスクール'] }
+        };
+
+        function updateView(key) {
+            document.querySelectorAll('.btn-cat').forEach(b => b.classList.remove('active'));
+            const btns = document.querySelectorAll('.btn-cat');
+            for (let btn of btns) {
+                if (btn.innerText.includes(siteData[key].label) || (key === 'top' && btn.innerText === 'TOP')) {
+                    btn.classList.add('active');
+                }
+            }
+            window.scrollTo(0, 0);
+
+            const data = siteData[key];
+            const topTpl = document.getElementById('temp-top');
+            const subWrapper = document.getElementById('sub-page-wrapper');
+
+            if (data.type === 'top') {
+                subWrapper.classList.remove('show');
+                topTpl.classList.add('show');
+            } else {
+                topTpl.classList.remove('show');
+                subWrapper.classList.add('show');
+                document.getElementById('ph-en').innerText = data.labelEn;
+                document.getElementById('ph-ja').innerText = data.label;
+                document.getElementById('breadcrumbs').innerText = `HOME > ${data.label}`;
+
+                document.getElementById('sidebar-title').innerText = data.labelEn;
+                const list = document.getElementById('sidebar-list');
+                list.innerHTML = '';
+                data.items.forEach((item, idx) => {
+                    const li = document.createElement('li');
+                    li.className = 'local-nav-item' + (idx === 0 ? ' current' : '');
+                    li.innerText = item;
+                    list.appendChild(li);
+                });
+                const contentArea = document.getElementById('sub-content-area');
+                contentArea.innerHTML = document.getElementById(data.contentId).innerHTML;
+            }
+        }
+        updateView('top');
+    </script>
+</body>
+
+</html>
