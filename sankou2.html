@@ -108,7 +108,8 @@
                                             <div class="ml-item" onclick="updateView('school')"><span>校長あいさつ</span><span
                                                     class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('school')">
-                                                <span>建学の精神・沿革・教育方針</span><span class="ml-arrow">→</span></div>
+                                                <span>建学の精神・沿革・教育方針</span><span class="ml-arrow">→</span>
+                                            </div>
                                             <div class="ml-item" onclick="updateView('school')"><span>施設・設備</span><span
                                                     class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('school')"><span>制服</span><span
@@ -116,7 +117,8 @@
                                             <div class="ml-item" onclick="updateView('school')"><span>費用</span><span
                                                     class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('school')">
-                                                <span>特色ある取り組み</span><span class="ml-arrow">→</span></div>
+                                                <span>特色ある取り組み</span><span class="ml-arrow">→</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -188,7 +190,8 @@
                                             <div class="ml-item" onclick="updateView('life')"><span>年間行事</span><span
                                                     class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('life')">
-                                                <span>1日のスケジュール</span><span class="ml-arrow">→</span></div>
+                                                <span>1日のスケジュール</span><span class="ml-arrow">→</span>
+                                            </div>
                                             <div class="ml-item" onclick="updateView('life')"><span>北高祭</span><span
                                                     class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('life')"><span>球技大会/運動会</span><span
@@ -196,7 +199,8 @@
                                             <div class="ml-item" onclick="updateView('life')"><span>修学旅行</span><span
                                                     class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('life')">
-                                                <span>在校生インタビュー</span><span class="ml-arrow">→</span></div>
+                                                <span>在校生インタビュー</span><span class="ml-arrow">→</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -222,7 +226,8 @@
                                             <div class="ml-item" onclick="updateView('career')"><span>実績</span><span
                                                     class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('career')">
-                                                <span>先輩生インタビュー</span><span class="ml-arrow">→</span></div>
+                                                <span>先輩生インタビュー</span><span class="ml-arrow">→</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -246,9 +251,11 @@
                                             <div class="ml-item" onclick="updateView('exam')"><span>入試情報</span><span
                                                     class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('exam')">
-                                                <span>オープンスクール・相談会</span><span class="ml-arrow">→</span></div>
+                                                <span>オープンスクール・相談会</span><span class="ml-arrow">→</span>
+                                            </div>
                                             <div class="ml-item" onclick="updateView('exam')">
-                                                <span>よくある質問(Q&A)</span><span class="ml-arrow">→</span></div>
+                                                <span>よくある質問(Q&A)</span><span class="ml-arrow">→</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -712,6 +719,22 @@
                 nav.classList.toggle('active');
             });
         }
+
+        // スクロール連動バナーの表示制御
+        window.addEventListener('scroll', function () {
+            const banner = document.querySelector('.fixed-right-banner');
+
+            // バナーが存在し、かつスマホ幅の場合のみ動作
+            if (banner && window.innerWidth <= 768) {
+
+                // 画面の高さ（FV）分以上スクロールしたら表示
+                if (window.scrollY > window.innerHeight) {
+                    banner.classList.add('is-visible');
+                } else {
+                    banner.classList.remove('is-visible');
+                }
+            }
+        });
 
         // スマホ用サブメニュー（アコーディオン）の制御
         function toggleSubmenu(element) {
