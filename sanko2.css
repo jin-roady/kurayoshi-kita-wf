@@ -4590,4 +4590,274 @@
          /* 色の変化を瞬時に適用 */
          transition: none;
      }
+
+     /* =========================================
+       FV SCREEN FIT (FV画面収まり調整)
+       ※ @media (max-width: 768px) の中に追加・上書きしてください
+       ========================================= */
+
+     /* 1. お知らせバー（Marquee）の高さを固定 */
+     .marquee-wrap {
+         height: 40px !important;
+         /* スマホ用に高さを40pxに固定 */
+         padding: 0;
+         /* 上下の余白を削除 */
+     }
+
+     /* バーの中身もサイズ調整 */
+     .marquee-label {
+         font-size: 11px;
+         padding: 0 15px 0 10px;
+         /* ラベルの余白調整 */
+     }
+
+     .marquee-content {
+         height: 100%;
+         /* 高さ一杯に */
+     }
+
+     .mq-item {
+         font-size: 11px;
+         /* 文字サイズ調整 */
+         height: 100%;
+         display: flex;
+         align-items: center;
+     }
+
+     /* 2. メイン画像エリア（Hero）の高さを計算 */
+     .hero {
+         /* 計算式: 画面高さ(100%) - ヘッダー(60px) - お知らせバー(40px) */
+         height: calc(100vh - 60px - 40px) !important;
+         height: calc(100dvh - 60px - 40px) !important;
+         /* アドレスバー考慮(対応機種用) */
+
+         margin-top: 60px;
+         /* ヘッダーの高さ分下げる */
+         min-height: 350px;
+         /* 画面が小さすぎても最低限の高さを確保 */
+     }
+
+     /* 画像自体の高さも追従させる */
+     .slide-img,
+     .swiper-slide {
+         height: 100% !important;
+     }
+
+     /* 3. Hero内の要素位置の微調整（狭くなった分調整） */
+     .hero-title-group {
+         bottom: 20px;
+         /* 下端からの距離を詰める */
+         left: 15px;
+         --hero-fs: 40px;
+         /* タイトル文字を少し小さくして収まりよく */
+     }
+
+     /* 日本語キャッチコピーの位置 */
+     .title-jp {
+         margin-top: 10px;
+         font-size: 11px;
+     }
+
+     /* 雑誌風フレームも画面に合わせて縮小 */
+     .magazine-frame {
+         top: 10px;
+         bottom: 10px;
+         left: 10px;
+         right: 10px;
+     }
+
+     /* 右下の画像（生徒など） */
+     .hero-bottom-img {
+         width: 45vw;
+         /* 邪魔にならないサイズに */
+         right: -10px;
+         opacity: 0.9;
+     }
+
+     /* スクロールダウン表示は邪魔になるので消すか小さく */
+     .scroll-down {
+         display: none;
+         /* スペース確保のため非表示推奨 */
+     }
+
+     /* =========================================
+       NEWS DECO SIZE (元の見出しデザイン用)
+       ※ @media (max-width: 768px) の中に追加・上書き
+       ========================================= */
+
+     .deco-news {
+         /* 元のサイズ(140px)から半分以下に縮小 */
+         width: 60px !important;
+
+         /* 位置調整：見出し(NEWS)と被らないように右上に寄せる */
+         top: -10px !important;
+         right: 0 !important;
+
+         /* スマホでは少し薄くして文字の可読性を優先 */
+         opacity: 0.6;
+     }
+
+     /* =========================================
+       FV TEXT SIZE FIX (文字サイズ統一)
+       ※ @media (max-width: 768px) の中に追加・上書きしてください
+       ========================================= */
+
+     /* "Straight to" と "The" を同じサイズ・太さに統一 */
+     .text-straight,
+     .text-the {
+         font-size: 32px !important;
+         /* 両方とも32pxに統一 */
+         line-height: 1.1;
+         letter-spacing: 0.02em;
+     }
+
+     /* "Straight to" の個別調整（もしあればリセット） */
+     .text-straight {
+         margin-right: 0;
+     }
+
+     /* "The" の個別調整 */
+     .text-the {
+         margin-left: 8px;
+         /* 少し間隔を空ける */
+     }
+
+     /* 1行目のレイアウト調整 */
+     .row-top {
+         display: flex;
+         align-items: baseline;
+         /* ベースラインで揃える */
+         flex-wrap: wrap;
+         /* 画面が狭すぎる場合は折り返し許可 */
+         margin-bottom: 5px;
+     }
+
+     /* 頭文字Sの強調もサイズに合わせて調整 */
+     .char-s {
+         font-size: 1.2em;
+         /* 基準より少しだけ大きく */
+     }
+
+     /* =========================================
+       FV TEXT SIZE (Straight to The を小さく)
+       ※ @media (max-width: 768px) の中に追加・上書きしてください
+       ========================================= */
+
+     /* "Straight to" と "The" のサイズ調整 */
+     .text-straight,
+     .text-the {
+         font-size: 26px !important;
+         /* 32px → 26px に縮小 */
+         line-height: 1.1;
+     }
+
+     /* 頭文字「S」のバランス維持 */
+     .char-s {
+         font-size: 1.3em;
+         /* 本文に合わせて自然な大きさに */
+     }
+
+     /* 行間を少し詰める */
+     .row-top {
+         margin-bottom: 2px;
+         gap: 8px;
+         /* 単語間の余白も少し狭く */
+     }
+
+     /* =========================================
+       FV SPACING OPTIMIZATION (余白・行間の最適化)
+       ※ @media (max-width: 768px) の中に追加・上書きしてください
+       ========================================= */
+
+     /* 1行目 ("Straight to" + "The") のレイアウト調整 */
+     .row-top {
+         display: flex;
+         align-items: baseline;
+
+         /* 単語間の間隔を少し広げて自然に (4px → 8px) */
+         gap: 8px !important;
+
+         /* 下の Future との行間を緩和 ( -10px → -2px ) */
+         /* ほどよい一体感を残しつつ、窮屈さを解消 */
+         margin-bottom: -2px !important;
+
+         flex-wrap: nowrap;
+     }
+
+     /* 文字サイズ設定（念のため維持） */
+     .text-straight,
+     .text-the {
+         font-size: 26px !important;
+     }
+ }
+
+ /* =========================================
+   NEWS SECTION: CLEAN & DECO FIX
+   (ノート風デザインの解除 & 画像位置修正)
+   ========================================= */
+
+ /* 1. ノート風デザインをリセットし、シンプルな「島」デザインに戻す */
+ .news-section {
+     position: relative;
+     background: #f4f8f6;
+     /* ほんのり薄い緑色で区切りをつける */
+     padding: 30px;
+     /* 程よい余白 */
+     border: none;
+     /* 枠線なし */
+     border-radius: 12px;
+     /* 角丸 */
+     box-shadow: none;
+     /* 影なし */
+     margin-bottom: 80px;
+
+     /* 背景パターン(方眼)などをリセット */
+     background-image: none;
+ }
+
+ /* リング穴やテープなどの疑似要素を非表示に */
+ .news-section::before,
+ .news-section::after {
+     display: none;
+ }
+
+
+ /* 2. スマホ表示時のデコ画像位置修正（テキストの邪魔にならないように） */
+ @media (max-width: 768px) {
+
+     /* セクション自体の余白調整 */
+     .news-section {
+         padding: 20px 15px;
+         /* 左右の余白を少し狭めて文字スペース確保 */
+         margin-left: -15px;
+         /* 画面幅いっぱいに広げる */
+         margin-right: -15px;
+         border-radius: 0;
+     }
+
+     /* 装飾画像の調整 */
+     .deco-news {
+         width: 60px !important;
+         /* さりげないサイズに縮小 */
+
+         /* 位置：右上の隅に配置 */
+         top: -15px !important;
+         right: 10px !important;
+
+         /* 重要：文字と重なっても読めるように透明度を下げる */
+         opacity: 0.3;
+
+         /* 文字の下に配置 */
+         z-index: 0;
+         pointer-events: none;
+     }
+
+     /* ニュースの文字を画像より上に表示させる */
+     .news-item {
+         position: relative;
+         z-index: 1;
+         background: transparent;
+         /* 背景を透明にして下の色となじませる */
+     }
+
  }
