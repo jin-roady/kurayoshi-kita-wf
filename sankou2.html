@@ -96,21 +96,27 @@
                             <span class="sp-toggle-btn">＋</span>
                             <div class="mega-menu">
                                 <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=SCHOOL" alt="">
+                                        </div>
+                                        <span class="mv-caption">学びの環境</span>
+                                    </div>
                                     <div class="mega-links-wrap">
                                         <p class="ml-title">SCHOOL GUIDE</p>
                                         <div class="mega-links">
                                             <div class="ml-item" onclick="updateView('school')"><span>校長あいさつ</span><span
                                                     class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('school')"><span>教育方針</span><span
-                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('school')">
+                                                <span>建学の精神・沿革・教育方針</span><span class="ml-arrow">→</span></div>
                                             <div class="ml-item" onclick="updateView('school')"><span>施設・設備</span><span
                                                     class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('school')"><span>制服紹介</span><span
+                                            <div class="ml-item" onclick="updateView('school')"><span>制服</span><span
                                                     class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('school')"><span>交通アクセス</span><span
+                                            <div class="ml-item" onclick="updateView('school')"><span>費用</span><span
                                                     class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('school')"><span>Q&A</span><span
-                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('school')">
+                                                <span>特色ある取り組み</span><span class="ml-arrow">→</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -122,20 +128,21 @@
                             <span class="sp-toggle-btn">＋</span>
                             <div class="mega-menu">
                                 <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=COURSE" alt="">
+                                        </div>
+                                        <span class="mv-caption">未来を見つける</span>
+                                    </div>
                                     <div class="mega-links-wrap">
                                         <p class="ml-title">COURSE GUIDE</p>
                                         <div class="mega-links">
-                                            <div class="ml-item" onclick="updateView('course')"><span>コース一覧</span><span
-                                                    class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('course')">
-                                                <span>特別進学コース</span><span class="ml-arrow">→</span>
-                                            </div>
-                                            <div class="ml-item" onclick="updateView('course')"><span>総合コース</span><span
-                                                    class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('course')"><span>調理科</span><span
-                                                    class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('course')"><span>進路実績</span><span
-                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('course')"><span>普通科
+                                                    特別進学コース</span><span class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('course')"><span>普通科
+                                                    総合コース</span><span class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('course')"><span>家庭学科
+                                                    調理科</span><span class="ml-arrow">→</span></div>
                                         </div>
                                     </div>
                                 </div>
@@ -147,16 +154,16 @@
                             <span class="sp-toggle-btn">＋</span>
                             <div class="mega-menu">
                                 <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=CLUB" alt="">
+                                        </div>
+                                        <span class="mv-caption">熱中する時間</span>
+                                    </div>
                                     <div class="mega-links-wrap">
                                         <p class="ml-title">CLUB ACTIVITIES</p>
                                         <div class="mega-links">
-                                            <div class="ml-item" onclick="updateView('club')"><span>運動部一覧</span><span
-                                                    class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('club')"><span>文化部一覧</span><span
-                                                    class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('club')"><span>大会結果報告</span><span
-                                                    class="ml-arrow">→</span></div>
-                                            <div class="ml-item" onclick="updateView('club')"><span>活動ブログ</span><span
+                                            <div class="ml-item" onclick="updateView('club')"><span>部活動一覧</span><span
                                                     class="ml-arrow">→</span></div>
                                         </div>
                                     </div>
@@ -164,9 +171,90 @@
                             </div>
                         </div>
 
-                        <div class="gnav-item" onclick="updateView('life')">学校生活</div>
-                        <div class="gnav-item" onclick="updateView('exam')">進路・進学</div>
-                        <div class="gnav-item" onclick="updateView('exam')">入試情報</div>
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            学校生活
+                            <span class="sp-toggle-btn">＋</span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=LIFE" alt="">
+                                        </div>
+                                        <span class="mv-caption">思い出を刻む</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">SCHOOL LIFE</p>
+                                        <div class="mega-links">
+                                            <div class="ml-item" onclick="updateView('life')"><span>年間行事</span><span
+                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('life')">
+                                                <span>1日のスケジュール</span><span class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('life')"><span>北高祭</span><span
+                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('life')"><span>球技大会/運動会</span><span
+                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('life')"><span>修学旅行</span><span
+                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('life')">
+                                                <span>在校生インタビュー</span><span class="ml-arrow">→</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            進路・進学
+                            <span class="sp-toggle-btn">＋</span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=CAREER" alt="">
+                                        </div>
+                                        <span class="mv-caption">夢へのサポート</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">CAREER SUPPORT</p>
+                                        <div class="mega-links">
+                                            <div class="ml-item" onclick="updateView('career')"><span>進路サポート</span><span
+                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('career')"><span>実績</span><span
+                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('career')">
+                                                <span>先輩生インタビュー</span><span class="ml-arrow">→</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            受験生の方へ
+                            <span class="sp-toggle-btn">＋</span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=ADMISSION" alt="">
+                                        </div>
+                                        <span class="mv-caption">KITA高を知る</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">ADMISSIONS</p>
+                                        <div class="mega-links">
+                                            <div class="ml-item" onclick="updateView('exam')"><span>入試情報</span><span
+                                                    class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('exam')">
+                                                <span>オープンスクール・相談会</span><span class="ml-arrow">→</span></div>
+                                            <div class="ml-item" onclick="updateView('exam')">
+                                                <span>よくある質問(Q&A)</span><span class="ml-arrow">→</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </nav>
             </div>

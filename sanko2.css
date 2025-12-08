@@ -4093,4 +4093,171 @@
      #custom-cursor {
          display: none !important;
      }
+
+     /* =========================================
+       CURSOR FIX (スマホ幅でカーソルを復活させる)
+       ※ @media (max-width: 768px) の中に追加
+       ========================================= */
+
+     body {
+         cursor: default !important;
+         /* 通常カーソルに戻す */
+     }
+
+     /* リンクやボタンの上では指マークに戻す */
+     a,
+     button,
+     .gnav-item,
+     .mq-item,
+     .side-img-banner,
+     .pickup-item,
+     .f-img-wrap,
+     .life-bento-item,
+     .media-link,
+     .event-main,
+     .event-sub,
+     .fixed-right-banner,
+     .modal-close,
+     .line-btn,
+     .page-top-btn,
+     .hamburger {
+         cursor: pointer !important;
+     }
+
+     /* =========================================
+       MOBILE MENU ADJUSTMENTS (矢印・展開デザイン修正)
+       ※ @media (max-width: 768px) の中に追加・上書きしてください
+       ========================================= */
+
+     /* 親メニューの配置調整 */
+     .gnav-item {
+         position: relative;
+         /* 矢印の基準位置 */
+         display: flex;
+         flex-wrap: wrap;
+         align-items: center;
+         justify-content: space-between;
+         padding: 20px 30px;
+         color: #fff;
+         cursor: pointer !important;
+     }
+
+     /* 展開用ボタン（＋記号を消して矢印にする） */
+     .sp-toggle-btn {
+         position: absolute;
+         top: 0;
+         right: 0;
+         width: 70px;
+         /* タップしやすいように広めに */
+         height: 60px;
+         /* メニューの高さに合わせる */
+
+         /* 文字(+)を透明にして隠す */
+         color: transparent;
+
+         /* 矢印を中央に配置するためのFlex */
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         cursor: pointer !important;
+     }
+
+     /* CSSで矢印（∨）を描画 */
+     .sp-toggle-btn::after {
+         content: '';
+         display: block;
+         width: 10px;
+         height: 10px;
+         border-right: 2px solid #fff;
+         border-bottom: 2px solid #fff;
+         transform: rotate(45deg);
+         /* 下向きの矢印 */
+         transition: transform 0.3s ease;
+         /* 回転アニメーション */
+         margin-bottom: 5px;
+         /* 重心調整 */
+     }
+
+     /* 開いた状態（クラスopenがついた時）の矢印回転 */
+     .gnav-item.open .sp-toggle-btn::after {
+         transform: rotate(225deg);
+         /* 180度回して上向きに */
+         margin-bottom: -5px;
+     }
+
+     .gnav-item.open .sp-toggle-btn {
+         color: transparent;
+         /* 開いても文字は出さない */
+     }
+
+     /* メガメニュー展開エリア（スマホ用） */
+     .mega-menu {
+         width: 100%;
+         display: none;
+         /* 初期状態は非表示 */
+         background: rgba(0, 0, 0, 0.2);
+         /* 親より少し濃い背景で階層感を出す */
+         margin-top: 15px;
+         border-radius: 8px;
+         padding: 10px 0;
+     }
+
+     /* メニューが開かれた時に表示 */
+     .gnav-item.open .mega-menu {
+         display: block;
+         animation: slideDown 0.3s ease;
+     }
+
+     /* 展開時のアニメーション */
+     @keyframes slideDown {
+         from {
+             opacity: 0;
+             transform: translateY(-10px);
+         }
+
+         to {
+             opacity: 1;
+             transform: translateY(0);
+         }
+     }
+
+     /* 中身のリンクスタイル */
+     .mega-links-wrap {
+         width: 100%;
+         padding: 0 15px;
+     }
+
+     .ml-title {
+         font-size: 11px;
+         color: var(--c-accent);
+         /* 黄色 */
+         opacity: 0.8;
+         margin: 10px 0 5px;
+         font-family: var(--font-en);
+         letter-spacing: 0.05em;
+         border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+         display: block;
+         width: 100%;
+     }
+
+     .ml-item {
+         display: flex;
+         justify-content: space-between;
+         align-items: center;
+         padding: 12px 10px;
+         font-size: 14px;
+         color: #fff;
+         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+         background: transparent;
+         /* 背景リセット */
+     }
+
+     .ml-item:last-child {
+         border-bottom: none;
+     }
+
+     .ml-arrow {
+         font-size: 12px;
+         color: var(--c-accent);
+     }
  }
