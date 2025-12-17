@@ -292,9 +292,6 @@
 
                 <div class="magazine-frame">
                 </div>
-                <div class="hero-bottom-img fade-up delay-3">
-                    <img src="images/student_smile.png" alt="Student">
-                </div>
                 <div class="hero-content">
                     <div class="hero-title-group">
 
@@ -400,14 +397,6 @@
                         <div class="btn-view-all">VIEW ALL</div>
                     </div>
                     <div class="sep-diagonal-stripe fade-up"></div>
-                    <div class="section-header fade-up">
-                        <h2 class="sec-title-en">ADMISSIONS</h2><span class="sec-title-jp">入試情報</span>
-                    </div>
-                    <div class="adm-list fade-up">
-                        <div class="adm-item"><span>募集要項</span><small>Guidelines</small></div>
-                        <div class="adm-item"><span>説明会情報</span><small>Open Campus</small></div>
-                        <div class="adm-item"><span>資料請求</span><small>Request</small></div>
-                    </div>
 
                     <div class="section-header fade-up">
                         <h2 class="sec-title-en">FEATURE</h2><span class="sec-title-jp">倉吉北高の特色</span>
@@ -454,6 +443,15 @@
                                 <span class="btn-arrow">READ MORE</span>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="section-header fade-up">
+                        <h2 class="sec-title-en">ADMISSIONS</h2><span class="sec-title-jp">入試情報</span>
+                    </div>
+                    <div class="adm-list fade-up">
+                        <div class="adm-item"><span>募集要項</span><small>Guidelines</small></div>
+                        <div class="adm-item"><span>説明会情報</span><small>Open Campus</small></div>
+                        <div class="adm-item"><span>資料請求</span><small>Request</small></div>
                     </div>
 
                     <div class="section-header fade-up">
@@ -749,6 +747,65 @@
         }
     </script>
     <script src="script.js"></script>
+    <div id="color-switcher"
+        style="position: fixed; bottom: 20px; left: 20px; z-index: 9999; background: rgba(255, 255, 255, 0.95); padding: 15px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.15); font-family: sans-serif; backdrop-filter: blur(5px); border: 1px solid #eee; width: 260px;">
+
+        <p style="margin: 0 0 8px; font-size: 10px; font-weight: bold; color: #888; letter-spacing: 0.05em;">TRADITIONAL
+            (伝統・格式)</p>
+        <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <button onclick="changeTheme('#254a3b')"
+                style="width: 35px; height: 35px; background: #254a3b; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="オリジナル (現在の色)"></button>
+
+            <button onclick="changeTheme('#004225')"
+                style="width: 35px; height: 35px; background: #004225; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="ブリティッシュ (さらに深く濃い)"></button>
+
+            <button onclick="changeTheme('#1a4d2e')"
+                style="width: 35px; height: 35px; background: #1a4d2e; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="スクールグリーン (学校の定番)"></button>
+        </div>
+
+        <p
+            style="margin: 0 0 8px; font-size: 10px; font-weight: bold; color: #888; letter-spacing: 0.05em; border-top: 1px dashed #ddd; padding-top: 8px;">
+            COOL / INTELLECTUAL (知的)</p>
+        <div style="display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+            <button onclick="changeTheme('#00695c')"
+                style="width: 35px; height: 35px; background: #00695c; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="ビリジアン (青み・落ち着き)"></button>
+
+            <button onclick="changeTheme('#006d77')"
+                style="width: 35px; height: 35px; background: #006d77; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="ティール (モダン・洗練)"></button>
+
+            <button onclick="changeTheme('#009688')"
+                style="width: 35px; height: 35px; background: #009688; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="エメラルド (鮮やか・宝石)"></button>
+        </div>
+
+        <p
+            style="margin: 0 0 8px; font-size: 10px; font-weight: bold; color: #888; letter-spacing: 0.05em; border-top: 1px dashed #ddd; padding-top: 8px;">
+            NATURAL / ACTIVE (元気)</p>
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button onclick="changeTheme('#2e7d32')"
+                style="width: 35px; height: 35px; background: #2e7d32; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="フォレスト (植物・成長)"></button>
+
+            <button onclick="changeTheme('#00b85a')"
+                style="width: 35px; height: 35px; background: #00b85a; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="ブライト (LINE色・親近感)"></button>
+
+            <button onclick="changeTheme('#558b2f')"
+                style="width: 35px; height: 35px; background: #558b2f; border: 2px solid #ddd; border-radius: 50%; cursor: pointer;"
+                title="オリーブ (抹茶・和風・穏やか)"></button>
+        </div>
+    </div>
+
+    <script>
+        function changeTheme(mainColor) {
+            document.documentElement.style.setProperty('--c-green', mainColor);
+        }
+    </script>
 </body>
 
 </html>
