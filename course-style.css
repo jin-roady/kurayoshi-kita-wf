@@ -1,0 +1,484 @@
+/* =========================================
+   COURSE PAGE SPECIFIC STYLES (REFINED ver.)
+   ========================================= */
+
+/* --- 共通変数定義（このページ専用） --- */
+:root {
+    --cp-green: #254a3b;
+    /* 深緑 */
+    --cp-gold: #c4a35a;
+    /* 落ち着いたゴールド（黄色の代わり） */
+    --cp-gray-bg: #f5f7f6;
+    /* 薄いグレー背景 */
+    --cp-font-en: 'Jost', sans-serif;
+    --cp-font-jp: 'Noto Sans JP', sans-serif;
+    --cp-font-serif: 'Shippori Mincho', serif;
+}
+
+/* --- ベーススタイル調整 --- */
+.course-section-block {
+    padding: 100px 0;
+    /* 上下の余白を広げてゆったりと */
+}
+
+/* --- リードエリア（シンプルで力強く） --- */
+.course-lead-area {
+    text-align: center;
+    margin-bottom: 100px;
+    padding: 80px 40px;
+    background-color: #fff;
+    /* 背景を白に */
+    /* ドットパターンと斜めラインを廃止し、シンプルなボーダーに */
+    border-top: 3px solid var(--cp-gold);
+    border-bottom: 1px solid #eee;
+    position: relative;
+}
+
+.course-lead-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.course-lead-en {
+    display: block;
+    font-family: var(--cp-font-en);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--cp-gold);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    /* 手書きフォントと傾きを廃止 */
+}
+
+.course-lead-jp {
+    font-family: var(--cp-font-serif);
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--cp-green);
+    margin: 0 0 40px 0;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+}
+
+.course-lead-text {
+    font-size: 16px;
+    line-height: 2.2;
+    /* 行間を広めに */
+    color: #444;
+    font-family: var(--cp-font-jp);
+}
+
+
+/* --- セクションヘッダー（整理されたデザイン） --- */
+.course-header-group {
+    display: flex;
+    align-items: baseline;
+    /* ベースラインで揃える */
+    gap: 30px;
+    margin-bottom: 60px;
+    border-bottom: 1px solid #eee;
+    /* 下線で区切る */
+    padding-bottom: 20px;
+}
+
+.course-header-num {
+    font-family: var(--cp-font-en);
+    font-size: 80px;
+    font-weight: 700;
+    color: #eee;
+    /* 薄いグレーで背景になじませる */
+    line-height: 0.8;
+}
+
+.course-header-titles {
+    /* ボーダーを廃止 */
+}
+
+.course-title-en {
+    font-family: var(--cp-font-en);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cp-gold);
+    margin: 0 0 5px 0;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    /* 手書きフォントを廃止 */
+}
+
+.course-title-jp {
+    font-family: var(--cp-font-serif);
+    font-size: 36px;
+    font-weight: 600;
+    color: var(--cp-green);
+    margin: 0;
+    line-height: 1.2;
+}
+
+
+/* --- 画像＋テキストレイアウト（余白とメリハリ） --- */
+.course-intro-row {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    /* 間隔を広げる */
+    margin-bottom: 80px;
+}
+
+.course-intro-row.course-reverse {
+    flex-direction: row-reverse;
+}
+
+.course-intro-img {
+    flex: 1.2;
+    /* 画像を少し大きく */
+    border-radius: 4px;
+    /* 角丸を小さく */
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    /* 影を上品に */
+    margin: 0;
+}
+
+.course-intro-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.course-intro-img:hover img {
+    transform: scale(1.05);
+}
+
+.course-intro-body {
+    flex: 1;
+    padding: 20px 0;
+}
+
+.course-intro-head {
+    font-family: var(--cp-font-serif);
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--cp-green);
+    margin-bottom: 30px;
+    line-height: 1.4;
+    /* マーカー装飾をシンプルな左線に変更 */
+    background: none;
+    padding-left: 20px;
+    border-left: 4px solid var(--cp-gold);
+}
+
+.course-intro-desc {
+    font-size: 16px;
+    line-height: 2;
+    color: #666;
+    font-family: var(--cp-font-jp);
+}
+
+/* センター配置用 */
+.course-intro-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 80px;
+}
+
+.course-intro-center .course-intro-head {
+    border-left: none;
+    padding-left: 0;
+    display: inline-block;
+    position: relative;
+}
+
+/* 下線アクセント */
+.course-intro-center .course-intro-head::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: var(--cp-gold);
+}
+
+
+/* --- ポイント・特徴（カードデザインの洗練） --- */
+.course-sub-head-center {
+    text-align: center;
+    font-family: var(--cp-font-serif);
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--cp-green);
+    margin-bottom: 50px;
+    letter-spacing: 0.1em;
+    /* 横線装飾を廃止し、シンプルに */
+}
+
+.course-points-grid,
+.course-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* カード共通スタイル */
+.course-point-card,
+.course-feature-item,
+.course-type-card {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    /* 枠線をやめて影で浮かせる */
+    border: none;
+    /* 既存のボーダーを削除 */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-point-card:hover,
+.course-feature-item:hover,
+.course-type-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* ポイントカード固有 */
+.course-pc-num {
+    font-family: var(--cp-font-en);
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--cp-gold);
+    /* 色をゴールドに */
+    margin-bottom: 20px;
+    display: inline-block;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.course-pc-title,
+.course-feature-item h5,
+.course-tc-title {
+    font-family: var(--cp-font-jp);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cp-green);
+    margin-bottom: 20px;
+}
+
+.course-pc-desc,
+.course-feature-item p,
+.course-tc-desc {
+    font-size: 15px;
+    color: #777;
+    line-height: 1.9;
+    font-family: var(--cp-font-jp);
+}
+
+/* 特徴リストの英語見出し */
+.course-cf-head {
+    font-family: var(--cp-font-en);
+    color: var(--cp-gold);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    /* 手書きフォント廃止 */
+}
+
+
+/* --- 4つの系（グリッドデザイン） --- */
+.course-bg-gray {
+    background-color: var(--cp-gray-bg);
+    /* 薄いグレー背景 */
+}
+
+.course-types-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.course-type-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    text-align: left;
+    /* 左揃えに戻す */
+    padding: 40px;
+}
+
+.course-tc-icon {
+    font-size: 36px;
+    color: var(--cp-green);
+    background: #fff;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    /* 丸ではなく角丸四角に */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+    border: none;
+    /* ボーダー削除 */
+    flex-shrink: 0;
+}
+
+.course-tc-body {
+    flex: 1;
+}
+
+
+/* --- スマホ対応（レスポンシブ） --- */
+@media (max-width: 768px) {
+    .course-section-block {
+        padding: 60px 0;
+    }
+
+    .course-lead-area {
+        padding: 50px 20px;
+        margin-bottom: 60px;
+    }
+
+    .course-lead-jp {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .course-header-group {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 40px;
+    }
+
+    .course-header-num {
+        font-size: 60px;
+    }
+
+    .course-title-jp {
+        font-size: 28px;
+    }
+
+    .course-intro-row,
+    .course-intro-row.course-reverse {
+        flex-direction: column;
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .course-intro-head {
+        font-size: 24px;
+    }
+
+    .course-points-grid,
+    .course-types-grid,
+    .course-features-grid {
+        grid-template-columns: 1fr;
+        /* 1列にする */
+        gap: 20px;
+    }
+
+    .course-type-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        /* スマホではセンター揃え */
+        gap: 20px;
+        padding: 30px;
+    }
+
+    .course-tc-icon {
+        margin-bottom: 0;
+    }
+}
+
+/* =========================================
+   h2の装飾（before要素）を強制削除
+   ========================================= */
+
+/* コースページ内の全てのh2のbefore/afterを無効化 */
+.course-lead-area h2::before,
+.course-lead-area h2::after,
+.course-section-block h2::before,
+.course-section-block h2::after,
+.course-header-titles h2::before,
+.course-header-titles h2::after {
+    content: none !important;
+    display: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+/* もし h2 タグ自体に余計な余白や線がついている場合のリセット */
+.course-lead-jp,
+.course-title-en {
+    border: none !important;
+    padding: 0 !important;
+    background: none !important;
+}
+
+.course-lead-jp {
+    display: block;
+    /* ブロック要素にして横幅いっぱいに */
+    width: 100%;
+    /* 幅を確実に100%に */
+    text-align: center;
+    /* 文字を中央揃え */
+    margin-left: auto;
+    /* 左右の余白を自動調整（念のため） */
+    margin-right: auto;
+
+    /* 以下は既存のデザイン維持 */
+    font-family: var(--cp-font-serif);
+    font-size: 42px;
+    font-weight: 600;
+    color: var(--cp-green);
+    margin-bottom: 40px;
+    /* 下の余白 */
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+}
+
+.entry-content h2,
+.club-section h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--c-green);
+    margin: 0 0 50px 0;
+    padding-bottom: 10px;
+    border-bottom: 2px dashed #ccc;
+    position: relative;
+    display: block;
+    align-items: baseline;
+}
+
+/* =========================================
+   タイトルスタイル変更（英語枠に日本語配置）
+   ========================================= */
+
+.course-title-en {
+    /* 日本語用の明朝体フォントに変更 */
+    font-family: var(--cp-font-serif);
+    /* メインの見出しとなるためサイズを大きく */
+    font-size: 36px;
+    font-weight: 600;
+    /* 色をメインカラー（緑）に変更 */
+    color: var(--cp-green);
+    margin: 0;
+    line-height: 1.2;
+    letter-spacing: 0.05em;
+    /* 英語用の設定（大文字変換など）をリセット */
+    text-transform: none;
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .course-title-en {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+}

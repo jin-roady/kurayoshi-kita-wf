@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校紹介 - 倉吉北高校</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Kaushan+Script&family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="sanko2.css">
+    <link rel="stylesheet" href="subpage.css">
+</head>
+
+<body class="sub-page">
+    <div id="custom-cursor"></div>
+    <header>
+        <div class="header-upper">
+            <div class="upper-inner">
+                <ul class="nav-target">
+                    <li>在校生・保護者の方へ</li>
+                    <li>卒業生の方へ</li>
+                    <li>受験生の方へ</li>
+                </ul>
+                <div class="nav-utility">
+                    <a href="#">交通アクセス</a>
+                    <a href="#">お問い合わせ</a>
+                    <a href="#" class="btn-request">資料請求</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-lower">
+            <div class="lower-inner">
+                <div class="logo"><span class="logo-k">K</span>URAYOSHI <span class="logo-k">K</span>ITA</div>
+
+                <div class="hamburger" id="js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="gnav" id="js-nav">
+                    <div class="gnav-inner">
+
+                        <a href="sankou2.html" class="gnav-item en">HOME</a>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            学校紹介
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=SCHOOL" alt="">
+                                        </div>
+                                        <span class="mv-caption">学びの環境</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">SCHOOL GUIDE</p>
+                                        <div class="mega-links">
+                                            <a href="school.html" class="ml-item"><span>校長あいさつ</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>建学の精神・沿革・教育方針</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>施設・設備</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>制服</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>費用</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>特色ある取り組み</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            学科・コース
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=COURSE" alt="">
+                                        </div>
+                                        <span class="mv-caption">未来を見つける</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">COURSE GUIDE</p>
+                                        <div class="mega-links">
+                                            <a href="course.html" class="ml-item"><span>普通科 特別進学コース</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="course.html" class="ml-item"><span>普通科 総合コース</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="course.html" class="ml-item"><span>家庭学科 調理科</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            部活動
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=CLUB" alt="">
+                                        </div>
+                                        <span class="mv-caption">熱中する時間</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">CLUB ACTIVITIES</p>
+                                        <div class="mega-links">
+                                            <a href="club.html" class="ml-item"><span>部活動一覧</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="news.html" class="ml-item"><span>部活動お知らせ</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            学校生活
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=LIFE" alt="">
+                                        </div>
+                                        <span class="mv-caption">思い出を刻む</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">SCHOOL LIFE</p>
+                                        <div class="mega-links">
+                                            <a href="life.html" class="ml-item"><span>年間行事</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>1日のスケジュール</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>北高祭</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>球技大会/運動会</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>修学旅行</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>在校生インタビュー</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            進路・進学
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=CAREER" alt="">
+                                        </div>
+                                        <span class="mv-caption">夢へのサポート</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">CAREER SUPPORT</p>
+                                        <div class="mega-links">
+                                            <a href="career.html" class="ml-item"><span>進路サポート</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="career.html" class="ml-item"><span>実績</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="career.html" class="ml-item"><span>先輩生インタビュー</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            受験生の方へ
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=ADMISSION" alt="">
+                                        </div>
+                                        <span class="mv-caption">KITA高を知る</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">ADMISSIONS</p>
+                                        <div class="mega-links">
+                                            <a href="exam.html" class="ml-item"><span>入試情報</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="exam.html" class="ml-item"><span>オープンスクール・相談会</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="exam.html" class="ml-item"><span>よくある質問(Q&A)</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <div class="page-header-area">
+            <div class="ph-bg"></div>
+            <div class="ph-inner">
+                <span class="ph-en">About School</span><br>
+                <span class="ph-jp">学校紹介</span>
+            </div>
+            <div class="ph-shape"></div>
+        </div>
+
+        <div class="breadcrumbs-area">
+            <div class="inner">
+                <ul class="breadcrumbs-list">
+                    <li><a href="/">HOME</a></li>
+                    <li>学校紹介</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <article class="main-col">
+                <div class="entry-content">
+
+                    <section id="tab-greeting" class="tab-content is-active">
+                        <h2>校長あいさつ</h2>
+                        <div class="greeting-wrap">
+                            <figure class="wp-block-image"
+                                style="float: left; margin: 0 30px 20px 0; max-width: 300px;">
+                                <img src="https://via.placeholder.com/300x400/eee/ccc?text=PRINCIPAL" alt="校長写真">
+                            </figure>
+                            <p>倉吉北高等学校のWebサイトをご覧いただき、誠にありがとうございます。<br>
+                                本校は「誠実・努力・感謝」を建学の精神とし、地域社会に貢献できる人材の育成を目指しています。</p>
+
+                            <h3>未来を切り拓く力を育む</h3>
+                            <p>変化の激しい現代社会において、自ら考え行動する力が求められています。本校では生徒一人ひとりの個性を尊重し、夢の実現を全力でサポートします。</p>
+
+                            <p>学習面だけでなく、心の教育にも重点を置き、豊かな人間性を育みます。私たちと一緒に、新しい未来への一歩を踏み出しましょう。</p>
+
+                            <blockquote>
+                                <p>「夢は逃げない。逃げるのはいつも自分だ。」</p>
+                                <cite>創立者の言葉より</cite>
+                            </blockquote>
+                        </div>
+                    </section>
+
+                    <section id="tab-philosophy" class="tab-content">
+                        <h2>建学の精神・教育方針・沿革</h2>
+
+                        <div class="philosophy-box">
+                            <h3 class="p-title">誠実・努力・感謝</h3>
+                            <p class="p-text">
+                                本校は、この3つの精神を基盤とし、<br>
+                                社会に貢献できる豊かな人間性を育みます。
+                            </p>
+                        </div>
+
+                        <h3>教育の3つの柱</h3>
+                        <p>生徒一人ひとりの個性を尊重し、以下の3つの柱を中心とした教育を実践しています。</p>
+
+                        <div class="policy-list">
+                            <div class="policy-item">
+                                <span class="pi-num">01</span>
+                                <div class="pi-content">
+                                    <h4>主体性を育む「探究学習」</h4>
+                                    <p>自ら問いを立て、解決する力を養います。地域課題の解決など、実践的な活動を通して学びを深めます。</p>
+                                </div>
+                            </div>
+                            <div class="policy-item">
+                                <span class="pi-num">02</span>
+                                <div class="pi-content">
+                                    <h4>未来を拓く「キャリア教育」</h4>
+                                    <p>早期からの進路指導と多様なインターンシップにより、自分自身の将来像を明確にし、実現に向けたサポートを行います。</p>
+                                </div>
+                            </div>
+                            <div class="policy-item">
+                                <span class="pi-num">03</span>
+                                <div class="pi-content">
+                                    <h4>心を磨く「部活動・行事」</h4>
+                                    <p>仲間と協力し、目標に向かって努力する経験を通して、協調性と忍耐力、そして他者を思いやる心を育てます。</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3>沿革</h3>
+                        <div class="history-table-wrap">
+                            <table class="wp-block-table">
+                                <tbody>
+                                    <tr>
+                                        <th>1960年 4月</th>
+                                        <td>学校法人倉吉北高等学校として開校。</td>
+                                    </tr>
+                                    <tr>
+                                        <th>1975年 4月</th>
+                                        <td>調理科を設置。専門教育の充実を図る。</td>
+                                    </tr>
+                                    <tr>
+                                        <th>1988年 8月</th>
+                                        <td>硬式野球部が夏の甲子園に初出場。</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2000年 4月</th>
+                                        <td>新校舎完成。教育環境のICT化を推進。</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2015年 4月</th>
+                                        <td>特別進学コースを改編。</td>
+                                    </tr>
+                                    <tr>
+                                        <th>2025年 4月</th>
+                                        <td>創立65周年を迎える。</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+
+                    <section id="tab-facility" class="tab-content">
+                        <h2>施設・設備</h2>
+                        <p>充実した学習環境と、快適なスクールライフを支える施設を紹介します。</p>
+                        <div class="facility-grid">
+                            <div class="facility-item">
+                                <figure class="f-image"><img
+                                        src="https://via.placeholder.com/600x400/eee/ccc?text=LIBRARY" alt="図書室">
+                                </figure>
+                                <h4>図書室</h4>
+                                <p>蔵書数3万冊以上。自習スペースも完備しています。</p>
+                            </div>
+                            <div class="facility-item">
+                                <figure class="f-image"><img src="https://via.placeholder.com/600x400/eee/ccc?text=CAFE"
+                                        alt="カフェテリア"></figure>
+                                <h4>カフェテリア</h4>
+                                <p>安くて美味しいメニューが豊富。お昼休みの憩いの場です。</p>
+                            </div>
+                            <div class="facility-item">
+                                <figure class="f-image"><img src="https://via.placeholder.com/600x400/eee/ccc?text=GYM"
+                                        alt="体育館"></figure>
+                                <h4>メインアリーナ</h4>
+                                <p>冷暖房完備の広々とした体育館です。</p>
+                            </div>
+                            <div class="facility-item">
+                                <figure class="f-image"><img
+                                        src="https://via.placeholder.com/600x400/eee/ccc?text=COOKING" alt="調理実習室">
+                                </figure>
+                                <h4>調理実習室</h4>
+                                <p>プロ仕様の設備が整った実習室です。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tab-uniform" class="tab-content">
+                        <h2>制服紹介</h2>
+                        <div class="uniform-box">
+                            <div class="u-img"><img src="https://via.placeholder.com/500x600/254a3b/fff?text=WINTER"
+                                    alt="冬服"></div>
+                            <div class="u-text">
+                                <h3>冬服 - Winter Style</h3>
+                                <p>深みのあるネイビーを基調としたブレザースタイル。フォーマルな場にも相応しい品格あるデザインです。</p>
+                            </div>
+                        </div>
+                        <div class="uniform-box reverse">
+                            <div class="u-img"><img src="https://via.placeholder.com/500x600/fff/ccc?text=SUMMER"
+                                    alt="夏服"></div>
+                            <div class="u-text">
+                                <h3>夏服 - Summer Style</h3>
+                                <p>通気性が良く、爽やかな印象の半袖シャツ・ブラウス。ポロシャツの着用も認められています。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tab-access" class="tab-content">
+                        <h2>交通アクセス</h2>
+                        <p>〒682-0000 鳥取県倉吉市〇〇町1-2-3</p>
+                        <div
+                            style="background:#eee; height:400px; display:flex; align-items:center; justify-content:center; border-radius:12px;">
+                            Google Map Placeholder
+                        </div>
+                        <h3>アクセス方法</h3>
+                        <ul>
+                            <li>JR山陰本線「倉吉駅」よりバスで15分</li>
+                            <li>「北高入口」バス停下車 徒歩3分</li>
+                        </ul>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="side-col">
+                <div class="side-widget-area">
+
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget-title">学校紹介</h4>
+                        <ul class="js-tab-menu">
+                            <li class="current-menu-item"><a href="#" data-target="tab-greeting">校長あいさつ</a></li>
+                            <li><a href="#" data-target="tab-philosophy">建学の精神・沿革</a></li>
+                            <li><a href="#" data-target="tab-facility">施設・設備</a></li>
+                            <li><a href="#" data-target="tab-uniform">制服紹介</a></li>
+                            <li><a href="#" data-target="tab-access">交通アクセス</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="widget widget_banners">
+                        <a href="#" class="side-banner">
+                            <img src="https://via.placeholder.com/300x100/254a3b/fff?text=OPEN+CAMPUS" alt="オープンキャンパス">
+                        </a>
+                        <a href="#" class="side-banner">
+                            <img src="https://via.placeholder.com/300x100/FFD54F/254a3b?text=REQUEST" alt="資料請求">
+                        </a>
+                    </div>
+
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-wrapper">
+
+            <a href="#" class="page-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                TOP
+            </a>
+            <div class="footer-bg-text">KURAYOSHI KITA</div>
+
+            <div class="footer-inner">
+                <div class="f-top-area">
+                    <div class="f-message">
+                        <span class="fm-en">Ready for the Future?</span>
+                        <span class="fm-jp">未来へ踏み出す、準備はいい？</span>
+                    </div>
+                    <div class="f-actions">
+                        <a href="#" class="f-btn-req">
+                            <span class="btn-icon">★</span>
+                            <span class="btn-text">資料請求</span>
+                        </a>
+                        <a href="#" class="f-btn-contact">お問い合わせ</a>
+                    </div>
+                </div>
+
+                <div class="f-divider"></div>
+
+                <div class="f-main-area">
+                    <div class="f-info-col">
+                        <div class="f-logo">
+                            <span class="fl-k">K</span>URAYOSHI <span class="fl-k">K</span>ITA<br>
+                            <span class="fl-sub">High School</span>
+                        </div>
+                        <address class="f-address">
+                            〒682-0000<br>
+                            鳥取県倉吉市〇〇町1-2-3<br>
+                            TEL: 0858-XX-XXXX
+                        </address>
+                        <div class="f-sns">
+                            <a href="#" class="sns-item">Ins</a>
+                            <a href="#" class="sns-item">X</a>
+                            <a href="#" class="sns-item">Fb</a>
+                        </div>
+                    </div>
+
+                    <div class="f-link-col">
+                        <ul class="f-nav-list">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">学校紹介</a></li>
+                            <li><a href="#">学科・コース</a></li>
+                        </ul>
+                        <ul class="f-nav-list">
+                            <li><a href="#">部活動</a></li>
+                            <li><a href="#">学校生活</a></li>
+                            <li><a href="#">進路・進学</a></li>
+                        </ul>
+                        <ul class="f-nav-list">
+                            <li><a href="#">入試情報</a></li>
+                            <li><a href="#">アクセス</a></li>
+                            <li><a href="#">サイトマップ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="f-bottom-area">
+                    <small class="f-copy">&copy; Kurayoshi Kita High School. All Rights Reserved.</small>
+                    <div class="f-policy">
+                        <a href="#">プライバシーポリシー</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-inview'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        function openModal() { document.getElementById('line-modal').classList.add('is-open'); }
+        function closeModal() { document.getElementById('line-modal').classList.remove('is-open'); }
+
+        // updateView 関数は不要になったので削除してOKですが、
+        // 既存のトップページ等と共用しているscript.js内にある場合はそのままでもエラーにはなりません。
+
+        // カーソル要素を取得
+        const cursor = document.getElementById('custom-cursor');
+        const links = document.querySelectorAll('a, button, .hover-img, .mq-item, .side-img-banner, .gnav-item');
+
+        // マウスが動いた時の処理
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // リンクにホバーした時のクラス付け替え
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        /* === スマホメニュー用スクリプト === */
+        const hamburger = document.getElementById('js-hamburger');
+        const nav = document.getElementById('js-nav');
+
+        if (hamburger && nav) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+
+        // スマホ用サブメニュー（アコーディオン）の制御
+        function toggleSubmenu(element) {
+            if (window.innerWidth <= 768) {
+                element.classList.toggle('open');
+            }
+        }
+
+        /* === TAB SWITCHING SCRIPT (サイドバー連動) === */
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabLinks = document.querySelectorAll('.js-tab-menu a');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const menuItems = document.querySelectorAll('.js-tab-menu li');
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const targetId = link.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+
+                    if (!targetContent) return;
+
+                    tabContents.forEach(content => {
+                        content.classList.remove('is-active');
+                    });
+                    targetContent.classList.add('is-active');
+
+                    menuItems.forEach(item => {
+                        item.classList.remove('current-menu-item');
+                    });
+                    link.parentElement.classList.add('current-menu-item');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

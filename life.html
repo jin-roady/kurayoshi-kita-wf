@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校生活 - 倉吉北高校</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Jost:wght@400;500;700&family=Kaushan+Script&family=Shippori+Mincho:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="sanko2.css">
+    <link rel="stylesheet" href="subpage.css">
+</head>
+
+<body class="sub-page">
+    <div id="custom-cursor"></div>
+    <header>
+        <div class="header-upper">
+            <div class="upper-inner">
+                <ul class="nav-target">
+                    <li>在校生・保護者の方へ</li>
+                    <li>卒業生の方へ</li>
+                    <li>受験生の方へ</li>
+                </ul>
+                <div class="nav-utility">
+                    <a href="#">交通アクセス</a>
+                    <a href="#">お問い合わせ</a>
+                    <a href="#" class="btn-request">資料請求</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="header-lower">
+            <div class="lower-inner">
+                <div class="logo"><span class="logo-k">K</span>URAYOSHI <span class="logo-k">K</span>ITA</div>
+
+                <div class="hamburger" id="js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <nav class="gnav" id="js-nav">
+                    <div class="gnav-inner">
+
+                        <a href="sankou2.html" class="gnav-item en">HOME</a>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            学校紹介
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=SCHOOL" alt="">
+                                        </div>
+                                        <span class="mv-caption">学びの環境</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">SCHOOL GUIDE</p>
+                                        <div class="mega-links">
+                                            <a href="school.html" class="ml-item"><span>校長あいさつ</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>建学の精神・沿革・教育方針</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>施設・設備</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>制服</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>費用</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>特色ある取り組み</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            学科・コース
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=COURSE" alt="">
+                                        </div>
+                                        <span class="mv-caption">未来を見つける</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">COURSE GUIDE</p>
+                                        <div class="mega-links">
+                                            <a href="course.html" class="ml-item"><span>普通科 特別進学コース</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="course.html" class="ml-item"><span>普通科 総合コース</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="course.html" class="ml-item"><span>家庭学科 調理科</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            部活動
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=CLUB" alt="">
+                                        </div>
+                                        <span class="mv-caption">熱中する時間</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">CLUB ACTIVITIES</p>
+                                        <div class="mega-links">
+                                            <a href="club.html" class="ml-item"><span>部活動一覧</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="news.html" class="ml-item"><span>部活動お知らせ</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            学校生活
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=LIFE" alt="">
+                                        </div>
+                                        <span class="mv-caption">思い出を刻む</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">SCHOOL LIFE</p>
+                                        <div class="mega-links">
+                                            <a href="life.html" class="ml-item"><span>年間行事</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>1日のスケジュール</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>北高祭</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>球技大会/運動会</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>修学旅行</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="life.html" class="ml-item"><span>在校生インタビュー</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            進路・進学
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=CAREER" alt="">
+                                        </div>
+                                        <span class="mv-caption">夢へのサポート</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">CAREER SUPPORT</p>
+                                        <div class="mega-links">
+                                            <a href="career.html" class="ml-item"><span>進路サポート</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="career.html" class="ml-item"><span>実績</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="career.html" class="ml-item"><span>先輩生インタビュー</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
+                            受験生の方へ
+                            <span class="sp-toggle-btn"></span>
+                            <div class="mega-menu">
+                                <div class="mega-inner">
+                                    <div class="mega-visual">
+                                        <div class="mega-visual-img"><img
+                                                src="https://via.placeholder.com/400x300/eee/ccc?text=ADMISSION" alt="">
+                                        </div>
+                                        <span class="mv-caption">KITA高を知る</span>
+                                    </div>
+                                    <div class="mega-links-wrap">
+                                        <p class="ml-title">ADMISSIONS</p>
+                                        <div class="mega-links">
+                                            <a href="exam.html" class="ml-item"><span>入試情報</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="exam.html" class="ml-item"><span>オープンスクール・相談会</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="exam.html" class="ml-item"><span>よくある質問(Q&A)</span><span
+                                                    class="ml-arrow">→</span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <div class="page-header-area">
+            <div class="ph-bg"></div>
+            <div class="ph-inner">
+                <span class="ph-en">School Life</span><br>
+                <span class="ph-jp">学校生活</span>
+            </div>
+            <div class="ph-shape"></div>
+        </div>
+
+        <div class="breadcrumbs-area">
+            <div class="inner">
+                <ul class="breadcrumbs-list">
+                    <li><a href="/">HOME</a></li>
+                    <li>学校生活</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <article class="main-col">
+                <div class="entry-content">
+
+                    <section id="tab-calendar" class="tab-content is-active">
+                        <h2>年間行事</h2>
+                        <div class="event-card-grid">
+                            <div class="event-card">
+                                <div class="ec-month">4<span>April</span></div>
+                                <ul class="ec-list">
+                                    <li>入学式</li>
+                                    <li>始業式</li>
+                                    <li>遠足</li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">5<span>May</span></div>
+                                <ul class="ec-list">
+                                    <li>中間考査</li>
+                                    <li>生徒総会</li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">6<span>June</span></div>
+                                <ul class="ec-list">
+                                    <li><span class="marker">県高校総体</span></li>
+                                    <li>衣替え</li>
+                                    <li>期末考査</li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">7<span>July</span></div>
+                                <ul class="ec-list">
+                                    <li><span class="marker">球技大会</span></li>
+                                    <li>三者懇談</li>
+                                    <li>夏季補習</li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">8<span>August</span></div>
+                                <ul class="ec-list">
+                                    <li>オープンスクール</li>
+                                    <li>夏期休業</li>
+                                </ul>
+                            </div>
+                            <div class="event-card highlight">
+                                <div class="ec-month">9<span>September</span></div>
+                                <ul class="ec-list">
+                                    <li><strong>北高祭（文化祭・体育祭）</strong></li>
+                                </ul>
+                            </div>
+                            <div class="event-card highlight">
+                                <div class="ec-month">10<span>October</span></div>
+                                <ul class="ec-list">
+                                    <li>中間考査</li>
+                                    <li><strong>2年修学旅行</strong></li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">11<span>November</span></div>
+                                <ul class="ec-list">
+                                    <li>人権教育講演会</li>
+                                    <li>期末考査</li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">12<span>December</span></div>
+                                <ul class="ec-list">
+                                    <li>三者懇談</li>
+                                    <li>1年スキー研修</li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">1<span>January</span></div>
+                                <ul class="ec-list">
+                                    <li>始業式</li>
+                                    <li>大学入学共通テスト</li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">2<span>February</span></div>
+                                <ul class="ec-list">
+                                    <li>入学試験</li>
+                                    <li>予餞会</li>
+                                </ul>
+                            </div>
+                            <div class="event-card">
+                                <div class="ec-month">3<span>March</span></div>
+                                <ul class="ec-list">
+                                    <li><span class="marker">卒業証書授与式</span></li>
+                                    <li>修了式</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tab-daily" class="tab-content">
+                        <h2>1日のスケジュール</h2>
+                        <p>勉強も部活も全力投球。倉吉北高生の充実した1日を紹介します。</p>
+
+                        <div class="timeline-schedule">
+                            <div class="tl-item">
+                                <div class="tl-time"><span>8:25</span></div>
+                                <div class="tl-content">
+                                    <div class="tl-img"><img
+                                            src="https://via.placeholder.com/200x120/eee/ccc?text=MORNING" alt="朝読書">
+                                    </div>
+                                    <div class="tl-text">
+                                        <h4>登校・朝読書</h4>
+                                        <p>余裕を持って登校し、朝のSHR（ショートホームルーム）前に読書をして心を落ち着かせます。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tl-item">
+                                <div class="tl-time"><span>8:45</span></div>
+                                <div class="tl-content">
+                                    <div class="tl-text">
+                                        <h4>午前授業（1〜4限）</h4>
+                                        <p>50分授業×4コマ。集中して授業に取り組みます。休み時間は友達とリフレッシュ。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tl-item highlight">
+                                <div class="tl-time"><span>12:35</span></div>
+                                <div class="tl-content">
+                                    <div class="tl-img"><img
+                                            src="https://via.placeholder.com/200x120/FFD54F/254a3b?text=LUNCH"
+                                            alt="ランチ"></div>
+                                    <div class="tl-text">
+                                        <h4>ランチタイム</h4>
+                                        <p>教室でお弁当を食べたり、カフェテリアで日替わりランチを楽しんだり。一番賑やかな時間です。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tl-item">
+                                <div class="tl-time"><span>13:20</span></div>
+                                <div class="tl-content">
+                                    <div class="tl-text">
+                                        <h4>午後授業（5〜6限）</h4>
+                                        <p>午後の授業スタート。特別進学コースなどは7限目まで授業があります。</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tl-item">
+                                <div class="tl-time"><span>15:30</span></div>
+                                <div class="tl-content">
+                                    <div class="tl-img"><img
+                                            src="https://via.placeholder.com/200x120/254a3b/fff?text=CLUB" alt="部活動">
+                                    </div>
+                                    <div class="tl-text">
+                                        <h4>清掃・SHR・部活動</h4>
+                                        <p>校内を綺麗にした後は、放課後タイム。部活動に励んだり、図書室で自習をしたりして過ごします。</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tab-events" class="tab-content">
+                        <h2>北高祭・修学旅行</h2>
+
+                        <h3>北高祭（学校祭）</h3>
+                        <p>9月に行われる最大のイベント。文化祭と体育祭を連続して行い、学校中が熱気に包まれます。</p>
+                        <div class="facility-grid">
+                            <div class="facility-item">
+                                <figure class="f-image"><img
+                                        src="https://via.placeholder.com/600x400/eee/ccc?text=CULTURE+FES" alt="文化祭">
+                                </figure>
+                                <h4>文化祭ステージ</h4>
+                                <p>クラス演劇やダンス、吹奏楽部の演奏などで盛り上がります。</p>
+                            </div>
+                            <div class="facility-item">
+                                <figure class="f-image"><img
+                                        src="https://via.placeholder.com/600x400/eee/ccc?text=SPORTS+FES" alt="体育祭">
+                                </figure>
+                                <h4>体育祭</h4>
+                                <p>クラス対抗リレーや応援合戦など、団結力が試されます。</p>
+                            </div>
+                        </div>
+
+                        <h3>修学旅行</h3>
+                        <p>2年次の10月に実施。行き先は年度によって異なりますが、北海道や沖縄、海外（台湾など）での異文化体験を通じて視野を広げます。</p>
+                        <div class="facility-grid">
+                            <div class="facility-item">
+                                <figure class="f-image"><img
+                                        src="https://via.placeholder.com/600x400/eee/ccc?text=TRIP+1" alt="観光"></figure>
+                                <h4>班別自主研修</h4>
+                                <p>事前の計画に基づいて、自分たちで街を散策します。</p>
+                            </div>
+                            <div class="facility-item">
+                                <figure class="f-image"><img
+                                        src="https://via.placeholder.com/600x400/eee/ccc?text=TRIP+2" alt="体験"></figure>
+                                <h4>平和学習・自然体験</h4>
+                                <p>現地ならではの体験学習を通して、多くのことを学びます。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="tab-voice" class="tab-content">
+                        <h2>在校生インタビュー</h2>
+                        <div class="uniform-box">
+                            <div class="u-img"><img src="https://via.placeholder.com/400x400/eee/ccc?text=STUDENT+A"
+                                    alt="生徒A"></div>
+                            <div class="u-text">
+                                <h3>「文武両道」を実践できる環境です。</h3>
+                                <p><strong>普通科 2年 男子</strong><br>
+                                    サッカー部に所属しながら、特別進学コースで勉強も頑張っています。</p>
+                            </div>
+                        </div>
+                        <div class="uniform-box reverse">
+                            <div class="u-img"><img src="https://via.placeholder.com/400x400/fff/ccc?text=STUDENT+B"
+                                    alt="生徒B"></div>
+                            <div class="u-text">
+                                <h3>調理師への夢に近づいている実感があります。</h3>
+                                <p><strong>調理科 3年 女子</strong><br>
+                                    本格的な設備での実習は緊張感がありますが、作った料理を「美味しい」と言ってもらえるのが何よりの喜びです。</p>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+            </article>
+
+            <aside class="side-col">
+                <div class="side-widget-area">
+                    <div class="widget widget_nav_menu">
+                        <h4 class="widget-title">学校生活</h4>
+                        <ul class="js-tab-menu">
+                            <li class="current-menu-item"><a href="#" data-target="tab-calendar">年間行事</a></li>
+                            <li><a href="#" data-target="tab-daily">1日のスケジュール</a></li>
+                            <li><a href="#" data-target="tab-events">北高祭・修学旅行</a></li>
+                            <li><a href="#" data-target="tab-voice">在校生インタビュー</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer id="footer">
+        <div class="footer-wrapper">
+
+            <a href="#" class="page-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                TOP
+            </a>
+            <div class="footer-bg-text">KURAYOSHI KITA</div>
+
+            <div class="footer-inner">
+                <div class="f-top-area">
+                    <div class="f-message">
+                        <span class="fm-en">Ready for the Future?</span>
+                        <span class="fm-jp">未来へ踏み出す、準備はいい？</span>
+                    </div>
+                    <div class="f-actions">
+                        <a href="#" class="f-btn-req">
+                            <span class="btn-icon">★</span>
+                            <span class="btn-text">資料請求</span>
+                        </a>
+                        <a href="#" class="f-btn-contact">お問い合わせ</a>
+                    </div>
+                </div>
+
+                <div class="f-divider"></div>
+
+                <div class="f-main-area">
+                    <div class="f-info-col">
+                        <div class="f-logo">
+                            <span class="fl-k">K</span>URAYOSHI <span class="fl-k">K</span>ITA<br>
+                            <span class="fl-sub">High School</span>
+                        </div>
+                        <address class="f-address">
+                            〒682-0000<br>
+                            鳥取県倉吉市〇〇町1-2-3<br>
+                            TEL: 0858-XX-XXXX
+                        </address>
+                        <div class="f-sns">
+                            <a href="#" class="sns-item">Ins</a>
+                            <a href="#" class="sns-item">X</a>
+                            <a href="#" class="sns-item">Fb</a>
+                        </div>
+                    </div>
+
+                    <div class="f-link-col">
+                        <ul class="f-nav-list">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">学校紹介</a></li>
+                            <li><a href="#">学科・コース</a></li>
+                        </ul>
+                        <ul class="f-nav-list">
+                            <li><a href="#">部活動</a></li>
+                            <li><a href="#">学校生活</a></li>
+                            <li><a href="#">進路・進学</a></li>
+                        </ul>
+                        <ul class="f-nav-list">
+                            <li><a href="#">入試情報</a></li>
+                            <li><a href="#">アクセス</a></li>
+                            <li><a href="#">サイトマップ</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="f-bottom-area">
+                    <small class="f-copy">&copy; Kurayoshi Kita High School. All Rights Reserved.</small>
+                    <div class="f-policy">
+                        <a href="#">プライバシーポリシー</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-inview'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        function openModal() { document.getElementById('line-modal').classList.add('is-open'); }
+        function closeModal() { document.getElementById('line-modal').classList.remove('is-open'); }
+
+        // updateView 関数は不要になったので削除してOKですが、
+        // 既存のトップページ等と共用しているscript.js内にある場合はそのままでもエラーにはなりません。
+
+        // カーソル要素を取得
+        const cursor = document.getElementById('custom-cursor');
+        const links = document.querySelectorAll('a, button, .hover-img, .mq-item, .side-img-banner, .gnav-item');
+
+        // マウスが動いた時の処理
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // リンクにホバーした時のクラス付け替え
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
+        /* === スマホメニュー用スクリプト === */
+        const hamburger = document.getElementById('js-hamburger');
+        const nav = document.getElementById('js-nav');
+
+        if (hamburger && nav) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
+            });
+        }
+
+        // スマホ用サブメニュー（アコーディオン）の制御
+        function toggleSubmenu(element) {
+            if (window.innerWidth <= 768) {
+                element.classList.toggle('open');
+            }
+        }
+
+        /* === TAB SWITCHING SCRIPT (サイドバー連動) === */
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabLinks = document.querySelectorAll('.js-tab-menu a');
+            const tabContents = document.querySelectorAll('.tab-content');
+            const menuItems = document.querySelectorAll('.js-tab-menu li');
+
+            tabLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    const targetId = link.getAttribute('data-target');
+                    const targetContent = document.getElementById(targetId);
+
+                    if (!targetContent) return;
+
+                    tabContents.forEach(content => {
+                        content.classList.remove('is-active');
+                    });
+                    targetContent.classList.add('is-active');
+
+                    menuItems.forEach(item => {
+                        item.classList.remove('current-menu-item');
+                    });
+                    link.parentElement.classList.add('current-menu-item');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
