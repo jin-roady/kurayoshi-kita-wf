@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>在校生・保護者の方へ - 倉吉北高校</title>
+    <title>お問い合わせ - 倉吉北高校</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -13,66 +13,198 @@
     <link rel="stylesheet" href="sanko2.css">
     <link rel="stylesheet" href="subpage.css">
     <style>
-        /* このページ専用のスタイル（アプリリンク用） */
-        .app-link-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
+        /* お問い合わせフォーム専用スタイル */
+        .contact-intro {
+            margin-bottom: 40px;
+            line-height: 1.8;
         }
 
-        .app-link-card {
-            background: #fff;
-            border: 2px solid #eee;
-            border-radius: 12px;
-            padding: 30px 20px;
+        /* 電話お問い合わせ枠 */
+        .tel-contact-box {
+            background-color: #f0f7f4;
+            border: 2px solid #254a3b;
+            border-radius: 8px;
+            padding: 30px;
             text-align: center;
-            transition: 0.3s;
-            text-decoration: none;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-bottom: 50px;
         }
 
-        .app-link-card:hover {
-            border-color: #254a3b;
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        .app-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-            color: #254a3b;
-        }
-
-        .app-name {
+        .tel-label {
             font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
+            color: #254a3b;
+            display: block;
+            margin-bottom: 10px;
         }
 
-        .app-desc {
+        .tel-number {
+            font-size: 2.5rem;
+            font-family: 'Jost', sans-serif;
+            font-weight: 700;
+            color: #254a3b;
+            line-height: 1;
+            display: block;
+            margin-bottom: 10px;
+            text-decoration: none;
+            pointer-events: none;
+        }
+
+        .tel-time {
             font-size: 0.9rem;
             color: #666;
+        }
+
+        /* フォームスタイル */
+        .contact-form-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 40px;
+        }
+
+        .contact-form-table th,
+        .contact-form-table td {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .contact-form-table th {
+            width: 30%;
+            background-color: #fafafa;
+            font-weight: bold;
+            color: #254a3b;
+            vertical-align: top;
+            padding-top: 25px;
+            /* 入力欄と高さを合わせる微調整 */
+        }
+
+        .contact-form-table td {
+            width: 70%;
+        }
+
+        /* 必須マーク */
+        .required-tag {
+            background-color: #d66a85;
+            /* ピンク */
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        .any-tag {
+            background-color: #999;
+            color: #fff;
+            font-size: 0.7rem;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 5px;
+            vertical-align: middle;
+        }
+
+        /* 入力フィールド */
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            background: #fff;
+            transition: border-color 0.3s;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            border-color: #254a3b;
+            outline: none;
+        }
+
+        .form-textarea {
+            height: 200px;
+            resize: vertical;
+        }
+
+        /* 送信ボタンエリア */
+        .form-submit-area {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .btn-submit {
+            background-color: #254a3b;
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 60px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+            box-shadow: 0 4px 10px rgba(37, 74, 59, 0.3);
+        }
+
+        .btn-submit:hover {
+            background-color: #1a352a;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(37, 74, 59, 0.4);
+        }
+
+        /* プライバシーポリシー同意 */
+        .privacy-check {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .privacy-check label {
+            cursor: pointer;
+        }
+
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+
+            .contact-form-table th,
+            .contact-form-table td {
+                display: block;
+                width: 100%;
+                border-bottom: none;
+            }
+
+            .contact-form-table th {
+                background: none;
+                padding-bottom: 5px;
+                padding-top: 20px;
+            }
+
+            .contact-form-table td {
+                padding-top: 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            .tel-number {
+                font-size: 1.8rem;
+                pointer-events: auto;
+                /* スマホのみタップ可能に */
+            }
         }
     </style>
 </head>
 
 <body class="sub-page">
     <div id="custom-cursor"></div>
-
     <header>
         <div class="header-upper">
             <div class="upper-inner">
                 <ul class="nav-target">
-                    <li><a href="target-student.html" style="font-weight:bold; color:#254a3b;">在校生・保護者の方へ</a></li>
+                    <li><a href="target-student.html">在校生・保護者の方へ</a></li>
                     <li><a href="target-graduate.html">卒業生の方へ</a></li>
                     <li><a href="exam.html">受験生の方へ</a></li>
                 </ul>
                 <div class="nav-utility">
-                    <a href="school.html#tab-access">交通アクセス</a>
+                    <a href="#">交通アクセス</a>
                     <a href="contact.html">お問い合わせ</a>
                     <a href="#" class="btn-request">資料請求</a>
                 </div>
@@ -82,12 +214,16 @@
         <div class="header-lower">
             <div class="lower-inner">
                 <div class="logo"><span class="logo-k">K</span>URAYOSHI <span class="logo-k">K</span>ITA</div>
-                <div class="hamburger" id="js-hamburger"><span></span><span></span><span></span></div>
+
+                <div class="hamburger" id="js-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
 
                 <nav class="gnav" id="js-nav">
                     <div class="gnav-inner">
                         <a href="sankou2.html" class="gnav-item en">HOME</a>
-
                         <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
                             学校紹介<span class="sp-toggle-btn"></span>
                             <div class="mega-menu">
@@ -107,9 +243,11 @@
                                                     class="ml-arrow">→</span></a>
                                             <a href="school.html" class="ml-item"><span>施設・設備</span><span
                                                     class="ml-arrow">→</span></a>
-                                            <a href="school.html" class="ml-item"><span>制服紹介</span><span
+                                            <a href="school.html" class="ml-item"><span>制服</span><span
                                                     class="ml-arrow">→</span></a>
-                                            <a href="school.html" class="ml-item"><span>交通アクセス</span><span
+                                            <a href="school.html" class="ml-item"><span>費用</span><span
+                                                    class="ml-arrow">→</span></a>
+                                            <a href="school.html" class="ml-item"><span>特色ある取り組み</span><span
                                                     class="ml-arrow">→</span></a>
                                         </div>
                                     </div>
@@ -253,11 +391,12 @@
     </header>
 
     <main id="main-content">
+
         <div class="page-header-area">
             <div class="ph-bg"></div>
             <div class="ph-inner">
-                <span class="ph-en">For Students & Parents</span><br>
-                <span class="ph-jp">在校生・保護者の方へ</span>
+                <span class="ph-en">Contact</span><br>
+                <span class="ph-jp">お問い合わせ</span>
             </div>
             <div class="ph-shape"></div>
         </div>
@@ -266,7 +405,7 @@
             <div class="inner">
                 <ul class="breadcrumbs-list">
                     <li><a href="/">HOME</a></li>
-                    <li>在校生・保護者の方へ</li>
+                    <li>お問い合わせ</li>
                 </ul>
             </div>
         </div>
@@ -275,107 +414,93 @@
             <article class="main-col">
                 <div class="entry-content">
 
-                    <section id="tab-cert" class="tab-content is-active">
-                        <h2>証明書発行</h2>
-                        <p>在学中に必要な各種証明書の発行についてご案内します。</p>
-                        <div class="history-table-wrap">
-                            <table class="wp-block-table">
-                                <tbody>
-                                    <tr>
-                                        <th>発行できる証明書</th>
-                                        <td>在学証明書 / 成績証明書 / 通学証明書 / 卒業見込証明書 など</td>
-                                    </tr>
-                                    <tr>
-                                        <th>発行手数料</th>
-                                        <td>1通につき 200円〜400円（種類による）</td>
-                                    </tr>
-                                    <tr>
-                                        <th>申請方法</th>
-                                        <td>事務室窓口にある「証明書交付願」に記入し、手数料を添えて提出してください。</td>
-                                    </tr>
-                                    <tr>
-                                        <th>発行所要日数</th>
-                                        <td>
-                                            <strong>在学証明書：</strong>即日〜翌日<br>
-                                            <strong>その他（英文含む）：</strong>3日〜1週間程度<br>
-                                            ※余裕を持って申請してください。
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                    <p class="contact-intro">
+                        倉吉北高等学校へのお問い合わせは、お電話または下記メールフォームより承っております。<br>
+                        入試に関するご質問、資料請求、学校見学のお申し込みなど、お気軽にお問い合わせください。
+                    </p>
+
+                    <div class="tel-contact-box">
+                        <span class="tel-label">お電話でのお問い合わせ</span>
+                        <a href="tel:0858261351" class="tel-number">0858-26-1351</a>
+                        <span class="tel-time">受付時間：平日 8:30〜17:00（土日祝・学校休業日を除く）</span>
+                    </div>
+
+                    <h2 class="entry-sub-title">お問い合わせフォーム</h2>
+                    <p style="margin-bottom: 30px; font-size: 0.9rem; color: #666;">
+                        ※必須項目は必ずご入力ください。<br>
+                        ※お問い合わせ内容によっては、回答にお時間をいただく場合がございます。あらかじめご了承ください。
+                    </p>
+
+                    <form action="#" method="post">
+                        <table class="contact-form-table">
+                            <tr>
+                                <th>お名前<span class="required-tag">必須</span></th>
+                                <td><input type="text" name="your-name" class="form-input" placeholder="例：倉吉 太郎"
+                                        required></td>
+                            </tr>
+                            <tr>
+                                <th>フリガナ<span class="required-tag">必須</span></th>
+                                <td><input type="text" name="your-kana" class="form-input" placeholder="例：クラヨシ タロウ"
+                                        required></td>
+                            </tr>
+                            <tr>
+                                <th>メールアドレス<span class="required-tag">必須</span></th>
+                                <td><input type="email" name="your-email" class="form-input"
+                                        placeholder="例：info@kurayoshikita.ed.jp" required></td>
+                            </tr>
+                            <tr>
+                                <th>電話番号<span class="any-tag">任意</span></th>
+                                <td><input type="tel" name="your-tel" class="form-input" placeholder="例：0858-26-1351">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>お問い合わせ種別<span class="required-tag">必須</span></th>
+                                <td>
+                                    <select name="contact-type" class="form-select">
+                                        <option value="">選択してください</option>
+                                        <option value="入試について">入試について</option>
+                                        <option value="資料請求">資料請求について</option>
+                                        <option value="学校見学">学校見学・オープンスクールについて</option>
+                                        <option value="証明書発行">証明書発行について</option>
+                                        <option value="その他">その他</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>お問い合わせ内容<span class="required-tag">必須</span></th>
+                                <td>
+                                    <textarea name="your-message" class="form-textarea" placeholder="お問い合わせ内容をご入力ください"
+                                        required></textarea>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <div class="privacy-check">
+                            <label>
+                                <input type="checkbox" name="privacy-policy" required>
+                                <a href="#" target="_blank" style="text-decoration: underline;">プライバシーポリシー</a>に同意する
+                            </label>
                         </div>
-                    </section>
 
-                    <section id="tab-scholarship" class="tab-content">
-                        <h2>奨学金のご案内</h2>
-                        <p>国や県の就学支援金制度のほか、各種奨学金を取り扱っています。</p>
-
-                        <h3>就学支援金・授業料減免</h3>
-                        <div class="policy-list">
-                            <div class="policy-item">
-                                <span class="pi-num">01</span>
-                                <div class="pi-content">
-                                    <h4>高等学校等就学支援金（国）</h4>
-                                    <p>家庭の所得に応じて、授業料の一部または全額が支援されます。</p>
-                                </div>
-                            </div>
-                            <div class="policy-item">
-                                <span class="pi-num">02</span>
-                                <div class="pi-content">
-                                    <h4>鳥取県育英奨学金</h4>
-                                    <p>学習意欲がありながら経済的な理由で修学が困難な生徒に対し、奨学金が貸与されます。</p>
-                                </div>
-                            </div>
+                        <div class="form-submit-area">
+                            <button type="submit" class="btn-submit">送信する</button>
                         </div>
-                        <p style="margin-top:20px; font-size:0.9rem;">※募集時期になりましたら、ホームルーム等を通じて生徒へ案内を配布します。</p>
-                    </section>
-
-                    <section id="tab-app" class="tab-content">
-                        <h2>連絡ツールのご登録</h2>
-                        <p>学校からの緊急連絡や欠席連絡には、以下のシステムを利用しています。未登録の方はご登録をお願いします。</p>
-
-                        <div class="app-link-grid">
-                            <a href="#" class="app-link-card">
-                                <span class="app-icon">💬</span>
-                                <span class="app-name">公式LINE</span>
-                                <span class="app-desc">緊急連絡・イベント情報</span>
-                            </a>
-                            <a href="#" class="app-link-card">
-                                <span class="app-icon">📧</span>
-                                <span class="app-name">マチコミメール</span>
-                                <span class="app-desc">一斉メール配信システム</span>
-                            </a>
-                            <a href="#" class="app-link-card">
-                                <span class="app-icon">📱</span>
-                                <span class="app-name">BLEND</span>
-                                <span class="app-desc">出欠連絡・成績確認</span>
-                            </a>
-                        </div>
-                    </section>
+                    </form>
 
                 </div>
             </article>
 
-            <aside class="side-col">
-                <div class="side-widget-area">
-                    <div class="widget widget_nav_menu">
-                        <h4 class="widget-title">メニュー</h4>
-                        <ul class="js-tab-menu">
-                            <li class="current-menu-item"><a href="#" data-target="tab-cert">証明書発行</a></li>
-                            <li><a href="#" data-target="tab-scholarship">奨学金のご案内</a></li>
-                            <li><a href="#" data-target="tab-app">LINE/マチコミ/BLEND</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </aside>
+
         </div>
     </main>
 
     <footer id="footer">
         <div class="footer-wrapper">
-            <a href="#" class="page-top-btn"
-                onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">TOP</a>
+            <a href="#" class="page-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
+                TOP
+            </a>
             <div class="footer-bg-text">KURAYOSHI KITA</div>
+
             <div class="footer-inner">
                 <div class="f-top-area">
                     <div class="f-message">
@@ -383,12 +508,16 @@
                         <span class="fm-jp">未来へ踏み出す、準備はいい？</span>
                     </div>
                     <div class="f-actions">
-                        <a href="#" class="f-btn-req"><span class="btn-icon">★</span><span
-                                class="btn-text">資料請求</span></a>
-                        <a href="#" class="f-btn-contact">お問い合わせ</a>
+                        <a href="#" class="f-btn-req">
+                            <span class="btn-icon">★</span>
+                            <span class="btn-text">資料請求</span>
+                        </a>
+                        <a href="contact.html" class="f-btn-contact">お問い合わせ</a>
                     </div>
                 </div>
+
                 <div class="f-divider"></div>
+
                 <div class="f-main-area">
                     <div class="f-info-col">
                         <div class="f-logo">
@@ -406,6 +535,7 @@
                             <a href="#" class="sns-item">Fb</a>
                         </div>
                     </div>
+
                     <div class="f-link-col">
                         <ul class="f-nav-list">
                             <li><a href="#">HOME</a></li>
@@ -424,9 +554,12 @@
                         </ul>
                     </div>
                 </div>
+
                 <div class="f-bottom-area">
                     <small class="f-copy">&copy; Kurayoshi Kita High School. All Rights Reserved.</small>
-                    <div class="f-policy"><a href="#">プライバシーポリシー</a></div>
+                    <div class="f-policy">
+                        <a href="#">プライバシーポリシー</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -434,59 +567,38 @@
 
     <script src="script.js"></script>
     <script>
-        /* === カスタムカーソル制御 === */
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-inview'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
         const cursor = document.getElementById('custom-cursor');
-        // ホバー時にカーソルを変化させる対象（リンク、ボタン、入力フォーム等）
-        const links = document.querySelectorAll('a, button, .hover-img, .mq-item, .gnav-item, .news-card, select, label, input');
+        const links = document.querySelectorAll('a, button, .hover-img, .mq-item, .side-img-banner, .gnav-item, input, select, textarea');
 
-        if (cursor) {
-            // マウスの動きに合わせてカーソルを移動
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
             });
+            link.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
 
-            // ホバー時のクラス付け替え
-            links.forEach(link => {
-                link.addEventListener('mouseenter', () => {
-                    cursor.classList.add('hover');
-                });
-                link.addEventListener('mouseleave', () => {
-                    cursor.classList.remove('hover');
-                });
+        const hamburger = document.getElementById('js-hamburger');
+        const nav = document.getElementById('js-nav');
+
+        if (hamburger && nav) {
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                nav.classList.toggle('active');
             });
         }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // タブ切り替え制御
-            const tabLinks = document.querySelectorAll('.js-tab-menu a');
-            const tabContents = document.querySelectorAll('.tab-content');
-            const menuItems = document.querySelectorAll('.js-tab-menu li');
-            tabLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    const targetId = link.getAttribute('data-target');
-                    const targetContent = document.getElementById(targetId);
-                    if (!targetContent) return;
-                    tabContents.forEach(content => content.classList.remove('is-active'));
-                    targetContent.classList.add('is-active');
-                    menuItems.forEach(item => item.classList.remove('current-menu-item'));
-                    link.parentElement.classList.add('current-menu-item');
-                });
-            });
-
-            // ハンバーガーメニュー制御
-            const hamburger = document.getElementById('js-hamburger');
-            const nav = document.getElementById('js-nav');
-            if (hamburger && nav) {
-                hamburger.addEventListener('click', () => {
-                    hamburger.classList.toggle('active');
-                    nav.classList.toggle('active');
-                });
-            }
-        });
-
-        // スマホ用サブメニュー制御
         function toggleSubmenu(element) {
             if (window.innerWidth <= 768) {
                 element.classList.toggle('open');
