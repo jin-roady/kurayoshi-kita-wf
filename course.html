@@ -15,15 +15,15 @@
     <link rel="stylesheet" href="course-style.css">
 </head>
 
-<body class="sub-page">
+<body class="sub-page course-page">
     <div id="custom-cursor"></div>
     <header>
         <div class="header-upper">
             <div class="upper-inner">
                 <ul class="nav-target">
-                    <li>在校生・保護者の方へ</li>
-                    <li>卒業生の方へ</li>
-                    <li>受験生の方へ</li>
+                    <li><a href="target-student.html">在校生・保護者の方へ</a></li>
+                    <li><a href="target-graduate.html">卒業生の方へ</a></li>
+                    <li><a href="exam.html">受験生の方へ</a></li>
                 </ul>
                 <div class="nav-utility">
                     <a href="#">交通アクセス</a>
@@ -45,9 +45,7 @@
 
                 <nav class="gnav" id="js-nav">
                     <div class="gnav-inner">
-
                         <a href="sankou2.html" class="gnav-item en">HOME</a>
-
                         <div class="gnav-item has-sub" onclick="toggleSubmenu(this)">
                             学校紹介
                             <span class="sp-toggle-btn"></span>
@@ -180,7 +178,7 @@
                                                     class="ml-arrow">→</span></a>
                                             <a href="career.html" class="ml-item"><span>実績</span><span
                                                     class="ml-arrow">→</span></a>
-                                            <a href="career.html" class="ml-item"><span>先輩生インタビュー</span><span
+                                            <a href="career.html" class="ml-item"><span>卒業生インタビュー</span><span
                                                     class="ml-arrow">→</span></a>
                                         </div>
                                     </div>
@@ -223,7 +221,8 @@
     <main id="main-content">
 
         <div class="page-header-area">
-            <div class="ph-bg"></div>
+            <div class="ph-bg"
+                style="background-image: url('https://via.placeholder.com/1200x400/254a3b/fff?text=Courses');"></div>
             <div class="ph-inner">
                 <span class="ph-en">Course Guide</span><br>
                 <span class="ph-jp">学科・コース</span>
@@ -244,18 +243,6 @@
             <article class="main-col">
                 <div class="entry-content">
 
-                    <div class="course-lead-area">
-                        <div class="course-lead-inner">
-                            <span class="course-lead-en">Find Your Future</span>
-                            <h2 class="course-lead-jp">自分の未来を、<br class="sp-only">自分で選ぶ。</h2>
-                            <p class="course-lead-text">
-                                倉吉北高等学校では、生徒一人ひとりの夢や適性に合わせた<br class="pc-only">
-                                「普通科 特別進学コース」「普通科 総合コース」「調理科」の3つの学びを用意しています。<br class="pc-only">
-                                それぞれの目標に向かって、確かな学力と豊かな人間性を育みます。
-                            </p>
-                        </div>
-                    </div>
-
                     <section id="special" class="course-section-block">
                         <div class="course-header-group">
                             <span class="course-header-num">01</span>
@@ -264,127 +251,367 @@
                             </div>
                         </div>
 
+                        <div class="tokushin-lead-head">
+                            <h3>夢を現実に！</h3>
+                            <p>
+                                最難関大学への進学<br>
+                                手厚い個別指導<br>
+                                3カ年の体系的な教育で国公立・難関私大を狙う！
+                            </p>
+                        </div>
+
+                        <div class="tokushin-lead-area">
+                            <h4 class="tokushin-sub-title">国公立・難関大へ向けた手厚い個別指導！</h4>
+                            <p style="margin-bottom:1.5rem;">
+                                「特別進学コース」では、国公立大学や難関私立大学への現役合格を目標に掲げ、質の高い授業と万全のサポート体制を整えています。生徒一人ひとりの「夢」を「現実」にするために、教員一丸となってバックアップします。
+                            </p>
+                            <ul class="tokushin-list">
+                                <li>国公立大学・上智大学等の難関私立大学への現役合格を目指します。</li>
+                                <li>一般選抜に加え、総合型選抜や学校推薦型選抜など多様な入試への対応を支援します。</li>
+                                <li>スクールバスで下校可能な、放課後の進学補習を実施します。</li>
+                                <li>大学見学などによる、進路意識の高揚を図ります。</li>
+                            </ul>
+                        </div>
+
+                        <div class="student-voice-grid">
+                            <div class="student-card">
+                                <img src="https://via.placeholder.com/200x200/88ccaa/fff?text=Boy" alt="生徒写真">
+                                <span class="st-name">安井 大翔 さん <small
+                                        style="font-size:0.8rem; font-weight:normal;">(3年生)</small></span>
+                                <div class="st-desc">
+                                    <strong>「文武両道」</strong><br>
+                                    野球部に所属しながら、国公立大学を目指して頑張っています。先生方は部活との両立を理解してくれ、隙間時間の活用法など具体的なアドバイスをくれます。
+                                </div>
+                            </div>
+                            <div class="student-card">
+                                <img src="https://via.placeholder.com/200x200/ddaa88/fff?text=Girl" alt="生徒写真">
+                                <span class="st-name">舞田 咲喜 さん <small
+                                        style="font-size:0.8rem; font-weight:normal;">(3年生)</small></span>
+                                <div class="st-desc">
+                                    <strong>「手厚いサポート」</strong><br>
+                                    苦手な数学も、放課後の個別指導のおかげで克服できました。クラスメイトもみんな志が高く、刺激を受けながら毎日勉強に励んでいます。
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mini-voice-row">
+                            <div class="mini-voice-item">
+                                <img src="https://via.placeholder.com/150x100/eee/999?text=1" alt="">
+                                <span class="mini-voice-text">勉強に集中できる環境</span>
+                            </div>
+                            <div class="mini-voice-item">
+                                <img src="https://via.placeholder.com/150x100/eee/999?text=2" alt="">
+                                <span class="mini-voice-text">先生との距離が近い</span>
+                            </div>
+                            <div class="mini-voice-item">
+                                <img src="https://via.placeholder.com/150x100/eee/999?text=3" alt="">
+                                <span class="mini-voice-text">模試対策もバッチリ</span>
+                            </div>
+                            <div class="mini-voice-item">
+                                <img src="https://via.placeholder.com/150x100/eee/999?text=4" alt="">
+                                <span class="mini-voice-text">行事も全力で楽しむ</span>
+                            </div>
+                            <div class="mini-voice-item">
+                                <img src="https://via.placeholder.com/150x100/eee/999?text=5" alt="">
+                                <span class="mini-voice-text">夢に向かって一直線</span>
+                            </div>
+                        </div>
+
+                        <h4 class="course-sub-head-center">3年間のステップ</h4>
+                        <div class="step-container">
+                            <div class="step-box">
+                                <span class="step-num">1 STEP</span>
+                                <div class="step-title">基礎・基本の確立</div>
+                                <div class="step-desc">徹底した基礎学習で、高校での学習習慣を身につけます。主要3科目を重点的に強化します。</div>
+                            </div>
+                            <div class="step-box">
+                                <span class="step-num">2 STEP</span>
+                                <div class="step-title">文系・理系の選択</div>
+                                <div class="step-desc">それぞれの進路希望に合わせてコースを選択。より専門的な科目履修が始まります。</div>
+                            </div>
+                            <div class="step-box">
+                                <span class="step-num">3 STEP</span>
+                                <div class="step-title">実戦力の養成</div>
+                                <div class="step-desc">大学入試を見据えた演習中心の授業へ。共通テスト対策や二次試験対策を行います。</div>
+                            </div>
+                        </div>
+
+                        <h4 class="course-sub-head-center">授業・活動風景</h4>
+                        <div class="class-gallery">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/888?text=Classroom" alt="授業風景">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/888?text=Study" alt="自習">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/888?text=Discussion" alt="グループワーク">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/888?text=Event" alt="学校行事">
+                        </div>
+
                         <div class="course-intro-row">
                             <figure class="course-intro-img">
-                                <img src="https://via.placeholder.com/800x500/254a3b/fff?text=Special+Course"
-                                    alt="特別進学コース">
+                                <img src="https://via.placeholder.com/400x300/aaddcc/fff?text=Graduate" alt="卒業生">
                             </figure>
                             <div class="course-intro-body">
-                                <h4 class="course-intro-head">国公立・難関私大への<br>現役合格を目指す</h4>
+                                <h4 style="font-size:1.2rem; color:#254a3b; margin-bottom:0.5rem;">看護師として活躍中</h4>
+                                <p style="font-weight:bold; margin-bottom:1rem;">小谷 優奈 さん <small>(鳥取大学医学部保健学科卒)</small>
+                                </p>
                                 <p class="course-intro-desc">
-                                    少人数制クラスによるきめ細かな指導を徹底。7限授業や放課後補習、長期休暇中の特別講習などを通じて、大学入学共通テストや各大学の個別試験に対応できる実践的な学力を養います。
+                                    特進コースでの3年間は、勉強だけでなく人間的にも成長できた時間でした。先生方の熱心な指導のおかげで、今の私があります。
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section id="general" class="course-section-block">
+                        <div class="course-header-group">
+                            <span class="course-header-num" style="color: #c93a5b; border-color: #c93a5b;">02</span>
+                            <div class="course-header-titles">
+                                <h2 class="course-title-en" style="color: #c93a5b;">普通科 総合コース</h2>
+                            </div>
+                        </div>
+
+                        <div class="sogo-lead-head">
+                            <h3>目標は君が決める！</h3>
+                            <p>
+                                自分らしい進路を見つける多様なカリキュラム<br>
+                                好きなことを伸ばし、将来の可能性を広げよう
+                            </p>
+                        </div>
+
+                        <div style="margin-bottom: 3rem; text-align: center;">
+                            <h4 style="font-size: 1.5rem; color: #c93a5b; margin-bottom: 1rem; font-weight: bold;">
+                                なりたい自分を見つける、育む！
+                            </h4>
+                            <p style="line-height: 1.8;">
+                                1年次は共通科目を履修し、基礎学力をしっかり定着させます。<br>
+                                2年次からは、自分の興味・関心や希望進路に合わせて<br>
+                                <strong>「進学系」「情報・ビジネス系」「生活・福祉系」「スポーツ系」</strong>の4つの系から選択。<br>
+                                専門的な学びを通して、自分だけの強みを磨きます。
+                            </p>
+                        </div>
+
+                        <div class="sogo-student-voice">
+                            <img src="https://via.placeholder.com/200x200/c93a5b/fff?text=Student" alt="生徒写真"
+                                class="sogo-st-img">
+                            <div class="sogo-st-content">
+                                <h4>「自分のペースで成長できる場所」</h4>
+                                <span class="sogo-st-meta">宮本 〇〇 さん (2年生)</span>
+                                <p>
+                                    私は将来やりたいことが明確ではなかったのですが、総合コースなら色々な分野を学びながら進路を決められると思い入学しました。今は「情報・ビジネス系」の授業でPCスキルを磨いています。資格取得にも挑戦でき、自信がつきました。
                                 </p>
                             </div>
                         </div>
 
-                        <div class="course-points-wrapper">
-                            <h4 class="course-sub-head-center">3つのポイント</h4>
-                            <div class="course-points-grid">
-                                <div class="course-point-card">
-                                    <div class="course-pc-num">01</div>
-                                    <h5 class="course-pc-title">少人数制・個別指導</h5>
-                                    <p class="course-pc-desc">一人ひとりの習熟度や志望校に合わせた、マンツーマンに近い指導を行います。</p>
+                        <h4 class="course-sub-head-center" style="color:#c93a5b;">専門性を高める4つの系</h4>
+                        <div class="sogo-types-grid">
+                            <div class="sogo-type-card">
+                                <img src="https://via.placeholder.com/400x250/eee/999?text=Academic" alt="進学系"
+                                    class="sogo-type-img">
+                                <div class="sogo-type-info">
+                                    <span class="sogo-type-title">進学系</span>
+                                    <p class="sogo-type-desc">大学・短大・専門学校への進学をサポート。受験に必要な科目を重点的に学びます。</p>
                                 </div>
-                                <div class="course-point-card">
-                                    <div class="course-pc-num">02</div>
-                                    <h5 class="course-pc-title">豊富な学習時間</h5>
-                                    <p class="course-pc-desc">平日7限授業に加え、土曜講座や放課後の進学補習で圧倒的な学習量を確保します。</p>
+                            </div>
+                            <div class="sogo-type-card">
+                                <img src="https://via.placeholder.com/400x250/eee/999?text=Business" alt="情報・ビジネス系"
+                                    class="sogo-type-img">
+                                <div class="sogo-type-info">
+                                    <span class="sogo-type-title">情報・ビジネス系</span>
+                                    <p class="sogo-type-desc">PCスキルや簿記など、社会で役立つ実務能力を習得。資格取得を強力にバックアップ。</p>
                                 </div>
-                                <div class="course-point-card">
-                                    <div class="course-pc-num">03</div>
-                                    <h5 class="course-pc-title">多様な入試に対応</h5>
-                                    <p class="course-pc-desc">一般選抜だけでなく、総合型選抜や学校推薦型選抜に向けた小論文・面接指導も実施。</p>
+                            </div>
+                            <div class="sogo-type-card">
+                                <img src="https://via.placeholder.com/400x250/eee/999?text=Welfare" alt="生活・福祉系"
+                                    class="sogo-type-img">
+                                <div class="sogo-type-info">
+                                    <span class="sogo-type-title">生活・福祉系</span>
+                                    <p class="sogo-type-desc">福祉の心と技術を学びます。保育や介護、看護分野への進路を目指す人に最適です。</p>
+                                </div>
+                            </div>
+                            <div class="sogo-type-card">
+                                <img src="https://via.placeholder.com/400x250/eee/999?text=Sports" alt="スポーツ系"
+                                    class="sogo-type-img">
+                                <div class="sogo-type-info">
+                                    <span class="sogo-type-title">スポーツ系</span>
+                                    <p class="sogo-type-desc">実技と理論の両面からスポーツを学習。健康づくりや指導者を目指す基礎を築きます。</p>
                                 </div>
                             </div>
                         </div>
-                    </section>
 
-                    <section id="general" class="course-section-block course-bg-gray">
-                        <div class="course-header-group">
-                            <span class="course-header-num">02</span>
-                            <div class="course-header-titles">
-                                <h2 class="course-title-en">普通科 総合コース</h2>
+                        <div class="sogo-detail-section">
+                            <div class="sogo-detail-head">
+                                進学系 <span>Academic</span>
                             </div>
-                        </div>
-                        <div class="course-intro-center">
-                            <h4 class="course-intro-head">1年次は基礎を固め、<br>2年次から「4つの系」で専門性を磨く</h4>
-                            <p class="course-intro-desc">
-                                1年次は共通科目を履修し、基礎学力の定着を図ります。2年次からは、自分の興味・関心や進路希望に合わせて4つの「系（類型）」から選択し、専門的な学びを深めます。</p>
+                            <div class="sogo-detail-content">
+                                <img src="https://via.placeholder.com/500x300/e0e0e0/888?text=Study+Scene" alt="進学系授業">
+                                <div class="sogo-detail-text">
+                                    <h5>基礎から応用まで、着実にレベルアップ</h5>
+                                    <p>
+                                        英語や国語などの主要教科を中心に、進学に必要な学力を養います。少人数授業で質問もしやすく、苦手科目の克服から入試対策まで一人ひとりに寄り添った指導を行います。
+                                    </p>
+                                </div>
+                            </div>
                         </div>
 
-                        <div class="course-types-wrapper">
-                            <div class="course-types-grid">
-                                <div class="course-type-card">
-                                    <div class="course-tc-icon">🎓</div>
-                                    <div class="course-tc-body">
-                                        <h5 class="course-tc-title">進学系</h5>
-                                        <p class="course-tc-desc">大学・短期大学・看護医療系専門学校への進学を目指します。受験に必要な科目を重点的に学習します。</p>
-                                    </div>
-                                </div>
-                                <div class="course-type-card">
-                                    <div class="course-tc-icon">💻</div>
-                                    <div class="course-tc-body">
-                                        <h5 class="course-tc-title">情報・ビジネス系</h5>
-                                        <p class="course-tc-desc">コンピュータ活用能力やビジネス基礎を習得。簿記や情報処理検定などの資格取得に挑戦します。</p>
-                                    </div>
-                                </div>
-                                <div class="course-type-card">
-                                    <div class="course-tc-icon">🤝</div>
-                                    <div class="course-tc-body">
-                                        <h5 class="course-tc-title">福祉系</h5>
-                                        <p class="course-tc-desc">高齢化社会で必要とされる福祉の心を学びます。「介護職員初任者研修」の修了を目指します。</p>
-                                    </div>
-                                </div>
-                                <div class="course-type-card">
-                                    <div class="course-tc-icon">⚾️</div>
-                                    <div class="course-tc-body">
-                                        <h5 class="course-tc-title">スポーツ系</h5>
-                                        <p class="course-tc-desc">スポーツ理論や実技を通して、健康や身体づくりについて学び、体育系大学や関連企業を目指します。</p>
-                                    </div>
+                        <div class="sogo-detail-section">
+                            <div class="sogo-detail-head">
+                                情報・ビジネス系 <span>Info & Business</span>
+                            </div>
+                            <div class="sogo-detail-content" style="direction: rtl;">
+                                <img src="https://via.placeholder.com/500x300/e0e0e0/888?text=Computer+Room"
+                                    alt="パソコン実習">
+                                <div class="sogo-detail-text" style="direction: ltr;">
+                                    <h5>即戦力となるスキルを習得</h5>
+                                    <p>
+                                        最新のコンピュータ室で、文書作成や表計算などのPCスキルを習得。全商情報処理検定や簿記検定などの資格取得を目指し、就職や進学に有利な実績を作ります。
+                                    </p>
                                 </div>
                             </div>
                         </div>
+
+                        <div class="sogo-detail-section">
+                            <div class="sogo-detail-head">
+                                生活・福祉系 <span>Life & Welfare</span>
+                            </div>
+                            <div class="sogo-detail-content">
+                                <img src="https://via.placeholder.com/500x300/e0e0e0/888?text=Care+Training" alt="介護実習">
+                                <div class="sogo-detail-text">
+                                    <h5>「支え合う心」を育む</h5>
+                                    <p>
+                                        高齢者介護や保育の基礎を学びます。校内での実習に加え、地域の施設での体験学習も実施。「介護職員初任者研修」の修了を目指すカリキュラムも用意されています。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="sogo-detail-section">
+                            <div class="sogo-detail-head">
+                                スポーツ系 <span>Sports</span>
+                            </div>
+                            <div class="sogo-detail-content" style="direction: rtl;">
+                                <img src="https://via.placeholder.com/500x300/e0e0e0/888?text=Gym+Activity"
+                                    alt="スポーツ実習">
+                                <div class="sogo-detail-text" style="direction: ltr;">
+                                    <h5>心技体を鍛える</h5>
+                                    <p>
+                                        スポーツを通じて、体力の向上だけでなく、チームワークやリーダーシップを学びます。将来、スポーツトレーナーや体育教師を目指す生徒の第一歩をサポートします。
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="course-intro-row">
+                            <figure class="course-intro-img">
+                                <img src="https://via.placeholder.com/400x300/ffccdd/fff?text=Graduate" alt="卒業生">
+                            </figure>
+                            <div class="course-intro-body">
+                                <h4 style="font-size:1.2rem; color:#c93a5b; margin-bottom:0.5rem;">地元企業で活躍中</h4>
+                                <p style="font-weight:bold; margin-bottom:1rem;">田中 美咲 さん <small>(一般企業 事務職)</small></p>
+                                <p class="course-intro-desc">
+                                    高校時代に取得した簿記やPCの資格が、今の仕事にとても役立っています。先生方が親身になって進路相談に乗ってくれたおかげで、自分に合った職場に出会えました。
+                                </p>
+                            </div>
+                        </div>
+
                     </section>
 
                     <section id="cooking" class="course-section-block">
                         <div class="course-header-group">
-                            <span class="course-header-num">03</span>
+                            <span class="course-header-num" style="color: #d67d26; border-color: #d67d26;">03</span>
                             <div class="course-header-titles">
-                                <h2 class="course-title-en">家庭学科 調理科</h2>
+                                <h2 class="course-title-en" style="color: #d67d26;">家庭学科 調理科</h2>
                             </div>
                         </div>
 
-                        <div class="course-intro-row course-reverse">
+                        <div class="katei-lead-head">
+                            <h3>食を職に！</h3>
+                            <p>
+                                卒業と同時に国家資格「調理師免許」を取得<br>
+                                調理・栄養・衛生のプロを目指す
+                            </p>
+                        </div>
+
+                        <div style="margin-bottom: 4rem; text-align: center;">
+                            <h4 style="font-size: 1.5rem; color: #d67d26; margin-bottom: 1rem; font-weight: bold;">
+                                国家資格「調理師免許」を試験免除で取得！
+                            </h4>
+                            <p style="line-height: 1.8; max-width: 800px; margin: 0 auto;">
+                                厚生労働省認定の調理師養成施設である本校では、3年間のカリキュラムを修了することで、
+                                実技試験・学科試験免除で調理師免許が取得できます。<br>
+                                日本・西洋・中国料理の専門講師から技術を学び、「おもてなしの心」を育てます。
+                            </p>
+                        </div>
+
+                        <h4 class="course-sub-head-center" style="color:#d67d26; text-align:center;">プロの技術を直接学ぶ</h4>
+                        <div class="katei-teacher-grid">
+                            <div class="katei-teacher-card">
+                                <img src="https://via.placeholder.com/200x200/d67d26/fff?text=Chef+JP" alt="日本料理講師"
+                                    class="katei-teacher-img">
+                                <span class="katei-teacher-role">日本料理 専門講師</span>
+                                <div class="entry-content">
+                                    <h4>伝統の技と心を伝承</h4>
+                                </div>
+                                <p class="katei-teacher-desc">
+                                    包丁の研ぎ方やだしの取り方など、基本から徹底して指導します。季節の食材を使った繊細な盛り付けや、日本料理特有の礼儀作法も身につけます。
+                                </p>
+                            </div>
+                            <div class="katei-teacher-card">
+                                <img src="https://via.placeholder.com/200x200/e69d56/fff?text=Chef+FR" alt="西洋料理講師"
+                                    class="katei-teacher-img">
+                                <span class="katei-teacher-role">西洋料理 専門講師</span>
+                                <div class="entry-content">
+                                    <h4>世界の味をクリエイト</h4>
+                                </div>
+                                <p class="katei-teacher-desc">
+                                    フランス・イタリア料理の基礎となるソース作りや火入れの技術を学びます。コース料理の調理からサービス（接客）まで、トータルに実践します。
+                                </p>
+                            </div>
+                        </div>
+
+                        <h4 class="course-sub-head-center" style="color:#d67d26; text-align:center;">3年間のステップ</h4>
+                        <div class="step-container">
+                            <div class="katei-step-box">
+                                <span class="katei-step-num">1 STEP</span>
+                                <div class="katei-step-title">基礎・基本の習得</div>
+                                <div class="step-desc">
+                                    包丁の扱い方や野菜の切り方（桂むき等）の基礎技術を徹底的に練習。食品衛生や栄養学の基礎知識も学びます。
+                                </div>
+                            </div>
+                            <div class="katei-step-box">
+                                <span class="katei-step-num">2 STEP</span>
+                                <div class="katei-step-title">技術の向上・応用</div>
+                                <div class="step-desc">
+                                    日本・西洋・中国料理の各分野で本格的なメニュー調理に挑戦。校内レストランの運営や料理コンクールへの参加も始まります。
+                                </div>
+                            </div>
+                            <div class="katei-step-box">
+                                <span class="katei-step-num">3 STEP</span>
+                                <div class="katei-step-title">実践力・総合力</div>
+                                <div class="step-desc">
+                                    集団給食調理やフルコース料理の創作など、プロの現場に近い実践的な実習を行います。卒業記念料理展で3年間の集大成を披露します。
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4 class="course-sub-head-center" style="color:#d67d26; text-align:center;">実習・活動風景</h4>
+                        <div class="class-gallery">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/888?text=Cooking+Practice" alt="調理実習">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/888?text=Contest" alt="料理コンクール">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/888?text=Service" alt="レストランサービス">
+                            <img src="https://via.placeholder.com/400x300/e0e0e0/888?text=Graduation+Dish" alt="卒業制作">
+                        </div>
+
+                        <div class="course-intro-row">
                             <figure class="course-intro-img">
-                                <img src="https://via.placeholder.com/800x500/eeb902/fff?text=Cooking+Course" alt="調理科">
+                                <img src="https://via.placeholder.com/400x300/f0d0a0/fff?text=Graduate" alt="卒業生">
                             </figure>
                             <div class="course-intro-body">
-                                <h4 class="course-intro-head">卒業と同時に国家資格<br>「調理師免許」を取得</h4>
+                                <h4 style="font-size:1.2rem; color:#d67d26; margin-bottom:0.5rem;">ホテルシェフとして活躍中</h4>
+                                <p style="font-weight:bold; margin-bottom:1rem;">佐藤 健太 さん <small>(ホテル〇〇 洋食部門勤務)</small>
+                                </p>
                                 <p class="course-intro-desc">
-                                    厚生労働省認定の調理師養成施設です。3年間で調理の基礎から応用、食品衛生や栄養学までをトータルに学習。卒業時には実技試験免除で調理師免許が授与されます。</p>
+                                    在学中に取得した調理師免許のおかげで、スムーズにキャリアをスタートできました。厳しくも温かい先生方の指導で身につけた「基本」が、今の僕の最大の武器です。
+                                </p>
                             </div>
                         </div>
 
-                        <div class="course-features-wrapper">
-                            <h4 class="course-sub-head-center">調理科の特長</h4>
-                            <div class="course-features-grid">
-                                <div class="course-feature-item">
-                                    <div class="course-cf-head">Pro Teachers</div>
-                                    <h5>プロの講師陣による指導</h5>
-                                    <p>日本・西洋・中国料理の各分野で活躍する専門講師から、プロの技術と心構えを直接学びます。</p>
-                                </div>
-                                <div class="course-feature-item">
-                                    <div class="course-cf-head">Kitchen Studio</div>
-                                    <h5>充実した実習環境</h5>
-                                    <p>プロ仕様の厨房設備を備えた調理実習室で、本格的な実習を行います。</p>
-                                </div>
-                                <div class="course-feature-item">
-                                    <div class="course-cf-head">Local & Contest</div>
-                                    <h5>地域連携・コンクール</h5>
-                                    <p>地域の食材を使ったメニュー開発や、料理コンクールへの出場など実践的な活動に取り組みます。</p>
-                                </div>
-                            </div>
-                        </div>
                     </section>
 
                 </div>
@@ -417,12 +644,9 @@
 
     <footer id="footer">
         <div class="footer-wrapper">
-
-            <a href="#" class="page-top-btn" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">
-                TOP
-            </a>
+            <a href="#" class="page-top-btn"
+                onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">TOP</a>
             <div class="footer-bg-text">KURAYOSHI KITA</div>
-
             <div class="footer-inner">
                 <div class="f-top-area">
                     <div class="f-message">
@@ -430,16 +654,12 @@
                         <span class="fm-jp">未来へ踏み出す、準備はいい？</span>
                     </div>
                     <div class="f-actions">
-                        <a href="#" class="f-btn-req">
-                            <span class="btn-icon">★</span>
-                            <span class="btn-text">資料請求</span>
-                        </a>
+                        <a href="#" class="f-btn-req"><span class="btn-icon">★</span><span
+                                class="btn-text">資料請求</span></a>
                         <a href="#" class="f-btn-contact">お問い合わせ</a>
                     </div>
                 </div>
-
                 <div class="f-divider"></div>
-
                 <div class="f-main-area">
                     <div class="f-info-col">
                         <div class="f-logo">
@@ -457,7 +677,6 @@
                             <a href="#" class="sns-item">Fb</a>
                         </div>
                     </div>
-
                     <div class="f-link-col">
                         <ul class="f-nav-list">
                             <li><a href="#">HOME</a></li>
@@ -476,12 +695,9 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="f-bottom-area">
                     <small class="f-copy">&copy; Kurayoshi Kita High School. All Rights Reserved.</small>
-                    <div class="f-policy">
-                        <a href="#">プライバシーポリシー</a>
-                    </div>
+                    <div class="f-policy"><a href="#">プライバシーポリシー</a></div>
                 </div>
             </div>
         </div>
@@ -494,77 +710,30 @@
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        function openModal() { document.getElementById('line-modal').classList.add('is-open'); }
-        function closeModal() { document.getElementById('line-modal').classList.remove('is-open'); }
-
-        // updateView 関数は不要になったので削除してOKですが、
-        // 既存のトップページ等と共用しているscript.js内にある場合はそのままでもエラーにはなりません。
-
-        // カーソル要素を取得
         const cursor = document.getElementById('custom-cursor');
         const links = document.querySelectorAll('a, button, .hover-img, .mq-item, .side-img-banner, .gnav-item');
-
-        // マウスが動いた時の処理
         document.addEventListener('mousemove', (e) => {
             cursor.style.left = e.clientX + 'px';
             cursor.style.top = e.clientY + 'px';
         });
-
-        // リンクにホバーした時のクラス付け替え
         links.forEach(link => {
-            link.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-            });
-            link.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-            });
+            link.addEventListener('mouseenter', () => { cursor.classList.add('hover'); });
+            link.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); });
         });
 
-        /* === スマホメニュー用スクリプト === */
         const hamburger = document.getElementById('js-hamburger');
         const nav = document.getElementById('js-nav');
-
         if (hamburger && nav) {
             hamburger.addEventListener('click', () => {
                 hamburger.classList.toggle('active');
                 nav.classList.toggle('active');
             });
         }
-
-        // スマホ用サブメニュー（アコーディオン）の制御
         function toggleSubmenu(element) {
             if (window.innerWidth <= 768) {
                 element.classList.toggle('open');
             }
         }
-
-        /* === TAB SWITCHING SCRIPT (サイドバー連動) === */
-        document.addEventListener('DOMContentLoaded', () => {
-            const tabLinks = document.querySelectorAll('.js-tab-menu a');
-            const tabContents = document.querySelectorAll('.tab-content');
-            const menuItems = document.querySelectorAll('.js-tab-menu li');
-
-            tabLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-
-                    const targetId = link.getAttribute('data-target');
-                    const targetContent = document.getElementById(targetId);
-
-                    if (!targetContent) return;
-
-                    tabContents.forEach(content => {
-                        content.classList.remove('is-active');
-                    });
-                    targetContent.classList.add('is-active');
-
-                    menuItems.forEach(item => {
-                        item.classList.remove('current-menu-item');
-                    });
-                    link.parentElement.classList.add('current-menu-item');
-                });
-            });
-        });
     </script>
 </body>
 

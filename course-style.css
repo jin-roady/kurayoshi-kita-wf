@@ -1,34 +1,77 @@
 /* =========================================
-   COURSE PAGE SPECIFIC STYLES (REFINED ver.)
+   COURSE PAGE SPECIFIC STYLES (Cleaned & Refined)
    ========================================= */
 
-/* --- 共通変数定義（このページ専用） --- */
+/* --- 共通変数定義 --- */
 :root {
+    /* カラーパレット */
     --cp-green: #254a3b;
-    /* 深緑 */
+    /* 特進：深緑 */
+    --cp-pink: #c93a5b;
+    /* 総合：ピンク */
+    --cp-orange: #d67d26;
+    /* 調理：オレンジ */
     --cp-gold: #c4a35a;
-    /* 落ち着いたゴールド（黄色の代わり） */
+    /* アクセント：ゴールド */
+    --cp-yellow: #ffe600;
+    /* 下線用：黄色 */
     --cp-gray-bg: #f5f7f6;
-    /* 薄いグレー背景 */
+    /* 背景：薄いグレー */
+
+    /* フォント */
     --cp-font-en: 'Jost', sans-serif;
     --cp-font-jp: 'Noto Sans JP', sans-serif;
     --cp-font-serif: 'Shippori Mincho', serif;
 }
 
-/* --- ベーススタイル調整 --- */
+
+/* =========================================
+   1. ベースレイアウト & リセット
+   ========================================= */
+
+/* セクション全体の余白 */
 .course-section-block {
     padding: 100px 0;
-    /* 上下の余白を広げてゆったりと */
 }
 
-/* --- リードエリア（シンプルで力強く） --- */
+/* 既存h2装飾の強制リセット */
+.course-lead-area h2::before,
+.course-lead-area h2::after,
+.course-section-block h2::before,
+.course-section-block h2::after,
+.course-header-titles h2::before,
+.course-header-titles h2::after {
+    content: none !important;
+    display: none !important;
+    border: none !important;
+    background: none !important;
+}
+
+/* 記事内h4の装飾（●）を非表示にし、センター揃えを強制 */
+body.course-page .entry-content h4::before {
+    visibility: hidden !important;
+}
+
+.entry-content h4 {
+    display: block !important;
+    /* Flexbox解除 */
+    width: 100% !important;
+    /* 幅いっぱい */
+    text-align: center !important;
+    /* 中央揃え */
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* =========================================
+   2. リードエリア（ページ上部）
+   ========================================= */
 .course-lead-area {
     text-align: center;
     margin-bottom: 100px;
     padding: 80px 40px;
     background-color: #fff;
-    /* 背景を白に */
-    /* ドットパターンと斜めラインを廃止し、シンプルなボーダーに */
     border-top: 3px solid var(--cp-gold);
     border-bottom: 1px solid #eee;
     position: relative;
@@ -48,10 +91,11 @@
     letter-spacing: 0.2em;
     text-transform: uppercase;
     margin-bottom: 20px;
-    /* 手書きフォントと傾きを廃止 */
 }
 
 .course-lead-jp {
+    display: block;
+    width: 100%;
     font-family: var(--cp-font-serif);
     font-size: 42px;
     font-weight: 600;
@@ -59,26 +103,29 @@
     margin: 0 0 40px 0;
     line-height: 1.4;
     letter-spacing: 0.05em;
+    border: none !important;
+    padding: 0 !important;
 }
 
 .course-lead-text {
     font-size: 16px;
     line-height: 2.2;
-    /* 行間を広めに */
     color: #444;
     font-family: var(--cp-font-jp);
 }
 
 
-/* --- セクションヘッダー（整理されたデザイン） --- */
+/* =========================================
+   3. 共通コンポーネント
+   ========================================= */
+
+/* セクション番号とタイトル */
 .course-header-group {
     display: flex;
     align-items: baseline;
-    /* ベースラインで揃える */
     gap: 30px;
     margin-bottom: 60px;
     border-bottom: 1px solid #eee;
-    /* 下線で区切る */
     padding-bottom: 20px;
 }
 
@@ -87,41 +134,29 @@
     font-size: 80px;
     font-weight: 700;
     color: #eee;
-    /* 薄いグレーで背景になじませる */
+    /* デフォルト色 */
     line-height: 0.8;
 }
 
-.course-header-titles {
-    /* ボーダーを廃止 */
-}
-
 .course-title-en {
-    font-family: var(--cp-font-en);
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--cp-gold);
-    margin: 0 0 5px 0;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    /* 手書きフォントを廃止 */
-}
-
-.course-title-jp {
     font-family: var(--cp-font-serif);
     font-size: 36px;
     font-weight: 600;
     color: var(--cp-green);
+    /* デフォルト色 */
     margin: 0;
     line-height: 1.2;
+    letter-spacing: 0.05em;
+    text-transform: none;
+    border: none !important;
+    padding: 0 !important;
 }
 
-
-/* --- 画像＋テキストレイアウト（余白とメリハリ） --- */
+/* 画像＋テキスト（左右配置） */
 .course-intro-row {
     display: flex;
     align-items: center;
     gap: 80px;
-    /* 間隔を広げる */
     margin-bottom: 80px;
 }
 
@@ -131,12 +166,9 @@
 
 .course-intro-img {
     flex: 1.2;
-    /* 画像を少し大きく */
     border-radius: 4px;
-    /* 角丸を小さく */
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    /* 影を上品に */
     margin: 0;
 }
 
@@ -161,9 +193,9 @@
     font-size: 30px;
     font-weight: 600;
     color: var(--cp-green);
+    /* デフォルト */
     margin-bottom: 30px;
     line-height: 1.4;
-    /* マーカー装飾をシンプルな左線に変更 */
     background: none;
     padding-left: 20px;
     border-left: 4px solid var(--cp-gold);
@@ -176,53 +208,7 @@
     font-family: var(--cp-font-jp);
 }
 
-/* センター配置用 */
-.course-intro-center {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 80px;
-}
-
-.course-intro-center .course-intro-head {
-    border-left: none;
-    padding-left: 0;
-    display: inline-block;
-    position: relative;
-}
-
-/* 下線アクセント */
-.course-intro-center .course-intro-head::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background: var(--cp-gold);
-}
-
-
-/* --- ポイント・特徴（カードデザインの洗練） --- */
-.course-sub-head-center {
-    text-align: center;
-    font-family: var(--cp-font-serif);
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--cp-green);
-    margin-bottom: 50px;
-    letter-spacing: 0.1em;
-    /* 横線装飾を廃止し、シンプルに */
-}
-
-.course-points-grid,
-.course-features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-/* カード共通スタイル */
+/* カード共通 */
 .course-point-card,
 .course-feature-item,
 .course-type-card {
@@ -230,10 +216,6 @@
     padding: 40px 30px;
     border-radius: 8px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    /* 枠線をやめて影で浮かせる */
-    border: none;
-    /* 既存のボーダーを削除 */
-    text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -244,95 +226,455 @@
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
 }
 
-/* ポイントカード固有 */
-.course-pc-num {
-    font-family: var(--cp-font-en);
-    font-size: 30px;
-    font-weight: 700;
-    color: var(--cp-gold);
-    /* 色をゴールドに */
-    margin-bottom: 20px;
-    display: inline-block;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #f0f0f0;
-}
-
-.course-pc-title,
-.course-feature-item h5,
-.course-tc-title {
-    font-family: var(--cp-font-jp);
-    font-size: 20px;
-    font-weight: 700;
+.course-sub-head-center {
+    text-align: center;
+    font-family: var(--cp-font-serif);
+    font-size: 24px;
+    font-weight: 600;
     color: var(--cp-green);
-    margin-bottom: 20px;
-}
-
-.course-pc-desc,
-.course-feature-item p,
-.course-tc-desc {
-    font-size: 15px;
-    color: #777;
-    line-height: 1.9;
-    font-family: var(--cp-font-jp);
-}
-
-/* 特徴リストの英語見出し */
-.course-cf-head {
-    font-family: var(--cp-font-en);
-    color: var(--cp-gold);
-    font-size: 14px;
-    font-weight: 700;
+    margin-bottom: 50px;
     letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    /* 手書きフォント廃止 */
+}
+
+.course-points-grid,
+.course-features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Educator Info 共通バー */
+.info-bar {
+    background: var(--cp-green);
+    color: #fff;
+    padding: 0.8rem 1rem;
+    font-weight: bold;
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.info-content {
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 0 0 4px 4px;
+    margin-bottom: 3rem;
 }
 
 
-/* --- 4つの系（グリッドデザイン） --- */
-.course-bg-gray {
-    background-color: var(--cp-gray-bg);
-    /* 薄いグレー背景 */
+/* =========================================
+   4. 普通科 特別進学コース (Tokushin)
+   ========================================= */
+
+/* 特進コース用ヘッダー */
+.tokushin-lead-head {
+    background-color: var(--cp-green);
+    color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(37, 74, 59, 0.2);
 }
 
-.course-types-grid {
+.tokushin-lead-head::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.tokushin-lead-head h3 {
+    font-family: var(--cp-font-serif);
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    border-bottom: 5px solid var(--cp-yellow);
+    padding-bottom: 5px;
+    background: transparent !important;
+}
+
+.tokushin-lead-head p {
+    font-size: 1.1rem;
+    line-height: 2;
+    font-weight: 500;
+    color: #f0f0f0;
+    margin: 0;
+}
+
+/* 特進コース詳細 */
+.tokushin-sub-title {
+    font-size: 1.5rem;
+    color: var(--cp-green);
+    border-bottom: 2px solid var(--cp-green);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.tokushin-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.tokushin-list li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.8em;
+    font-weight: bold;
+    color: #333;
+}
+
+.tokushin-list li::before {
+    content: "■";
+    color: var(--cp-green);
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+/* インタビュー・ギャラリー等 */
+.student-voice-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 2rem;
+    margin-bottom: 3rem;
 }
 
-.course-type-card {
-    display: flex;
-    align-items: flex-start;
-    gap: 30px;
-    text-align: left;
-    /* 左揃えに戻す */
-    padding: 40px;
+.student-card {
+    text-align: center;
 }
 
-.course-tc-icon {
-    font-size: 36px;
+.student-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #eee;
+}
+
+.st-name {
+    font-size: 1.2rem;
     color: var(--cp-green);
-    background: #fff;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.st-desc {
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    background: #f9f9f9;
+    padding: 1rem;
     border-radius: 8px;
-    /* 丸ではなく角丸四角に */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-    border: none;
-    /* ボーダー削除 */
+}
+
+.mini-voice-row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin-bottom: 4rem;
+}
+
+.mini-voice-item {
+    text-align: center;
+    background: #fff;
+    padding: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mini-voice-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.mini-voice-text {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: var(--cp-green);
+    display: block;
+}
+
+.step-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.step-box {
+    background: #eef5f3;
+    padding: 1.5rem;
+    border-radius: 4px;
+    position: relative;
+}
+
+.step-num {
+    background: var(--cp-green);
+    color: #fff;
+    display: inline-block;
+    padding: 0.2rem 1.2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.step-title {
+    font-size: 1.1rem;
+    color: var(--cp-green);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.step-desc {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.class-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.class-gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+
+/* =========================================
+   5. 普通科 総合コース (Sogo)
+   ========================================= */
+
+/* 総合コース用ヘッダー */
+.sogo-lead-head {
+    background-color: var(--cp-pink);
+    color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(201, 58, 91, 0.2);
+    /* 左揃え（デフォルト） */
+}
+
+.sogo-lead-head::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.sogo-lead-head h3 {
+    font-family: var(--cp-font-serif);
+    font-size: 2.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    border-bottom: 5px solid var(--cp-yellow);
+    padding-bottom: 5px;
+    background: transparent !important;
+
+    /* 左の緑線削除 */
+    border-left: none !important;
+    padding-left: 0 !important;
+}
+
+.sogo-lead-head p {
+    font-size: 1.1rem;
+    line-height: 2;
+    font-weight: 500;
+    color: #f0f0f0;
+    margin: 0;
+}
+
+/* 4つの系グリッド */
+.sogo-types-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin: 3rem 0;
+}
+
+.sogo-type-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+    border-top: 4px solid var(--cp-pink);
+}
+
+.sogo-type-card:hover {
+    transform: translateY(-5px);
+}
+
+.sogo-type-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.sogo-type-info {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.sogo-type-title {
+    color: var(--cp-pink);
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.sogo-type-desc {
+    font-size: 0.9rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* 総合コース詳細セクション */
+.sogo-detail-section {
+    margin-bottom: 4rem;
+}
+
+.sogo-detail-head {
+    background-color: var(--cp-pink);
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sogo-detail-head span {
+    background: #fff;
+    color: var(--cp-pink);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-left: 10px;
+}
+
+.sogo-detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.sogo-detail-content img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.sogo-detail-text h5 {
+    font-size: 1.3rem;
+    color: var(--cp-pink);
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.sogo-detail-text p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* 総合コース生徒インタビュー */
+.sogo-student-voice {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.sogo-st-img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--cp-pink);
     flex-shrink: 0;
 }
 
-.course-tc-body {
-    flex: 1;
+.sogo-st-content h4 {
+    color: var(--cp-pink);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.sogo-st-meta {
+    display: block;
+    margin-bottom: 1rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 総合コース Educator Info */
+.info-bar.sogo-ver {
+    background: var(--cp-pink);
 }
 
 
-/* --- スマホ対応（レスポンシブ） --- */
+/* =========================================
+   6. 調理科 & その他ユーティリティ
+   ========================================= */
+
+.course-bg-gray {
+    background-color: var(--cp-gray-bg);
+}
+
+/* 調理科用クラス（必要であれば追加） */
+.section-katei {
+    --cp-green: var(--cp-orange);
+}
+
+
+/* =========================================
+   7. スマホ対応 (Responsive)
+   ========================================= */
+
 @media (max-width: 768px) {
     .course-section-block {
         padding: 60px 0;
@@ -359,6 +701,10 @@
         font-size: 60px;
     }
 
+    .course-title-en {
+        font-size: 24px;
+    }
+
     .course-title-jp {
         font-size: 28px;
     }
@@ -370,115 +716,221 @@
         margin-bottom: 50px;
     }
 
-    .course-intro-head {
-        font-size: 24px;
-    }
-
     .course-points-grid,
-    .course-types-grid,
     .course-features-grid {
         grid-template-columns: 1fr;
-        /* 1列にする */
         gap: 20px;
     }
 
-    .course-type-card {
+    /* 総合コースレスポンシブ */
+    .sogo-types-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .sogo-type-card {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        /* スマホではセンター揃え */
-        gap: 20px;
         padding: 30px;
     }
 
-    .course-tc-icon {
-        margin-bottom: 0;
+    .sogo-detail-content {
+        grid-template-columns: 1fr;
+    }
+
+    .sogo-detail-content img {
+        margin-bottom: 1rem;
+    }
+
+    .sogo-student-voice {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+
+    /* 特進コースレスポンシブ */
+    .student-voice-grid,
+    .step-container,
+    .class-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .mini-voice-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .mini-voice-row .mini-voice-item:last-child {
+        grid-column: span 2;
+    }
+
+    .tokushin-lead-head h3 {
+        font-size: 1.8rem;
+    }
+
+    .tokushin-lead-head,
+    .sogo-lead-head {
+        padding: 2rem 1.5rem;
     }
 }
 
 /* =========================================
-   h2の装飾（before要素）を強制削除
+   家庭学科 調理科（KATEI COURSE）専用スタイル
    ========================================= */
 
-/* コースページ内の全てのh2のbefore/afterを無効化 */
-.course-lead-area h2::before,
-.course-lead-area h2::after,
-.course-section-block h2::before,
-.course-section-block h2::after,
-.course-header-titles h2::before,
-.course-header-titles h2::after {
-    content: none !important;
-    display: none !important;
-    border: none !important;
-    background: none !important;
+/* テーマカラー変数 */
+:root {
+    --katei-color: #d67d26;
+    /* 調理科のテーマカラー（オレンジ） */
 }
 
-/* もし h2 タグ自体に余計な余白や線がついている場合のリセット */
-.course-lead-jp,
-.course-title-en {
-    border: none !important;
-    padding: 0 !important;
-    background: none !important;
-}
-
-.course-lead-jp {
-    display: block;
-    /* ブロック要素にして横幅いっぱいに */
-    width: 100%;
-    /* 幅を確実に100%に */
-    text-align: center;
-    /* 文字を中央揃え */
-    margin-left: auto;
-    /* 左右の余白を自動調整（念のため） */
-    margin-right: auto;
-
-    /* 以下は既存のデザイン維持 */
-    font-family: var(--cp-font-serif);
-    font-size: 42px;
-    font-weight: 600;
-    color: var(--cp-green);
-    margin-bottom: 40px;
-    /* 下の余白 */
-    line-height: 1.4;
-    letter-spacing: 0.05em;
-}
-
-.entry-content h2,
-.club-section h2 {
-    font-size: 26px;
-    font-weight: 700;
-    color: var(--c-green);
-    margin: 0 0 50px 0;
-    padding-bottom: 10px;
-    border-bottom: 2px dashed #ccc;
+/* --- ヘッダー（オレンジ） --- */
+.katei-lead-head {
+    background-color: var(--katei-color);
+    color: #fff;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
     position: relative;
-    display: block;
-    align-items: baseline;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(214, 125, 38, 0.2);
+    /* 左揃え（デフォルト） */
 }
 
-/* =========================================
-   タイトルスタイル変更（英語枠に日本語配置）
-   ========================================= */
+.katei-lead-head::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
 
-.course-title-en {
-    /* 日本語用の明朝体フォントに変更 */
-    font-family: var(--cp-font-serif);
-    /* メインの見出しとなるためサイズを大きく */
-    font-size: 36px;
+.katei-lead-head h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2.8rem;
     font-weight: 600;
-    /* 色をメインカラー（緑）に変更 */
-    color: var(--cp-green);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    color: #fff;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+    display: inline-block;
+    border-bottom: 5px solid #ffe600;
+    /* 黄色の下線 */
+    padding-bottom: 5px;
+    background: transparent !important;
+
+    border-left: none !important;
+    padding-left: 0 !important;
+}
+
+.katei-lead-head p {
+    font-size: 1.1rem;
+    line-height: 2;
+    font-weight: 500;
+    color: #fff;
     margin: 0;
-    line-height: 1.2;
-    letter-spacing: 0.05em;
-    /* 英語用の設定（大文字変換など）をリセット */
-    text-transform: none;
+}
+
+/* --- 講師紹介（生徒インタビューのレイアウトを流用・調整） --- */
+.katei-teacher-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.katei-teacher-card {
+    text-align: center;
+    background: #fff;
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--katei-color);
+}
+
+.katei-teacher-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    border: 3px solid #eee;
+}
+
+.katei-teacher-role {
+    display: block;
+    color: var(--katei-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.katei-teacher-desc {
+    text-align: left;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-top: 1rem;
+}
+
+/* --- 3年間のステップ（オレンジ版） --- */
+.katei-step-box {
+    background: #fff8f0;
+    /* 薄いオレンジ背景 */
+    padding: 1.5rem;
+    border-radius: 4px;
+    position: relative;
+    border-top: 3px solid var(--katei-color);
+}
+
+.katei-step-num {
+    background: var(--katei-color);
+    color: #fff;
+    display: inline-block;
+    padding: 0.2rem 1.2rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+}
+
+.katei-step-title {
+    font-size: 1.1rem;
+    color: var(--katei-color);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    /* ここだけセンター */
+}
+
+/* Educator Info（調理科用色） */
+.info-bar.katei-ver {
+    background: var(--katei-color);
 }
 
 /* スマホ対応 */
 @media (max-width: 768px) {
-    .course-title-en {
-        font-size: 24px;
-        line-height: 1.4;
+    .katei-teacher-grid {
+        grid-template-columns: 1fr;
     }
+}
+
+/* =========================================
+   セクション番号のカラー設定
+   ========================================= */
+
+/* 特別進学コース (01) - 深緑 */
+#special .course-header-num {
+    color: #254a3b;
+}
+
+/* 総合コース (02) - ピンク */
+#general .course-header-num {
+    color: #c93a5b;
+}
+
+/* 調理科 (03) - オレンジ */
+#cooking .course-header-num {
+    color: #d67d26;
 }

@@ -12,6 +12,34 @@
         rel="stylesheet">
     <link rel="stylesheet" href="sanko2.css">
     <link rel="stylesheet" href="subpage.css">
+    <style>
+        .news-card {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .news-card.is-hidden {
+            display: none;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* フェードイン効果用 */
+        .news-card.fade-in {
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 
 <body class="sub-page">
@@ -21,9 +49,9 @@
         <div class="header-upper">
             <div class="upper-inner">
                 <ul class="nav-target">
-                    <li>在校生・保護者の方へ</li>
-                    <li>卒業生の方へ</li>
-                    <li>受験生の方へ</li>
+                    <li><a href="target-student.html">在校生・保護者の方へ</a></li>
+                    <li><a href="target-graduate.html">卒業生の方へ</a></li>
+                    <li><a href="exam.html">受験生の方へ</a></li>
                 </ul>
                 <div class="nav-utility">
                     <a href="#">交通アクセス</a>
@@ -174,7 +202,7 @@
                                                     class="ml-arrow">→</span></a>
                                             <a href="career.html" class="ml-item"><span>実績</span><span
                                                     class="ml-arrow">→</span></a>
-                                            <a href="career.html" class="ml-item"><span>先輩生インタビュー</span><span
+                                            <a href="career.html" class="ml-item"><span>卒業生インタビュー</span><span
                                                     class="ml-arrow">→</span></a>
                                         </div>
                                     </div>
@@ -315,20 +343,69 @@
                 onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">TOP</a>
             <div class="footer-bg-text">KURAYOSHI KITA</div>
             <div class="footer-inner">
-                <div class="f-bottom-area"><small class="f-copy">&copy; Kurayoshi Kita High School.</small></div>
+                <div class="f-top-area">
+                    <div class="f-message">
+                        <span class="fm-en">Ready for the Future?</span>
+                        <span class="fm-jp">未来へ踏み出す、準備はいい？</span>
+                    </div>
+                    <div class="f-actions">
+                        <a href="#" class="f-btn-req"><span class="btn-icon">★</span><span
+                                class="btn-text">資料請求</span></a>
+                        <a href="#" class="f-btn-contact">お問い合わせ</a>
+                    </div>
+                </div>
+                <div class="f-divider"></div>
+                <div class="f-main-area">
+                    <div class="f-info-col">
+                        <div class="f-logo">
+                            <span class="fl-k">K</span>URAYOSHI <span class="fl-k">K</span>ITA<br>
+                            <span class="fl-sub">High School</span>
+                        </div>
+                        <address class="f-address">
+                            〒682-0000<br>
+                            鳥取県倉吉市〇〇町1-2-3<br>
+                            TEL: 0858-XX-XXXX
+                        </address>
+                        <div class="f-sns">
+                            <a href="#" class="sns-item">Ins</a>
+                            <a href="#" class="sns-item">X</a>
+                            <a href="#" class="sns-item">Fb</a>
+                        </div>
+                    </div>
+                    <div class="f-link-col">
+                        <ul class="f-nav-list">
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">学校紹介</a></li>
+                            <li><a href="#">学科・コース</a></li>
+                        </ul>
+                        <ul class="f-nav-list">
+                            <li><a href="#">部活動</a></li>
+                            <li><a href="#">学校生活</a></li>
+                            <li><a href="#">進路・進学</a></li>
+                        </ul>
+                        <ul class="f-nav-list">
+                            <li><a href="#">入試情報</a></li>
+                            <li><a href="#">アクセス</a></li>
+                            <li><a href="#">サイトマップ</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="f-bottom-area">
+                    <small class="f-copy">&copy; Kurayoshi Kita High School. All Rights Reserved.</small>
+                    <div class="f-policy"><a href="#">プライバシーポリシー</a></div>
+                </div>
             </div>
         </div>
     </footer>
 
     <script src="script.js"></script>
     <script>
-        // Intersection Observer for fade-up animations
+        // 既存のスクリプト（スクロール監視、カーソル、ハンバーガーメニュー等）
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('is-inview'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        // Custom cursor
         const cursor = document.getElementById('custom-cursor');
         const links = document.querySelectorAll('a, button, .hover-img, .mq-item, .side-img-banner, .gnav-item, .news-card');
 
@@ -342,7 +419,6 @@
             link.addEventListener('mouseleave', () => { cursor.classList.remove('hover'); });
         });
 
-        // Hamburger menu toggle
         const hamburger = document.getElementById('js-hamburger');
         const nav = document.getElementById('js-nav');
         if (hamburger && nav) {
@@ -352,12 +428,56 @@
             });
         }
 
-        // Mobile submenu toggle
         function toggleSubmenu(element) {
             if (window.innerWidth <= 768) {
                 element.classList.toggle('open');
             }
         }
+
+        /* -------------------------------------------
+           カテゴリフィルタリング機能
+           ------------------------------------------- */
+        document.addEventListener('DOMContentLoaded', () => {
+            // フィルタボタンとニュースカードを取得
+            const filterBtns = document.querySelectorAll('.news-filter .filter-item');
+            const newsCards = document.querySelectorAll('.news-list-area .news-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+
+                    // 1. ボタンのアクティブ状態の切り替え
+                    filterBtns.forEach(b => b.classList.remove('is-active'));
+                    btn.classList.add('is-active');
+
+                    // 2. 選択されたカテゴリ名を取得
+                    const selectedCategory = btn.textContent.trim();
+
+                    // 3. ニュースカードのフィルタリング処理
+                    newsCards.forEach(card => {
+                        // カード内のカテゴリラベルを取得
+                        const cardCategory = card.querySelector('.cat-label').textContent.trim();
+
+                        // アニメーション用にクラスを一度リセット
+                        card.classList.remove('fade-in');
+
+                        // ALLが選択されているか、またはカテゴリが一致する場合
+                        if (selectedCategory === 'ALL' || selectedCategory === cardCategory) {
+                            // 表示する処理
+                            card.classList.remove('is-hidden');
+
+                            // 少し遅れてフェードインクラスを付与
+                            setTimeout(() => {
+                                card.classList.add('fade-in');
+                            }, 10);
+                        } else {
+                            // 非表示にする処理
+                            card.classList.add('is-hidden');
+                        }
+                    });
+                });
+            });
+        });
     </script>
 </body>
 

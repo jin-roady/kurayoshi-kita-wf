@@ -20,9 +20,9 @@
         <div class="header-upper">
             <div class="upper-inner">
                 <ul class="nav-target">
-                    <li>在校生・保護者の方へ</li>
-                    <li>卒業生の方へ</li>
-                    <li>受験生の方へ</li>
+                    <li><a href="target-student.html">在校生・保護者の方へ</a></li>
+                    <li><a href="target-graduate.html">卒業生の方へ</a></li>
+                    <li><a href="exam.html">受験生の方へ</a></li>
                 </ul>
                 <div class="nav-utility">
                     <a href="#">交通アクセス</a>
@@ -179,7 +179,7 @@
                                                     class="ml-arrow">→</span></a>
                                             <a href="career.html" class="ml-item"><span>実績</span><span
                                                     class="ml-arrow">→</span></a>
-                                            <a href="career.html" class="ml-item"><span>先輩生インタビュー</span><span
+                                            <a href="career.html" class="ml-item"><span>卒業生インタビュー</span><span
                                                     class="ml-arrow">→</span></a>
                                         </div>
                                     </div>
@@ -245,28 +245,39 @@
 
                     <section id="tab-guide" class="tab-content is-active">
                         <h2>入試概要</h2>
-                        <div class="history-table-wrap">
-                            <table class="wp-block-table">
-                                <tbody>
-                                    <tr>
-                                        <th>募集コース</th>
-                                        <td>特別進学コース / 総合コース / 調理科</td>
-                                    </tr>
-                                    <tr>
-                                        <th>入試区分</th>
-                                        <td>特色選抜 / 一般選抜（専願・併願）</td>
-                                    </tr>
-                                    <tr>
-                                        <th>試験内容</th>
-                                        <td>
-                                            <strong>特色選抜：</strong>小論文または作文、面接（調理科は実技あり）<br>
-                                            <strong>一般選抜：</strong>5教科（国・数・社・英・理）の学力試験<br>
-                                            ※英語は60分、他は50分
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
+
+                        <div class="exam-year-selector">
+                            <label for="examYear" style="margin-right:10px; font-weight:bold;">表示年度：</label>
+                            <select id="examYear" class="exam-year-select">
+                                <option value="2026">2026年度（令和8年度）</option>
+                            </select>
                         </div>
+
+                        <div id="year-2026" class="year-content is-active">
+
+                            <div class="application-info-box">
+                                <h3 class="app-title">令和８年度　入学試験出願について</h3>
+
+                                <p class="app-text">
+                                    入学試験の出願はWebにて行います。出願サイトは下記のリンクよりお入りください。<br>
+                                    また、出願方法などは下記の「生徒募集要項」をご確認ください。<br><br>
+                                    ご不明点は本校（<span class="tel-link">0858-26-1351</span>）までお問い合わせください。
+                                </p>
+
+                                <div class="app-actions">
+                                    <a href="#" class="btn-web-app" target="_blank" rel="noopener">
+                                        Web出願サイトはこちら
+                                    </a>
+
+                                    <div class="btn-download-row">
+                                        <a href="#" class="btn-dl" target="_blank">生徒募集要項 (PDF)</a>
+                                        <a href="#" class="btn-dl" target="_blank">特色選抜（自己アピール型）出願書類 (PDF)</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </section>
 
                     <section id="tab-event" class="tab-content">
@@ -471,7 +482,27 @@
                 });
             });
         });
+
+        /* === 入試情報 年度切り替えスクリプト === */
+        const yearSelect = document.getElementById('examYear');
+        if (yearSelect) {
+            yearSelect.addEventListener('change', function () {
+                const selectedYear = this.value;
+
+                // 全ての年度コンテンツを非表示にする
+                document.querySelectorAll('.year-content').forEach(content => {
+                    content.classList.remove('is-active');
+                });
+
+                // 選択された年度を表示する
+                const targetContent = document.getElementById('year-' + selectedYear);
+                if (targetContent) {
+                    targetContent.classList.add('is-active');
+                }
+            });
+        }
     </script>
+
 </body>
 
 </html>

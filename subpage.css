@@ -3207,3 +3207,1529 @@ a.facility-item:hover {
         display: none;
     }
 }
+
+/* =========================================
+   REFINED POLICY DESIGN (NEW)
+   ========================================= */
+
+/* コンテナ全体：薄いグレー背景でエリアをまとめる */
+.policy-wrapper {
+    background: #f4f8f6;
+    /* ごく薄いグリーン */
+    padding: 60px 40px;
+    border-radius: 20px;
+    margin-bottom: 60px;
+}
+
+/* カード共通スタイル */
+.policy-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eef2f0;
+    margin-bottom: 30px;
+    transition: transform 0.3s ease;
+}
+
+/* --- 1. スクールミッション（特別扱い） --- */
+.mission-card {
+    border-top: 6px solid var(--c-green);
+    /* 上部に太い緑のライン */
+}
+
+.mission-card .pc-head {
+    background: #fff;
+    padding: 30px 40px 10px;
+    text-align: center;
+}
+
+.mission-card .pc-body {
+    padding: 10px 40px 40px;
+}
+
+.mission-card .pc-lead {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--c-green);
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px dashed #ddd;
+}
+
+/* ミッションのリスト */
+.pc-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 30px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pc-list li {
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.6;
+    font-weight: 500;
+    color: #444;
+}
+
+.pc-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    background: var(--c-accent);
+    /* イエロー */
+    border-radius: 50%;
+}
+
+
+/* --- 2. 3つのポリシー（グリッド配置） --- */
+.three-policies-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 50px;
+}
+
+/* ポリシーカードのヘッダー */
+.tp-card .pc-head {
+    background: var(--c-green);
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+.tp-card .pc-body {
+    padding: 25px;
+}
+
+/* 英語タイトル */
+.pc-en {
+    display: block;
+    font-family: var(--font-en);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+/* 英語タイトル（ミッション用は緑） */
+.mission-card .pc-en {
+    color: var(--c-accent);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 日本語タイトル */
+.pc-jp {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.pc-jp::before {
+    display: none;
+}
+
+/* 既存の装飾消去 */
+
+/* ミッション用日本語タイトル */
+.mission-card .pc-jp {
+    font-size: 28px;
+    color: var(--c-green);
+}
+
+/* サブリード文 */
+.pc-sub-lead {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--c-green);
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* チェックリスト */
+.pc-check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pc-check-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.pc-check-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--c-green);
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* --- アドミッション・ポリシーの詳細枠 --- */
+.ap-details {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.ap-item {
+    margin-bottom: 15px;
+}
+
+.ap-item:last-child {
+    margin-bottom: 0;
+}
+
+.ap-tag {
+    display: inline-block;
+    background: #f0f7f4;
+    color: var(--c-green);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.ap-item p {
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- 本年度の重点目標 --- */
+.policy-year-goals {
+    margin-top: 60px;
+    border-top: 2px dashed #ccc;
+    padding-top: 40px;
+}
+
+.year-goals-title {
+    text-align: center;
+    font-size: 22px;
+    color: var(--c-green);
+    margin: 0 0 30px 0;
+    display: block;
+}
+
+.year-goals-title::before {
+    display: none;
+}
+
+/* 既存の装飾消去 */
+
+
+/* --- レスポンシブ (Mobile) --- */
+@media (max-width: 900px) {
+    .policy-wrapper {
+        padding: 30px 20px;
+    }
+
+    .mission-card .pc-head,
+    .mission-card .pc-body {
+        padding: 20px;
+    }
+
+    .pc-list {
+        grid-template-columns: 1fr;
+        /* 1列に */
+        gap: 15px;
+    }
+
+    .three-policies-grid {
+        grid-template-columns: 1fr;
+        /* 1列に積み上げ */
+        gap: 30px;
+    }
+
+    /* 矢印でフロー感を出す（スマホのみ） */
+    .tp-card {
+        margin-bottom: 0;
+    }
+}
+
+/* =========================================
+   REFINED POLICY DESIGN (VERTICAL STACK)
+   ========================================= */
+
+/* コンテナ全体：薄いグレー背景でエリアをまとめる */
+.policy-wrapper {
+    background: #f4f8f6;
+    /* ごく薄いグリーン */
+    padding: 60px 40px;
+    border-radius: 20px;
+    margin-bottom: 60px;
+    border: 1px solid #eef2f0;
+}
+
+/* カード共通スタイル */
+.policy-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+    border: 1px solid #eef2f0;
+    margin-bottom: 30px;
+    /* カード間の余白 */
+    transition: transform 0.3s ease;
+}
+
+.policy-card:last-child {
+    margin-bottom: 0;
+}
+
+/* ホバー時に少し浮く演出 */
+.policy-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-color: var(--c-green);
+}
+
+/* --- 1. スクールミッション（最上位） --- */
+.mission-card {
+    border-top: 6px solid var(--c-green);
+    /* 上部に太い緑のライン */
+    margin-bottom: 50px;
+    /* 下のポリシー群との間隔を広めに */
+}
+
+.mission-card .pc-head {
+    background: #fff;
+    padding: 30px 40px 10px;
+    text-align: center;
+    border-bottom: 1px dashed #eee;
+    /* ミッションのみ区切り線を入れる */
+}
+
+.mission-card .pc-body {
+    padding: 30px 40px 40px;
+}
+
+.mission-card .pc-lead {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--c-green);
+    text-align: center;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+/* ミッションのリスト（2列レイアウト維持） */
+.pc-list {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px 40px;
+    list-style: none;
+    padding: 0;
+}
+
+.pc-list li {
+    position: relative;
+    padding-left: 20px;
+    line-height: 1.8;
+    font-weight: 500;
+    color: #444;
+}
+
+.pc-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 8px;
+    height: 8px;
+    background: var(--c-accent);
+    /* イエロー */
+    border-radius: 50%;
+}
+
+
+/* --- 2. 3つのポリシー（縦積みレイアウトに変更） --- */
+.three-policies-grid {
+    display: flex;
+    flex-direction: column;
+    /* 縦並び指定 */
+    gap: 30px;
+    /* カード間の間隔 */
+    margin-bottom: 50px;
+}
+
+/* 各ポリシーカード（横幅いっぱいに使う） */
+.tp-card {
+    display: flex;
+    /* ヘッダーとボディを横並びにする（PC時） */
+    align-items: stretch;
+}
+
+/* ポリシーカードのヘッダー（左側） */
+.tp-card .pc-head {
+    background: var(--c-green);
+    color: #fff;
+    width: 240px;
+    /* 固定幅 */
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+/* ポリシーカードのボディ（右側） */
+.tp-card .pc-body {
+    padding: 30px 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* 英語タイトル */
+.pc-en {
+    display: block;
+    font-family: var(--font-en);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    opacity: 0.9;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.mission-card .pc-en {
+    color: var(--c-accent);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* 日本語タイトル */
+.pc-jp {
+    font-size: 20px;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    line-height: 1.4;
+}
+
+.pc-jp::before {
+    display: none;
+}
+
+.mission-card .pc-jp {
+    font-size: 28px;
+    color: var(--c-green);
+}
+
+/* サブリード文 */
+.pc-sub-lead {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--c-green);
+    margin-bottom: 15px;
+    line-height: 1.6;
+    border-bottom: 2px solid #f0f7f4;
+    padding-bottom: 10px;
+    display: inline-block;
+}
+
+/* チェックリスト */
+.pc-check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.pc-check-list li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 8px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #444;
+}
+
+.pc-check-list li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--c-green);
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* アドミッション・ポリシーの詳細タグエリア */
+.ap-details {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px dashed #ddd;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* ここは3列でスッキリ並べる */
+    gap: 20px;
+}
+
+.ap-item {
+    background: #f9fcfb;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.ap-tag {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid var(--c-green);
+    color: var(--c-green);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 8px;
+}
+
+.ap-item p {
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.6;
+    color: #666;
+}
+
+
+/* --- 本年度の重点目標 --- */
+.policy-year-goals {
+    margin-top: 80px;
+    position: relative;
+}
+
+/* 区切り線（タイトルをまたぐ線） */
+.policy-year-goals::before {
+    content: '';
+    position: absolute;
+    top: 12px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #ccc;
+    z-index: 1;
+}
+
+.year-goals-title {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    font-size: 22px;
+    color: var(--c-green);
+    margin: 0 auto 40px;
+    display: table;
+    background: #f4f8f6;
+    /* 背景色と同じにして線を隠す */
+    padding: 0 30px;
+}
+
+.year-goals-title::before {
+    display: none;
+}
+
+
+/* --- レスポンシブ (スマホ対応) --- */
+@media (max-width: 768px) {
+    .policy-wrapper {
+        padding: 40px 20px;
+    }
+
+    .mission-card .pc-head,
+    .mission-card .pc-body {
+        padding: 20px;
+    }
+
+    .pc-list {
+        grid-template-columns: 1fr;
+        /* ミッションリストを1列に */
+        gap: 15px;
+    }
+
+    /* ポリシーカードを縦積みに（スマホ時） */
+    .tp-card {
+        flex-direction: column;
+    }
+
+    .tp-card .pc-head {
+        width: 100%;
+        padding: 15px;
+        flex-direction: row;
+        /* 横並びにして高さを抑える */
+        gap: 15px;
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .tp-card .pc-head .pc-en {
+        margin-bottom: 0;
+        margin-right: 10px;
+    }
+
+    .tp-card .pc-body {
+        padding: 20px;
+    }
+
+    /* アドミッションポリシー詳細も1列に */
+    .ap-details {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* =========================================
+   FIX: 教育方針エリアのh4スタイル上書き
+   ========================================= */
+
+/* .entry-content h4 の flex設定を解除し、ブロック要素に戻す */
+.entry-content .policy-wrapper h4 {
+    display: block !important;
+    /* flexを強制的にblockに変更 */
+    text-align: center !important;
+    /* テキストを中央寄せ */
+    width: 100%;
+    /* 幅を親要素いっぱいに */
+    border: none !important;
+    /* 既存の下線などを消す */
+    padding: 0 !important;
+    /* 既存のパディングをリセット */
+    background: none !important;
+    /* 既存の背景色などをリセット */
+    margin-top: 0;
+    /* マージン調整 */
+}
+
+/* h4についている「●」アイコンを消す */
+.entry-content .policy-wrapper h4::before {
+    display: none !important;
+}
+
+/* 重点目標タイトル（year-goals-title）の配置調整 */
+.year-goals-title {
+    margin: 0 auto 40px !important;
+    /* 上下マージンと中央配置 */
+}
+
+/* ポリシーカード内の日本語タイトル（pc-jp）の微調整 */
+.tp-card .pc-jp,
+.mission-card .pc-jp {
+    text-align: center;
+    line-height: 1.4;
+}
+
+/* =========================================
+   FACILITY GRID (3 COLUMNS UPDATE)
+   ========================================= */
+
+/* PC表示時は3列にして一覧性を高める */
+@media (min-width: 900px) {
+    .facility-grid-3col {
+        grid-template-columns: repeat(3, 1fr) !important;
+        /* 既存の2列設定を上書き */
+    }
+}
+
+/* 画像の高さを統一してガタつきを防止 */
+.facility-item .f-image img {
+    height: 200px;
+    /* お好みの高さに調整してください */
+    width: 100%;
+    object-fit: cover;
+}
+
+/* タイトルの下線などの微調整 */
+.facility-item h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    border-bottom: 2px dashed #ddd;
+    /* ポップな印象の破線 */
+    padding-bottom: 10px;
+}
+
+/* =========================================
+   UNIFORM DESIGN (BOYS & GIRLS - SIMPLE)
+   ========================================= */
+
+.uniform-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    /* 男子と女子の間隔 */
+}
+
+/* 各性別グループ */
+.uniform-group {
+    background: #fff;
+    border-radius: 12px;
+    padding: 40px;
+    border: 1px solid #eee;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* 見出し */
+.ug-title {
+    font-size: 24px;
+    color: var(--c-green);
+    margin-bottom: 30px !important;
+    /* !importantで既存スタイル上書き */
+    border-bottom: 2px solid var(--c-accent);
+    padding-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+}
+
+.ug-title::before {
+    display: none !important;
+}
+
+/* 装飾リセット */
+
+.ug-en {
+    font-family: var(--font-en);
+    font-size: 16px;
+    color: #999;
+    font-weight: normal;
+}
+
+/* コンテンツレイアウト（PC：画像左、テキスト右） */
+.ug-content {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    /* 垂直方向中央揃え */
+}
+
+/* 画像エリア */
+.ug-images {
+    flex: 1;
+    /* 幅を確保 */
+    display: flex;
+    gap: 15px;
+}
+
+.ug-fig {
+    width: 50%;
+    /* 2枚並べるので50% */
+    margin: 0;
+    text-align: center;
+}
+
+.ug-img-wrap {
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 0;
+    /* キャプションがないのでマージン不要 */
+    border: 1px solid #eee;
+    aspect-ratio: 2 / 3;
+    /* 縦長比率を固定 */
+}
+
+.ug-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: transform 0.4s ease;
+}
+
+.ug-img-wrap:hover img {
+    transform: scale(1.05);
+}
+
+/* テキストエリア */
+.ug-text {
+    flex: 1;
+}
+
+.ug-text p {
+    margin: 0;
+    line-height: 2;
+    color: #555;
+    font-size: 15px;
+}
+
+
+/* --- スマホ対応 --- */
+@media (max-width: 768px) {
+    .uniform-group {
+        padding: 20px;
+    }
+
+    .ug-content {
+        flex-direction: column;
+        /* 縦積みに */
+        gap: 20px;
+    }
+
+    .ug-title {
+        font-size: 20px;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .ug-en {
+        font-size: 14px;
+    }
+}
+
+/* =========================================
+   ACCESS SECTION (IMAGE STYLE)
+   ========================================= */
+
+/* 上部のアクセス情報グリッド */
+.access-info-wrapper {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.access-box {
+    flex: 1;
+}
+
+/* 画像のデザインを参考にした見出し */
+.ab-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #333;
+    border-bottom: 3px solid #333;
+    /* 黒い太線 */
+    padding-bottom: 10px;
+    margin-bottom: 20px !important;
+    display: block !important;
+    /* flex解除 */
+}
+
+.ab-title::before {
+    display: none !important;
+}
+
+/* 既存の装飾リセット */
+.ab-title::after {
+    display: none !important;
+}
+
+/* 本文テキスト */
+.ab-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444;
+    font-weight: 500;
+}
+
+/* 地図エリア */
+.access-map-area {
+    width: 100%;
+    height: 450px;
+    /* 十分な高さを確保 */
+    background: #eee;
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid #ddd;
+}
+
+.access-map-area iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+
+/* --- スマホ対応 --- */
+@media (max-width: 768px) {
+    .access-info-wrapper {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .ab-title {
+        font-size: 18px;
+        border-bottom-width: 2px;
+    }
+
+    .access-map-area {
+        height: 300px;
+        /* スマホでは少し高さを抑える */
+    }
+}
+
+/* --- 年間行事 新デザイン (画像付きカード) --- */
+
+.event-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    /* 画像が見やすいよう少し幅広に */
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.event-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 月ヘッダー */
+.ec-header {
+    background: #254a3b;
+    /* テーマカラー（深緑） */
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ec-month-en {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    opacity: 0.8;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.ec-month-num {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.ec-month-num::after {
+    content: '月';
+    font-size: 0.9rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    margin-left: 2px;
+}
+
+/* 画像エリア */
+.ec-image {
+    width: 100%;
+    height: 180px;
+    /* 高さを固定して揃える */
+    overflow: hidden;
+    position: relative;
+    background: #f0f0f0;
+    /* 画像読み込み前の背景色 */
+}
+
+.ec-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* 画像を枠いっぱいにトリミング表示 */
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .ec-image img {
+    transform: scale(1.05);
+    /* ホバーで少し拡大 */
+}
+
+/* 行事名エリア */
+.ec-body {
+    padding: 15px 20px;
+    background: #fff;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+.ec-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    border-left: 4px solid #d67d26;
+    /* オレンジのアクセント */
+    padding-left: 12px;
+    line-height: 1.4;
+}
+
+/* SP対応 */
+@media (max-width: 768px) {
+    .event-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .ec-image {
+        height: 140px;
+        /* スマホでは少し低く */
+    }
+
+    .ec-title {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 年間行事：画像＋タグ併用デザイン --- */
+
+/* カードグリッド設定 */
+.event-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.event-card {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #eee;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* 月ヘッダー */
+.ec-header {
+    background: #254a3b;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ec-month-en {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    opacity: 0.9;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.ec-month-num {
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 1;
+}
+
+.ec-month-num::after {
+    content: '月';
+    font-size: 0.9rem;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 500;
+    margin-left: 2px;
+}
+
+/* 画像エリア */
+.ec-image {
+    width: 100%;
+    height: 160px;
+    /* バランスを見て調整 */
+    overflow: hidden;
+    background: #f0f0f0;
+}
+
+.ec-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.event-card:hover .ec-image img {
+    transform: scale(1.05);
+}
+
+/* 行事タグエリア */
+.ec-body {
+    padding: 15px;
+    background: #fff;
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+    /* タグを折り返し表示 */
+    gap: 8px;
+    /* タグ間の隙間 */
+    align-content: flex-start;
+    /* 上詰め */
+}
+
+/* 行事タグスタイル */
+.ec-tag {
+    display: inline-block;
+    background: #f7f7f7;
+    color: #444;
+    padding: 6px 12px;
+    border-radius: 6px;
+    /* 角丸四角 */
+    font-size: 0.85rem;
+    font-weight: 500;
+    line-height: 1.4;
+    border: 1px solid #eee;
+}
+
+/* 強調したい行事（試験や大きなイベント）用 */
+.ec-tag.main {
+    background: #fff8e1;
+    /* 薄い黄色 */
+    color: #d67d26;
+    /* オレンジ文字 */
+    border-color: #ffe082;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .event-card-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .ec-image {
+        height: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-card-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- 進路サポート用 追加スタイル --- */
+
+.career-section {
+    margin-bottom: 60px;
+    padding-bottom: 40px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.career-section:last-child {
+    border-bottom: none;
+}
+
+/* 見出しデザイン */
+.career-head {
+    font-size: 1.6rem;
+    color: #254a3b;
+    /* テーマカラー */
+    margin-bottom: 0.5rem;
+    border-left: 6px solid #eeb902;
+    /* 黄色のアクセント */
+    padding-left: 15px;
+    line-height: 1.4;
+}
+
+.career-sub {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* 本文とリスト */
+.career-desc {
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.career-list {
+    background: #f9f9f9;
+    padding: 20px 20px 20px 40px;
+    border-radius: 8px;
+    list-style-type: disc;
+}
+
+.career-list li {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 留学プログラムのグリッド */
+.abroad-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.abroad-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.abroad-title {
+    background: #254a3b;
+    color: #fff;
+    padding: 5px 15px;
+    display: inline-block;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+/* 生徒のメッセージ（吹き出し風） */
+.student-msg-box {
+    background: #f0f7f4;
+    /* 薄い緑背景 */
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    position: relative;
+    border-left: 4px solid #254a3b;
+}
+
+.msg-label {
+    font-family: 'Kaushan Script', cursive;
+    color: #254a3b;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.msg-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #444;
+    margin: 0;
+}
+
+/* ICTエリア */
+.ict-area {
+    background: #eef2f5;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+@media (min-width: 768px) {
+    .abroad-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* PCでは2列 */
+    }
+}
+
+/* --- 卒業生インタビュー 画像サイズ調整 --- */
+
+/* PC表示：画像の幅を300pxに制限 */
+.uniform-box .u-img {
+    width: 300px;
+    flex: 0 0 300px;
+    /* 幅を固定 */
+    margin-right: 2rem;
+    /* テキストとの間隔 */
+}
+
+/* 画像を逆配置にする場合（右側に画像）の余白調整 */
+.uniform-box.reverse .u-img {
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+/* 画像自体のスタイル */
+.uniform-box .u-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    /* 角丸 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    /* 影 */
+}
+
+/* スマホ表示（768px以下） */
+@media (max-width: 768px) {
+
+    .uniform-box .u-img,
+    .uniform-box.reverse .u-img {
+        width: 200px;
+        /* スマホではさらに小さく */
+        flex: 0 0 auto;
+        margin: 0 auto 1.5rem auto;
+        /* 中央寄せ */
+    }
+}
+
+/* --- インタビューの区切りを明確にするスタイル --- */
+
+.uniform-box {
+    /* 既存のスタイルに加えて以下を追加 */
+    padding-bottom: 40px;
+    /* 下の余白 */
+    margin-bottom: 40px;
+    /* 次の要素との間隔 */
+    border-bottom: 1px dashed #ccc;
+    /* 点線の区切り線 */
+}
+
+/* 最後のインタビューだけ線と余白を消す */
+.uniform-box:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+/* （参考）既存の画像サイズ調整（前回の内容） */
+.uniform-box .u-img {
+    width: 300px;
+    flex: 0 0 300px;
+    margin-right: 2rem;
+}
+
+.uniform-box.reverse .u-img {
+    margin-right: 0;
+    margin-left: 2rem;
+}
+
+.uniform-box .u-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+
+    .uniform-box .u-img,
+    .uniform-box.reverse .u-img {
+        width: 100%;
+        /* スマホでは幅いっぱいまたは適宜調整 */
+        max-width: 300px;
+        margin: 0 auto 1.5rem auto;
+    }
+
+    .uniform-box {
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+/* --- 年度切り替えプルダウン --- */
+.exam-year-selector {
+    margin-bottom: 30px;
+    text-align: right;
+    /* 右寄せ */
+}
+
+.exam-year-select {
+    padding: 10px 40px 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #254a3b;
+    /* テーマカラー */
+    border-radius: 4px;
+    background-color: #fff;
+    color: #254a3b;
+    font-weight: bold;
+    cursor: pointer;
+    appearance: none;
+    /* デフォルトの矢印を消す */
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23254a3b' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+}
+
+.exam-year-select:hover {
+    background-color: #f9f9f9;
+}
+
+/* 年度別コンテンツの表示制御 */
+.year-content {
+    display: none;
+    /* デフォルト非表示 */
+    animation: fadeIn 0.5s ease;
+}
+
+.year-content.is-active {
+    display: block;
+    /* アクティブな年だけ表示 */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- Web出願・募集要項エリアのデザイン --- */
+.application-info-box {
+    background-color: #ffff;
+    border: 2px solid #254a3b;
+    /* テーマカラーで枠線 */
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    color: #254a3b;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    padding-bottom: 10px;
+    border-bottom: 1px dashed #ccc;
+    display: inline-block;
+}
+
+.app-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.tel-link {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #254a3b;
+    text-decoration: none;
+    pointer-events: none;
+    /* PCではクリック無効 */
+}
+
+@media (max-width: 768px) {
+    .tel-link {
+        pointer-events: auto;
+        text-decoration: underline;
+    }
+
+    /* スマホのみタップ可能 */
+}
+
+/* ボタン群 */
+.app-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Web出願ボタン（一番目立たせる） */
+.btn-web-app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    background-color: #eeb902;
+    /* 黄色アクセント */
+    color: #254a3b;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(238, 185, 2, 0.3);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn-web-app:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(238, 185, 2, 0.4);
+    background-color: #fccb2d;
+}
+
+/* 資料ダウンロードボタン */
+.btn-download-row {
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.btn-dl {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    background-color: #f0f7f4;
+    /* 薄い緑 */
+    color: #254a3b;
+    font-weight: bold;
+    border: 1px solid #254a3b;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.2s;
+    font-size: 0.95rem;
+}
+
+.btn-dl:hover {
+    background-color: #254a3b;
+    color: #fff;
+}
+
+.btn-dl::before {
+    content: "📄";
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+/* Web出願ボタンのアイコン */
+.btn-web-app::before {
+    content: "💻";
+    margin-right: 10px;
+    font-size: 1.3em;
+}
+
+@media (max-width: 600px) {
+    .btn-download-row {
+        flex-direction: column;
+    }
+}
